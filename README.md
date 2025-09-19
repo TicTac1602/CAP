@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Checklist de l'Adulte 📋
 
-## Getting Started
+Une plateforme web qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante.
 
-First, run the development server:
+## 🎯 Objectif
+
+Offrir des guides clairs, des checklists interactives, des rappels et des outils pour éviter les oublis et les erreurs lors de la transition vers l'autonomie.
+
+## ✨ Fonctionnalités
+
+### 🏠 Pages thématiques
+- **Administration** : Impôts, carte d'identité, sécurité sociale
+- **Logement** : Location, achat, assurance habitation, aides
+- **Santé** : Mutuelle, médecin traitant, remboursements
+- **Banque & Budget** : Compte bancaire, budget, épargne
+- **Assurances** : Auto, habitation, responsabilité civile
+- **Emploi** : CV, entretiens, contrats de travail
+
+### 📋 Checklists interactives
+- Progression sauvegardée localement
+- Priorités visuelles (haute, moyenne, basse)
+- Échéances et rappels
+- Liens vers ressources utiles
+
+### 🧮 Simulateurs
+- **Budget mensuel** : Calcul revenus/charges avec conseils personnalisés
+- Répartition recommandée des dépenses
+- Conseils d'épargne
+
+### ❓ FAQ complète
+- Questions fréquentes par thème
+- Filtres par catégorie
+- Réponses détaillées et pratiques
+
+## 🛠 Technologies utilisées
+
+- **Frontend** : Next.js 15, React, TypeScript
+- **Styling** : Tailwind CSS
+- **Stockage** : LocalStorage (pour les préférences utilisateur)
+- **Déploiement** : Vercel
+- **Package Manager** : npm
+
+## 🚀 Installation et développement
 
 ```bash
+# Cloner le projet
+git clone [URL_DU_REPO]
+cd checklist-adulte
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build pour la production
+npm run build
+
+# Lancer en production
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible sur `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Structure du projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                 # Pages Next.js (App Router)
+│   ├── page.tsx        # Page d'accueil
+│   ├── administration/ # Page Administration
+│   ├── logement/       # Page Logement
+│   ├── simulateurs/    # Simulateurs
+│   └── faq/           # Questions fréquentes
+├── components/         # Composants React réutilisables
+│   ├── Header.tsx     # Navigation principale
+│   ├── Footer.tsx     # Pied de page
+│   ├── ThemeCard.tsx  # Carte de thème
+│   └── Checklist.tsx  # Checklist interactive
+├── data/              # Données statiques
+│   └── themes.ts      # Contenu des thèmes
+└── types/             # Types TypeScript
+    └── index.ts       # Interfaces et types
+```
 
-## Learn More
+## 🎨 Design et UX
 
-To learn more about Next.js, take a look at the following resources:
+- **Mobile-first** : Interface responsive
+- **Accessible** : Couleurs contrastées, navigation claire
+- **Progressif** : Sauvegarde automatique des checklists
+- **Intuitif** : Navigation simple, pas de jargon technique
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📊 Données et contenu
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Les données sont organisées en thèmes contenant :
+- **Checklists** : Tâches avec priorités et échéances
+- **Guides** : Explications étape par étape
+- **Points de vigilance** : Dates limites, pièges à éviter
+- **Liens utiles** : Sites officiels et ressources
 
-## Deploy on Vercel
+## 🔄 Évolutions prévues
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Version 2.0
+- [ ] Calendrier de rappels personnalisé
+- [ ] Simulateur d'impôts avancé
+- [ ] Guides avec captures d'écran
+- [ ] Système de commentaires (Disqus/Giscus)
+- [ ] Recherche globale
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Version 3.0
+- [ ] Notifications push
+- [ ] Mode sombre
+- [ ] Téléchargements PDF (modèles de lettres)
+- [ ] API pour les mises à jour de contenu
+- [ ] Statistiques d'usage anonymes
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Merci de :
+1. Créer une issue pour discuter des changements
+2. Fork le projet
+3. Créer une branche pour votre fonctionnalité
+4. Commiter vos modifications
+5. Ouvrir une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 🙏 Ressources et remerciements
+
+- [Service-Public.fr](https://www.service-public.fr) - Informations officielles
+- [CAF](https://www.caf.fr) - Aides au logement
+- [Impôts.gouv.fr](https://www.impots.gouv.fr) - Déclaration de revenus
+- [Ameli.fr](https://www.ameli.fr) - Sécurité sociale
+
+## 📞 Contact
+
+Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur GitHub.
+
+---
+
+**La Checklist de l'Adulte** - Parce que devenir adulte, ça s'apprend ! 🎓✨

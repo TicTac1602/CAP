@@ -1,6 +1,7 @@
 import { ThemeSection } from '@/types';
 
 export const themes: ThemeSection[] = [
+	// #region ADMINISTRATION
 	{
 		id: 'administration',
 		title: 'Administration',
@@ -19,7 +20,7 @@ export const themes: ThemeSection[] = [
 						description: 'Renouveler ou obtenir sa première carte d\'identité',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.service-public.fr']
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/R62483']
 					},
 					{
 						id: 'admin-4',
@@ -27,7 +28,7 @@ export const themes: ThemeSection[] = [
 						description: 'Renouveler ou obtenir son passeport pour voyager à l\'étranger',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.service-public.fr']
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/R62483']
 					},
 					{
 						id: 'admin-5',
@@ -35,15 +36,15 @@ export const themes: ThemeSection[] = [
 						description: 'Faire une demande de carte électorale',
 						completed: false,
 						priority: 'low',
-						resources: ['https://www.service-public.fr']
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/R16396']
 					},
 					{
 						id: 'admin-6',
 						title: 'Obtenir une carte vitale',
 						description: 'Faire une demande de carte vitale',
 						completed: false,
-						priority: 'high',
-						resources: ['https://www.service-public.fr']
+						priority: 'low',
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/F265']
 					}
 				]
 			},
@@ -97,15 +98,27 @@ export const themes: ThemeSection[] = [
 		],
 		vigilancePoints: [
 			{
+				id: 'vigilance-admin-4',
+				title: 'Inscription sur les listes électorales',
+				description: 'Obligatoire pour voter, à faire avant le 31 décembre de l\'année précédant une élection. Souvent l\'inscription est automatique à 18 ans si les parents sont inscrits.',
+				type: 'important'
+			},
+			{
 				id: 'vigilance-admin-0',
 				title: 'Validité de la carte d\'identité',
 				description: 'Valable 15 ans pour les majeurs, 10 ans pour les mineurs',
-				type: 'deadline'
+				type: 'trap'
 			},
 			{
 				id: 'vigilance-admin-2',
 				title: 'Validité du passeport',
 				description: 'Valable 10 ans pour les majeurs, 5 ans pour les mineurs',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-admin-1',
+				title: 'Date limite déclaration revenus',
+				description: 'Ne pas dépasser la date limite de déclaration des revenus (généralement entre avril et juin)',
 				type: 'deadline'
 			},
 			{
@@ -136,6 +149,8 @@ export const themes: ThemeSection[] = [
 			}
 		]
 	},
+	// #endregion
+	// #region LOGEMENT
 	{
 		id: 'logement',
 		title: 'Logement',
@@ -144,28 +159,100 @@ export const themes: ThemeSection[] = [
 		color: 'bg-green-500',
 		checklistSections: [
 			{
-				id: 'logement-recherche',
-				title: 'Recherche et signature',
-				description: 'Trouver et sécuriser son logement',
+				id: 'logement-location',
+				title: 'Recherche et dossier de location',
+				description: 'Trouver et construire un dossier solide pour sa location',
 				items: [
+					{
+						id: 'housing-0',
+						title: 'Définir ses critères de recherche et son budget',
+						description: 'Emplacement, type de logement, loyer maximum',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'housing-4',
+						title: 'Constituer un dossier de location complet',
+						description: 'Pièces justificatives, garant, etc.',
+						completed: false,
+						priority: 'medium',
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/F1169']
+					},
+					{
+						id: 'housing-5',
+						title: 'Visiter des logements',
+						description: 'Préparer des questions à poser au propriétaire ou à l\'agence. Vérifier l\'état général du logement et des équipements.',
+						completed: false,
+						priority: 'medium'
+					},
 					{
 						id: 'housing-1',
 						title: 'Vérifier le bail avant signature',
 						description: 'Contrôler toutes les clauses du contrat de location',
+						completed: false,
+						priority: 'high',
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/F35109/0_0']
+					},
+					{
+						id: 'housing-7',
+						title: 'Souscrire aux services essentiels',
+						description: 'Électricité, gaz, eau, internet',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'housing-2',
+						title: 'Souscrire une assurance habitation',
+						description: 'Obligatoire pour les locataires',
 						completed: false,
 						priority: 'high'
 					}
 				]
 			},
 			{
-				id: 'logement-assurance',
-				title: 'Assurance et protection',
-				description: 'Se protéger et assurer son logement',
+				id: 'logement-achat',
+				title: 'Achat immobilier',
+				description: 'Étapes pour acheter son premier logement',
 				items: [
 					{
-						id: 'housing-2',
-						title: 'Souscrire une assurance habitation',
-						description: 'Obligatoire pour les locataires',
+						id: 'housing-6',
+						title: 'Évaluer sa capacité d\'emprunt',
+						description: 'Calculer son budget en fonction de ses revenus et charges',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'housing-3',
+						title: 'Rechercher un bien immobilier',
+						description: 'Utiliser des sites spécialisés, agences immobilières, etc.',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'housing-8',
+						title: 'Faire une offre d\'achat',
+						description: 'Négocier le prix avec le vendeur',
+						completed: false,
+						priority: 'high'
+					},
+					{
+						id: 'housing-9',
+						title: 'Signer le compromis de vente',
+						description: 'Engagement réciproque entre l\'acheteur et le vendeur',
+						completed: false,
+						priority: 'high'
+					},
+					{
+						id: 'housing-10',
+						title: 'Finaliser le prêt immobilier',
+						description: 'Obtenir l\'accord de la banque et signer l\'offre de prêt',
+						completed: false,
+						priority: 'high'
+					},
+					{
+						id: 'housing-11',
+						title: 'Signer l\'acte de vente chez le notaire',
+						description: 'Devenir officiellement propriétaire du bien',
 						completed: false,
 						priority: 'high'
 					}
@@ -181,7 +268,8 @@ export const themes: ThemeSection[] = [
 						title: 'Faire les demandes d\'aides (APL, ALS)',
 						description: 'Déposer sa demande sur caf.fr',
 						completed: false,
-						priority: 'medium'
+						priority: 'medium',
+						resources: ['https://www.service-public.fr/particuliers/vosdroits/F12006', 'https://www.service-public.fr/particuliers/vosdroits/F1280']
 					}
 				]
 			}
@@ -192,17 +280,43 @@ export const themes: ThemeSection[] = [
 				title: 'Dépôt de garantie',
 				description: 'Maximum 1 mois de loyer pour un logement vide, 2 mois pour un meublé',
 				type: 'important'
+			},
+			{
+				id: 'vigilance-housing-2',
+				title: 'État des lieux',
+				description: 'Faire un état des lieux précis à l\'entrée et à la sortie pour éviter les litiges',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-housing-3',
+				title: 'Assurance habitation',
+				description: 'Obligatoire pour les locataires, à fournir au propriétaire lors de la remise des clés',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-housing-4',
+				title: 'Loyer impayé',
+				description: 'Risques de procédure d\'expulsion en cas de non-paiement',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-housing-5',
+				title: 'Délai de préavis',
+				description: 'Respecter le délai de préavis en cas de départ du logement',
+				type: 'important'
 			}
 		],
 		usefulLinks: [
 			{
 				id: 'link-housing-1',
 				title: 'CAF - Mes Aides',
-				url: 'https://www.caf.fr/',
+				url: 'https://wwwd.caf.fr/wps/portal/caffr/aidesetdemarches/mesdemarches/faireunesimulation/lelogement#/preparation',
 				description: 'Simuler et demander ses aides au logement'
 			}
 		]
 	},
+	// #endregion
+	// #region SANTÉ
 	{
 		id: 'sante',
 		title: 'Santé',
@@ -263,6 +377,8 @@ export const themes: ThemeSection[] = [
 			}
 		]
 	},
+	// #endregion
+	// #region BANQUE & BUDGET
 	{
 		id: 'banque-budget',
 		title: 'Banque & Budget',
@@ -309,6 +425,8 @@ export const themes: ThemeSection[] = [
 		vigilancePoints: [],
 		usefulLinks: []
 	},
+	// #endregion
+	// #region ASSURANCES
 	{
 		id: 'assurances',
 		title: 'Assurances',
@@ -348,6 +466,8 @@ export const themes: ThemeSection[] = [
 		vigilancePoints: [],
 		usefulLinks: []
 	},
+	// #endregion
+	// #region EMPLOI
 	{
 		id: 'emploi',
 		title: 'Emploi',

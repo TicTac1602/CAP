@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ThemeSection, ChecklistState, ChecklistSection } from '@/types';
+import Link from 'next/link';
 
 // Fonctions utilitaires exportées
 /**
@@ -390,7 +391,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 																<p className="text-xs text-gray-500 mb-1">Ressources utiles :</p>
 																<div className="space-y-1">
 																	{item.resources.map((resource: string, index: number) => (
-																		<a
+																		<Link
 																			key={index}
 																			href={resource}
 																			target="_blank"
@@ -398,7 +399,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 																			className="text-xs text-blue-600 hover:text-blue-700 underline block"
 																		>
 																			{resource}
-																		</a>
+																		</Link>
 																	))}
 																</div>
 															</div>

@@ -42,8 +42,8 @@ export default function FAQPage() {
 								key={category}
 								onClick={() => setActiveCategory(category)}
 								className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeCategory === category
-										? 'bg-blue-600 text-white'
-										: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+									? 'bg-blue-600 text-white'
+									: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
 									}`}
 							>
 								{category}
@@ -111,14 +111,14 @@ export default function FAQPage() {
 						>
 							Voir tous les guides
 						</Link>
-						<a
+						<Link
 							href="https://www.service-public.fr"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
 						>
 							Service Public.fr
-						</a>
+						</Link>
 					</div>
 				</div>
 

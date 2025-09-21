@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
@@ -25,18 +26,18 @@ export default function Home() {
 								pour éviter les oublis et les erreurs.
 							</p>
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
-								<a
+								<Link
 									href="#themes"
 									className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
 								>
 									Explorer les thèmes
-								</a>
-								<a
+								</Link>
+								<Link
 									href="/calendrier"
 									className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
 								>
 									Voir le calendrier
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -62,7 +63,7 @@ export default function Home() {
 						</div>
 
 						<div className="text-center">
-							<a
+							<Link
 								href="/theme"
 								className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
 							>
@@ -70,7 +71,7 @@ export default function Home() {
 								<svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 								</svg>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</section>
@@ -147,7 +148,7 @@ export default function Home() {
 						<p className="text-xl text-blue-100 mb-8">
 							Choisissez votre premier thème et commencez dès maintenant
 						</p>
-						<a
+						<Link
 							href="/theme"
 							className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-lg"
 						>
@@ -155,7 +156,7 @@ export default function Home() {
 							<svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
 							</svg>
-						</a>
+						</Link>
 					</div>
 				</section>
 			</main>

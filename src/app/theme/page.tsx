@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
 import ThemeStats from '@/components/ThemeStats';
 import { themes } from '@/data/themes';
+import Link from 'next/link';
 
 export default function ThemesPage() {
 	return (
@@ -38,18 +39,18 @@ export default function ThemesPage() {
 							marquées &quot;priorité haute&quot; et suivez nos guides détaillés.
 						</p>
 						<div className="flex flex-wrap justify-center gap-4">
-							<a
+							<Link
 								href="/faq"
 								className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
 							>
 								Questions fréquentes
-							</a>
-							<a
+							</Link>
+							<Link
 								href="/simulateurs"
 								className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
 							>
 								Simulateurs budget
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

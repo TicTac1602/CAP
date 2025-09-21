@@ -66,30 +66,30 @@ export default function Footer() {
 							Aide
 						</h3>
 						<div className="mt-4 space-y-4">
-							<a
+							<Link
 								href="https://www.service-public.fr"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-sm text-gray-600 hover:text-blue-600 block"
 							>
 								Service Public
-							</a>
-							<a
+							</Link>
+							<Link
 								href="https://www.caf.fr"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-sm text-gray-600 hover:text-blue-600 block"
 							>
 								CAF
-							</a>
-							<a
+							</Link>
+							<Link
 								href="https://www.impots.gouv.fr"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-sm text-gray-600 hover:text-blue-600 block"
 							>
 								Impôts
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

@@ -12,7 +12,7 @@ export default function Footer() {
             </h3>
             <div className="mt-4 space-y-4">
               <p className="text-sm text-gray-600">
-                La Checklist de l&apos;Adulte vous accompagne dans vos démarches administratives 
+                Cap Adulte vous accompagne dans vos démarches administratives 
                 et vous aide à bien démarrer votre vie indépendante.
               </p>
             </div>
@@ -24,16 +24,16 @@ export default function Footer() {
               Liens rapides
             </h3>
             <div className="mt-4 space-y-4">
-              <Link href="/administration" className="text-sm text-gray-600 hover:text-blue-600 block">
+              <Link href="/theme/administration" className="text-sm text-gray-600 hover:text-blue-600 block">
                 Administration
               </Link>
-              <Link href="/logement" className="text-sm text-gray-600 hover:text-blue-600 block">
+              <Link href="/theme/logement" className="text-sm text-gray-600 hover:text-blue-600 block">
                 Logement
               </Link>
-              <Link href="/sante" className="text-sm text-gray-600 hover:text-blue-600 block">
+              <Link href="/theme/sante" className="text-sm text-gray-600 hover:text-blue-600 block">
                 Santé
               </Link>
-              <Link href="/banque-budget" className="text-sm text-gray-600 hover:text-blue-600 block">
+              <Link href="/theme/banque-budget" className="text-sm text-gray-600 hover:text-blue-600 block">
                 Banque & Budget
               </Link>
             </div>
@@ -96,7 +96,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-gray-200 pt-8">
           <p className="text-sm text-gray-400 text-center">
-            © 2024 La Checklist de l&apos;Adulte. Conçu pour faciliter votre transition vers l&apos;autonomie.
+            © 2025 Cap Adulte. Conçu pour faciliter votre transition vers l&apos;autonomie.
           </p>
         </div>
       </div>

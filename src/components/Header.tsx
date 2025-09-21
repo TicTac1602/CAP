@@ -8,7 +8,7 @@ export default function Header() {
 
   const navigation = [
     { name: 'Accueil', href: '/' },
-    { name: 'Thèmes', href: '/#themes' },
+    { name: 'Thèmes', href: '/theme' },
     { name: 'Calendrier', href: '/calendrier' },
     { name: 'Simulateurs', href: '/simulateurs' },
     { name: 'FAQ', href: '/faq' },
@@ -22,7 +22,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-blue-600">
-                📋 La Checklist de l&apos;Adulte
+                📋 Cap Adulte
               </span>
             </Link>
           </div>

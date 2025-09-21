@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
+import GlobalStats from '@/components/GlobalStats';
 import { themes } from '@/data/themes';
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                La Checklist de l&apos;Adulte
+                Cap Adulte
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
                 Toutes les informations et démarches pratiques pour bien démarrer 
@@ -36,39 +37,6 @@ export default function Home() {
                 >
                   Voir le calendrier
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section Statistiques */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="bg-blue-50 rounded-lg p-8">
-                <div className="text-3xl font-bold text-blue-600 mb-2">{themes.length}</div>
-                <div className="text-gray-600">Thèmes couverts</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  Administration, logement, santé...
-                </div>
-              </div>
-              <div className="bg-green-50 rounded-lg p-8">
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {themes.reduce((total, theme) => total + theme.checklist.length, 0)}
-                </div>
-                <div className="text-gray-600">Tâches à accomplir</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  Checklists détaillées
-                </div>
-              </div>
-              <div className="bg-purple-50 rounded-lg p-8">
-                <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {themes.reduce((total, theme) => total + theme.guides.length, 0)}
-                </div>
-                <div className="text-gray-600">Guides pratiques</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  Pas à pas détaillés
-                </div>
               </div>
             </div>
           </div>
@@ -95,7 +63,7 @@ export default function Home() {
 
             <div className="text-center">
               <a
-                href="/themes"
+                href="/theme"
                 className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Voir tous les thèmes
@@ -104,6 +72,13 @@ export default function Home() {
                 </svg>
               </a>
             </div>
+          </div>
+        </section>
+
+		{/* Section Statistiques */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <GlobalStats />
           </div>
         </section>
 
@@ -173,7 +148,7 @@ export default function Home() {
               Choisissez votre premier thème et commencez dès maintenant
             </p>
             <a
-              href="#themes"
+              href="/theme"
               className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-lg"
             >
               Commencer maintenant

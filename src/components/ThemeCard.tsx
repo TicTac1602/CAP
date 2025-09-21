@@ -1,18 +1,55 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ThemeSection } from '@/types';
+import { getGuidesByTheme } from '@/data/guides';
+import { getChecklistState, calculateChecklistStats, mergeChecklistData } from '@/components/Checklist';
 
 interface ThemeCardProps {
   theme: ThemeSection;
 }
 
 export default function ThemeCard({ theme }: ThemeCardProps) {
-  const totalTasks = theme.checklist.length;
-  const highPriorityTasks = theme.checklist.filter(item => item.priority === 'high').length;
-  const completedTasks = theme.checklist.filter(item => item.completed).length;
-  const progressPercentage = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
+  const [stats, setStats] = useState(() => {
+    const checklistState = getChecklistState(theme.id);
+    const mergedSections = mergeChecklistData(theme.checklistSections, checklistState);
+    return calculateChecklistStats(mergedSections);
+  });
+  const themeGuides = getGuidesByTheme(theme.id);
+
+  // Mettre à jour les statistiques quand le composant se monte et périodiquement
+  useEffect(() => {
+    const updateStats = () => {
+      const checklistState = getChecklistState(theme.id);
+      const mergedSections = mergeChecklistData(theme.checklistSections, checklistState);
+      const newStats = calculateChecklistStats(mergedSections);
+      setStats(newStats);
+    };
+
+    // Mettre à jour immédiatement
+    updateStats();
+
+    // Écouter les changements du localStorage
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === `checklist-${theme.id}`) {
+        updateStats();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    // Polling pour détecter les changements dans le même onglet
+    const interval = setInterval(updateStats, 3000);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, [theme.id, theme.checklistSections]);
 
   return (
-    <Link href={`/${theme.id}`} className="group">
+    <Link href={`/theme/${theme.id}`} className="group">
       <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 h-full">
         {/* Header avec icône et titre */}
         <div className="flex items-center mb-4">
@@ -35,12 +72,12 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
           <div>
             <div className="flex justify-between text-sm text-gray-600 mb-1">
               <span>Progression</span>
-              <span>{completedTasks}/{totalTasks} tâches</span>
+              <span>{stats.completedTasks}/{stats.totalTasks} tâches</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div 
                 className={`h-2 rounded-full ${theme.color} transition-all duration-300`}
-                style={{ width: `${progressPercentage}%` }}
+                style={{ width: `${stats.progressPercentage}%` }}
               ></div>
             </div>
           </div>
@@ -49,11 +86,11 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
           <div className="flex justify-between text-sm">
             <div className="flex items-center">
               <span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-              <span className="text-gray-600">{highPriorityTasks} prioritaire{highPriorityTasks > 1 ? 's' : ''}</span>
+              <span className="text-gray-600">{stats.highPriorityTasks} prioritaire{stats.highPriorityTasks > 1 ? 's' : ''}</span>
             </div>
             <div className="flex items-center">
               <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              <span className="text-gray-600">{theme.guides.length} guide{theme.guides.length > 1 ? 's' : ''}</span>
+              <span className="text-gray-600">{themeGuides.length} guide{themeGuides.length > 1 ? 's' : ''}</span>
             </div>
           </div>
         </div>

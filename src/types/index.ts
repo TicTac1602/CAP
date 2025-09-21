@@ -8,24 +8,26 @@ export interface ChecklistItem {
   resources?: string[];
 }
 
+export interface ChecklistSection {
+  id: string;
+  title: string;
+  description: string;
+  items: ChecklistItem[];
+}
+
+export interface ChecklistState {
+  [itemId: string]: boolean; // Stockage simplifié : id -> completed
+}
+
 export interface ThemeSection {
   id: string;
   title: string;
   description: string;
   icon: string;
   color: string;
-  checklist: ChecklistItem[];
-  guides: Guide[];
+  checklistSections: ChecklistSection[];
   vigilancePoints: VigilancePoint[];
   usefulLinks: UsefulLink[];
-}
-
-export interface Guide {
-  id: string;
-  title: string;
-  content: string;
-  steps: string[];
-  images?: string[];
 }
 
 export interface VigilancePoint {
@@ -55,4 +57,27 @@ export interface Calculator {
   type: 'tax' | 'budget' | 'rent';
   inputs: Record<string, number>;
   result?: number;
+}
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+}
+
+export interface GuideArticle {
+  id: string;
+  title: string;
+  description: string;
+  filePath: string;
+  themeId: string;
+  tags: string[];
+  priority: 'low' | 'medium' | 'high';
+  slug: string;
+  featured?: boolean;
+  readingTime?: number;
+  author?: string;
+  publishedAt?: string;
+  updatedAt?: string;
 }

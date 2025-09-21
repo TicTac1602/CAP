@@ -1,4 +1,4 @@
-# La Checklist de l'Adulte 📋
+# Cap Adulte 📋
 
 Une plateforme web qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante.
 
@@ -140,4 +140,4 @@ Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur GitHub
 
 ---
 
-**La Checklist de l'Adulte** - Parce que devenir adulte, ça s'apprend ! 🎓✨
+**Cap Adulte** - Parce que devenir adulte, ça s'apprend ! 🎓✨

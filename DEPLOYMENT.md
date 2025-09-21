@@ -1,6 +1,6 @@
 # Instructions de déploiement 🚀
 
-## Étapes pour déployer "La Checklist de l'Adulte"
+## Étapes pour déployer "Cap Adulte"
 
 ### 1. Créer un repository GitHub
 

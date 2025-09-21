@@ -88,14 +88,42 @@ export function calculateGlobalStats(themes: ThemeSection[]) {
 	};
 }
 
+/**
+ * Calcule les statistiques globales de tous les thèmes sans accéder au localStorage
+ * Utilisé pour le rendu côté serveur et l'état initial
+ * @param themes - Les thèmes avec leurs checklists
+ * @returns Statistiques globales par défaut
+ */
+export function calculateGlobalStatsDefault(themes: ThemeSection[]) {
+	let totalTasks = 0;
+	let completedTasks = 0;
+
+	themes.forEach(theme => {
+		// Utilise un état vide (pas de localStorage)
+		const mergedSections = mergeChecklistData(theme.checklistSections, {});
+		const stats = calculateChecklistStats(mergedSections);
+		totalTasks += stats.totalTasks;
+		completedTasks += stats.completedTasks;
+	});
+
+	const globalProgressPercentage = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
+
+	return {
+		totalTasks,
+		completedTasks,
+		globalProgressPercentage
+	};
+}
+
 interface ChecklistProps {
 	checklistSections: ChecklistSection[];
 	themeId: string;
 }
 
 export default function Checklist({ checklistSections, themeId }: ChecklistProps) {
-	// État local pour le stockage simplifié
-	const [checklistState, setChecklistState] = useState<ChecklistState>(() => getChecklistState(themeId));
+	// État local pour le stockage simplifié - initialize with empty state for server
+	const [checklistState, setChecklistState] = useState<ChecklistState>(() => ({}));
+	const [isHydrated, setIsHydrated] = useState(false);
 
 	// État pour l'expansion/collapse des sections (fermées par défaut)
 	const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
@@ -106,6 +134,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 	// Mettre à jour si le themeId change
 	useEffect(() => {
 		setChecklistState(getChecklistState(themeId));
+		setIsHydrated(true);
 		// Réinitialiser l'état d'expansion lors du changement de thème
 		setExpandedSections(new Set());
 	}, [themeId]);
@@ -308,8 +337,8 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 											<div
 												key={item.id}
 												className={`border rounded-lg p-4 transition-all duration-200 ${item.completed
-														? 'bg-green-50 border-green-200'
-														: 'bg-white border-gray-200 hover:border-gray-300'
+													? 'bg-green-50 border-green-200'
+													: 'bg-white border-gray-200 hover:border-gray-300'
 													}`}
 											>
 												<div className="flex items-start space-x-3">
@@ -317,8 +346,8 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 													<button
 														onClick={() => toggleItem(item.id)}
 														className={`flex-shrink-0 w-6 h-6 rounded border-2 transition-colors duration-200 ${item.completed
-																? 'bg-green-600 border-green-600'
-																: 'border-gray-300 hover:border-gray-400'
+															? 'bg-green-600 border-green-600'
+															: 'border-gray-300 hover:border-gray-400'
 															}`}
 													>
 														{item.completed && (

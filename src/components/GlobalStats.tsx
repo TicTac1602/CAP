@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { themes } from '@/data/themes';
 import { guideArticles } from '@/data/guides';
-import { calculateGlobalStats } from '@/components/Checklist';
+import { calculateGlobalStats, calculateGlobalStatsDefault } from '@/components/Checklist';
 
 export default function GlobalStats() {
-	const [globalStats, setGlobalStats] = useState(() => calculateGlobalStats(themes));
+	// Initialize with default stats (no localStorage access)
+	const [globalStats, setGlobalStats] = useState(() => calculateGlobalStatsDefault(themes));
+	const [isHydrated, setIsHydrated] = useState(false);
 
 	useEffect(() => {
 		const updateStats = () => {
@@ -14,8 +16,9 @@ export default function GlobalStats() {
 			setGlobalStats(newStats);
 		};
 
-		// Mettre à jour immédiatement
+		// Mettre à jour immédiatement après l'hydratation
 		updateStats();
+		setIsHydrated(true);
 
 		// Écouter les changements du localStorage pour toutes les checklists
 		const handleStorageChange = (e: StorageEvent) => {

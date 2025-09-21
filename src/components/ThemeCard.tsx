@@ -11,11 +11,13 @@ interface ThemeCardProps {
 }
 
 export default function ThemeCard({ theme }: ThemeCardProps) {
+	// Initialize with default stats (no localStorage access)
 	const [stats, setStats] = useState(() => {
-		const checklistState = getChecklistState(theme.id);
-		const mergedSections = mergeChecklistData(theme.checklistSections, checklistState);
+		// Always use default stats on server and initial client render
+		const mergedSections = mergeChecklistData(theme.checklistSections, {});
 		return calculateChecklistStats(mergedSections);
 	});
+	const [isHydrated, setIsHydrated] = useState(false);
 	const themeGuides = getGuidesByTheme(theme.id);
 
 	// Mettre à jour les statistiques quand le composant se monte et périodiquement
@@ -27,8 +29,9 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
 			setStats(newStats);
 		};
 
-		// Mettre à jour immédiatement
+		// Mettre à jour immédiatement après l'hydratation
 		updateStats();
+		setIsHydrated(true);
 
 		// Écouter les changements du localStorage
 		const handleStorageChange = (e: StorageEvent) => {
@@ -86,7 +89,7 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
 					<div className="flex justify-between text-sm">
 						<div className="flex items-center">
 							<span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-							<span className="text-gray-600">{stats.highPriorityTasks} prioritaire{stats.highPriorityTasks > 1 ? 's' : ''}</span>
+							<span className="text-gray-600">{stats.highPriorityTasks} tâche{stats.highPriorityTasks > 1 ? 's' : ''} importante{stats.highPriorityTasks > 1 ? 's' : ''}</span>
 						</div>
 						<div className="flex items-center">
 							<span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-2"></span>

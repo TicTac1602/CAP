@@ -1,3 +1,8 @@
+export interface Resource {
+	title: string;
+	url: string;
+}
+
 export interface ChecklistItem {
 	id: string;
 	title: string;
@@ -5,7 +10,7 @@ export interface ChecklistItem {
 	completed: boolean;
 	priority: 'low' | 'medium' | 'high';
 	deadline?: Date;
-	resources?: string[];
+	resources?: Resource[];
 }
 
 export interface ChecklistSection {

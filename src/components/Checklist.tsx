@@ -390,15 +390,15 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 															<div className="mt-3">
 																<p className="text-xs text-gray-500 mb-1">Ressources utiles :</p>
 																<div className="space-y-1">
-																	{item.resources.map((resource: string, index: number) => (
+																	{item.resources.map((resource, index: number) => (
 																		<Link
 																			key={index}
-																			href={resource}
+																			href={resource.url}
 																			target="_blank"
 																			rel="noopener noreferrer"
 																			className="text-xs text-blue-600 hover:text-blue-700 underline block"
 																		>
-																			{resource}
+																			{resource.title}
 																		</Link>
 																	))}
 																</div>

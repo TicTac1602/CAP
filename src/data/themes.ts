@@ -20,7 +20,12 @@ export const themes: ThemeSection[] = [
 						description: 'Renouveler ou obtenir sa première carte d\'identité',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/R62483']
+						resources: [
+							{
+								title: 'Démarches carte d\'identité - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/R62483'
+							}
+						]
 					},
 					{
 						id: 'admin-4',
@@ -28,7 +33,12 @@ export const themes: ThemeSection[] = [
 						description: 'Renouveler ou obtenir son passeport pour voyager à l\'étranger',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/R62483']
+						resources: [
+							{
+								title: 'Démarches passeport - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/R62483'
+							}
+						]
 					},
 					{
 						id: 'admin-5',
@@ -36,7 +46,12 @@ export const themes: ThemeSection[] = [
 						description: 'Faire une demande de carte électorale',
 						completed: false,
 						priority: 'low',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/R16396']
+						resources: [
+							{
+								title: 'Inscription sur les listes électorales - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/R16396'
+							}
+						]
 					},
 					{
 						id: 'admin-6',
@@ -44,7 +59,12 @@ export const themes: ThemeSection[] = [
 						description: 'Faire une demande de carte vitale',
 						completed: false,
 						priority: 'low',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/F265']
+						resources: [
+							{
+								title: 'Carte Vitale - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F265'
+							}
+						]
 					}
 				]
 			},
@@ -60,7 +80,16 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'high',
 						deadline: new Date('2026-05-31'),
-						resources: ['https://www.impots.gouv.fr', 'https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu']
+						resources: [
+							{
+								title: 'Site officiel des impôts',
+								url: 'https://www.impots.gouv.fr'
+							},
+							{
+								title: 'Guide impôt sur le revenu - Économie.gouv',
+								url: 'https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu'
+							}
+						]
 					},
 					{
 						id: 'admin-7',
@@ -76,7 +105,16 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'high',
 						deadline: new Date('2026-12-31'),
-						resources: ['https://www.impots.gouv.fr', 'https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu']
+						resources: [
+							{
+								title: 'Site officiel des impôts',
+								url: 'https://www.impots.gouv.fr'
+							},
+							{
+								title: 'Guide impôt sur le revenu - Économie.gouv',
+								url: 'https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu'
+							}
+						]
 					}
 				]
 			},
@@ -91,7 +129,12 @@ export const themes: ThemeSection[] = [
 						description: 'Vérifier les aides auxquelles vous pouvez prétendre',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.mesdroitssociaux.gouv.fr/dd1pnds-ria/#destination/simu-foyer']
+						resources: [
+							{
+								title: 'Simulateur des droits sociaux - Mes Droits Sociaux',
+								url: 'https://www.mesdroitssociaux.gouv.fr/dd1pnds-ria/#destination/simu-foyer'
+							}
+						]
 					}
 				]
 			}
@@ -176,7 +219,12 @@ export const themes: ThemeSection[] = [
 						description: 'Pièces justificatives, garant, etc.',
 						completed: false,
 						priority: 'medium',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/F1169']
+						resources: [
+							{
+								title: 'Dossier de location - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F1169'
+							}
+						]
 					},
 					{
 						id: 'housing-5',
@@ -191,7 +239,12 @@ export const themes: ThemeSection[] = [
 						description: 'Contrôler toutes les clauses du contrat de location',
 						completed: false,
 						priority: 'high',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/F35109/0_0']
+						resources: [
+							{
+								title: 'Contrat de location - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F35109/0_0'
+							}
+						]
 					},
 					{
 						id: 'housing-7',
@@ -269,7 +322,16 @@ export const themes: ThemeSection[] = [
 						description: 'Déposer sa demande sur caf.fr',
 						completed: false,
 						priority: 'medium',
-						resources: ['https://www.service-public.fr/particuliers/vosdroits/F12006', 'https://www.service-public.fr/particuliers/vosdroits/F1280']
+						resources: [
+							{
+								title: 'Aide personnalisée au logement (APL) - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F12006'
+							},
+							{
+								title: 'Allocation de logement sociale (ALS) - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F1280'
+							}
+						]
 					}
 				]
 			}

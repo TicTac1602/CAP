@@ -41,6 +41,19 @@ export const themes: ThemeSection[] = [
 						]
 					},
 					{
+						id: 'admin-3',
+						title: 'Obtenir son permis de conduire',
+						description: 'Renouveler ou obtenir un permis de conduire',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Demande de permis de conduire - Service Public',
+								url: 'https://permisdeconduire.ants.gouv.fr/demarches-en-ligne/demander-la-fabrication-de-votre-permis-de-conduire'
+							}
+						]
+					},
+					{
 						id: 'admin-5',
 						title: 'Obtenir une carte électorale',
 						description: 'Faire une demande de carte électorale',
@@ -249,7 +262,7 @@ export const themes: ThemeSection[] = [
 					{
 						id: 'housing-7',
 						title: 'Souscrire aux services essentiels',
-						description: 'Électricité, gaz, eau, internet',
+						description: 'Électricité, gaz, eau, internet ...',
 						completed: false,
 						priority: 'medium'
 					},
@@ -344,16 +357,16 @@ export const themes: ThemeSection[] = [
 				type: 'important'
 			},
 			{
-				id: 'vigilance-housing-2',
-				title: 'État des lieux',
-				description: 'Faire un état des lieux précis à l\'entrée et à la sortie pour éviter les litiges',
-				type: 'trap'
-			},
-			{
 				id: 'vigilance-housing-3',
 				title: 'Assurance habitation',
 				description: 'Obligatoire pour les locataires, à fournir au propriétaire lors de la remise des clés',
 				type: 'important'
+			},
+			{
+				id: 'vigilance-housing-2',
+				title: 'État des lieux',
+				description: 'Faire un état des lieux précis à l\'entrée et à la sortie pour éviter les litiges',
+				type: 'trap'
 			},
 			{
 				id: 'vigilance-housing-4',
@@ -397,6 +410,20 @@ export const themes: ThemeSection[] = [
 						description: 'Déclarer son médecin traitant auprès de l\'Assurance Maladie',
 						completed: false,
 						priority: 'high'
+					},
+					{
+						id: 'health-6',
+						title: 'Effectuer un bilan de santé annuel',
+						description: 'Consulter son médecin traitant pour un check-up complet',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'health-7',
+						title: 'Effectuer un bilan dentaire annuel',
+						description: 'Consulter son dentiste pour un contrôle et un nettoyage',
+						completed: false,
+						priority: 'medium'
 					}
 				]
 			},
@@ -411,6 +438,30 @@ export const themes: ThemeSection[] = [
 						description: 'Complémentaire santé pour réduire le reste à charge',
 						completed: false,
 						priority: 'medium'
+					},
+					{
+						id: 'health-4',
+						title: 'Comprendre les remboursements de l\'Assurance Maladie',
+						description: 'Savoir comment sont calculés les remboursements',
+						completed: false,
+						priority: 'low'
+					},
+					{
+						id: 'health-5',
+						title: 'Couverture santé à l\'étranger',
+						description: 'Obtenir la carte européenne d\'assurance maladie (CEAM) pour les voyages en Europe',
+						completed: false,
+						priority: 'low',
+						resources: [
+							{
+								title: 'Carte Européenne d\'Assurance Maladie - Ameli.fr',
+								url: 'https://www.ameli.fr/assure/adresses-et-contacts/votre-carte-vitale-appli-carte-vitale-carte-europeenne-d-assurance-maladie-ceam/commander-une-carte-europeenne-d-assurance-maladie-ceam'
+							},
+							{
+								title: 'Protections sociale à l\'étranger - Ameli.fr',
+								url: 'https://www.ameli.fr/assure/droits-demarches/europe-international/protection-sociale-etranger'
+							}
+						]
 					}
 				]
 			},
@@ -424,18 +475,101 @@ export const themes: ThemeSection[] = [
 						title: 'Mettre à jour ses vaccins',
 						description: 'Vérifier son carnet de vaccination',
 						completed: false,
-						priority: 'medium'
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Calendrier vaccinal - Ministère de la Santé',
+								url: 'https://sante.gouv.fr/prevention-en-sante/preserver-sa-sante/vaccination/calendrier-vaccinal'
+							}
+						]
+					},
+					{
+						id: 'health-11',
+						title: 'Dépistage du VIH et autres IST',
+						description: 'Connaître les lieux de dépistage et l\'importance du dépistage régulier',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Dépistage VIH - Sida Info Service',
+								url: 'https://www.sida-info-service.org/mon-test-ist/'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'sante-urgences',
+				title: 'Aides',
+				description: 'Se proteger soi même et les autres',
+				items: [
+					{
+						id: 'health-9',
+						title: 'Apprendre les gestes de premiers secours',
+						description: 'Suivre une formation aux premiers secours (PSC1)',
+						completed: false,
+						priority: 'low'
+					},
+					{
+						id: 'health-10',
+						title: 'Donner son sang',
+						description: 'S\'inscrire comme donneur de sang et participer aux collectes',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Don du sang - EFS',
+								url: 'https://dondesang.efs.sante.fr/trouver-une-collecte'
+							}
+						]
 					}
 				]
 			}
 		],
-		vigilancePoints: [],
+		vigilancePoints: [
+			{
+				id: 'vigilance-health-1',
+				title: 'Déclaration du médecin traitant',
+				description: 'Indispensable pour bénéficier du parcours de soins coordonnés et d\'un meilleur remboursement',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-health-2',
+				title: 'Validité de la carte vitale',
+				description: 'Mettre à jour sa carte vitale chaque année avec les informations de l\'Assurance Maladie',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-health-3',
+				title: 'Souscription à une mutuelle',
+				description: 'Comparer les offres pour choisir une mutuelle adaptée à ses besoins et éviter les mauvaises surprises',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-health-4',
+				title: 'Vaccins et traitement nécessaires',
+				description: 'Si vous voyagez à l\'étranger, vérifier les vaccins obligatoires et recommandés pour la destination',
+				type: 'deadline'
+			}
+		],
 		usefulLinks: [
 			{
 				id: 'link-health-1',
 				title: 'Ameli.fr',
 				url: 'https://www.ameli.fr/',
 				description: 'Compte Assurance Maladie'
+			},
+			{
+				id: 'link-health-2',
+				title: 'Trouver son médecin traitant - Ameli.fr',
+				url: 'https://www.ameli.fr/assure/droits-demarches/principes/choisir-et-declarer-votre-medecin-traitant',
+				description: 'Site de l\'Assurance Maladie pour choisir et déclarer son médecin traitant'
+			},
+			{
+				id: 'link-health-3',
+				title: 'Recommandation vaccinal - Ministère de la Santé',
+				url: 'https://sante.gouv.fr/prevention-en-sante/preserver-sa-sante/vaccination/',
+				description: 'Informations officielles sur la vaccination en France'
 			}
 		]
 	},

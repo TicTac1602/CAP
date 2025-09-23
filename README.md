@@ -62,27 +62,6 @@ npm start
 
 Le site sera accessible sur `http://localhost:3000`
 
-## 📁 Structure du projet
-
-```
-src/
-├── app/                 # Pages Next.js (App Router)
-│   ├── page.tsx        # Page d'accueil
-│   ├── administration/ # Page Administration
-│   ├── logement/       # Page Logement
-│   ├── simulateurs/    # Simulateurs
-│   └── faq/           # Questions fréquentes
-├── components/         # Composants React réutilisables
-│   ├── Header.tsx     # Navigation principale
-│   ├── Footer.tsx     # Pied de page
-│   ├── ThemeCard.tsx  # Carte de thème
-│   └── Checklist.tsx  # Checklist interactive
-├── data/              # Données statiques
-│   └── themes.ts      # Contenu des thèmes
-└── types/             # Types TypeScript
-    └── index.ts       # Interfaces et types
-```
-
 ## 🎨 Design et UX
 
 - **Mobile-first** : Interface responsive

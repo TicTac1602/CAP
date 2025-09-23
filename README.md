@@ -36,7 +36,7 @@ Offrir des guides clairs, des checklists interactives, des rappels et des outils
 
 - **Frontend** : Next.js 15, React, TypeScript
 - **Styling** : Tailwind CSS
-- **Stockage** : LocalStorage (pour les préférences utilisateur)
+- **Stockage** : Pas de base de données, tout est statique et stocké localement
 - **Déploiement** : Vercel
 - **Package Manager** : npm
 

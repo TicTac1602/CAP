@@ -93,7 +93,7 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'medium',
 						deadline: new Date('2026-01-31'),
-					}
+					},
 					{
 						id: 'admin-2',
 						title: 'Déclarer ses revenus',
@@ -126,14 +126,14 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'high',
 						deadline: new Date('2025-10-20'),
-					}
+					},
 					{
 						id: 'admin-8',
 						title: 'Paiement des impôts sur le revenu',
 						description: 'Effectuer le paiement des impôts sur le revenu',
 						completed: false,
 						priority: 'high',
-						deadline: new Date('2026-12-31'),
+						deadline: new Date('2025-12-31'),
 						resources: [
 							{
 								title: 'Site officiel des impôts',

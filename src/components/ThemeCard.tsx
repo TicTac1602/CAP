@@ -17,7 +17,6 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
 		const mergedSections = mergeChecklistData(theme.checklistSections, {});
 		return calculateChecklistStats(mergedSections);
 	});
-	const [isHydrated, setIsHydrated] = useState(false);
 	const themeGuides = getGuidesByTheme(theme.id);
 
 	// Mettre à jour les statistiques quand le composant se monte et périodiquement
@@ -31,7 +30,6 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
 
 		// Mettre à jour immédiatement après l'hydratation
 		updateStats();
-		setIsHydrated(true);
 
 		// Écouter les changements du localStorage
 		const handleStorageChange = (e: StorageEvent) => {

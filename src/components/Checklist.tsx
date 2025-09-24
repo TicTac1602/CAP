@@ -124,7 +124,6 @@ interface ChecklistProps {
 export default function Checklist({ checklistSections, themeId }: ChecklistProps) {
 	// État local pour le stockage simplifié - initialize with empty state for server
 	const [checklistState, setChecklistState] = useState<ChecklistState>(() => ({}));
-	const [isHydrated, setIsHydrated] = useState(false);
 
 	// État pour l'expansion/collapse des sections (fermées par défaut)
 	const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
@@ -135,8 +134,6 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 	// Mettre à jour si le themeId change
 	useEffect(() => {
 		setChecklistState(getChecklistState(themeId));
-		setIsHydrated(true);
-		// Réinitialiser l'état d'expansion lors du changement de thème
 		setExpandedSections(new Set());
 	}, [themeId]);
 

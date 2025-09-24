@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
-import GlobalStats from '@/components/GlobalStats';
 import { themes } from '@/data/themes';
 
 export default function Home() {
@@ -73,13 +72,6 @@ export default function Home() {
 								</svg>
 							</Link>
 						</div>
-					</div>
-				</section>
-
-				{/* Section Statistiques */}
-				<section className="py-16">
-					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<GlobalStats />
 					</div>
 				</section>
 

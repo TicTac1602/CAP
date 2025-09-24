@@ -1,7 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
-import ThemeStats from '@/components/ThemeStats';
 import { themes } from '@/data/themes';
 import Link from 'next/link';
 
@@ -19,9 +18,6 @@ export default function ThemesPage() {
 						des checklists pratiques, des guides détaillés et des conseils personnalisés.
 					</p>
 				</div>
-
-				{/* Statistiques rapides */}
-				<ThemeStats />
 
 				{/* Grille des thèmes */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

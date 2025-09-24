@@ -12,6 +12,7 @@ export default function Header() {
 		{ name: 'Calendrier', href: '/calendrier' },
 		{ name: 'Simulateurs', href: '/simulateurs' },
 		{ name: 'FAQ', href: '/faq' },
+		{ name: 'Contact', href: '/contact' },
 	];
 
 	return (

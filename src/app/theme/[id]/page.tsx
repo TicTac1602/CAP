@@ -150,7 +150,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 										>
 											<h3 className="font-semibold text-blue-600 mb-1">{link.title}</h3>
 											<p className="text-sm text-gray-600">{link.description}</p>
-											<span className="text-xs text-gray-500">{link.url}</span>
+											<p className="text-xs text-gray-500 truncate" title={link.url}>{link.url}</p>
 										</Link>
 									))}
 								</div>

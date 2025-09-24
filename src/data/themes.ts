@@ -346,7 +346,7 @@ export const themes: ThemeSection[] = [
 				description: 'Bénéficier des aides financières',
 				items: [
 					{
-						id: 'housing-3',
+						id: 'housing-12',
 						title: 'Faire les demandes d\'aides (APL, ALS)',
 						description: 'Déposer sa demande sur caf.fr',
 						completed: false,

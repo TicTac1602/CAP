@@ -67,109 +67,87 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-					{/* Checklist */}
-					<div id="checklist">
-						<Checklist checklistSections={theme.checklistSections} themeId={theme.id} />
-					</div>
+				{/* Checklist principale */}
+				<div id="checklist" className="mb-8">
+					<Checklist checklistSections={theme.checklistSections} themeId={theme.id} />
+				</div>
 
-					{/* Guides et informations */}
-					<div className="space-y-8">
-						{/* Guides */}
-						{themeGuides.length > 0 && (
-							<div id="guides" className="bg-white rounded-lg shadow-md p-6">
-								<h2 className="text-2xl font-bold text-gray-900 mb-6">Guides pratiques</h2>
-								<div className="space-y-4">
-									{themeGuides.map((guide) => (
-										<Link
-											key={guide.id}
-											href={`/guide/${guide.slug}`}
-											className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
-										>
-											<div className="flex items-center justify-between">
-												<div className="flex-1">
-													<h3 className="text-lg font-semibold text-gray-900 mb-2">{guide.title}</h3>
-													<p className="text-gray-600 mb-2">{guide.description}</p>
-													<div className="flex items-center text-sm text-gray-500 space-x-4">
-														<span>⏱️ {guide.readingTime} min de lecture</span>
-														<span>👤 {guide.author}</span>
-														{guide.featured && (
-															<span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">
-																⭐ À la une
-															</span>
-														)}
-													</div>
-													<div className="flex flex-wrap gap-1 mt-2">
-														{guide.tags.map((tag: string) => (
-															<span key={tag} className="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">
-																{tag}
-															</span>
-														))}
-													</div>
-												</div>
-												<div className="ml-4">
-													<span className="text-blue-600 hover:text-blue-800">
-														→
-													</span>
-												</div>
-											</div>
-										</Link>
-									))}
-								</div>
-							</div>
-						)}            {/* Points de vigilance */}
-						{theme.vigilancePoints.length > 0 && (
-							<div id="vigilance" className="bg-white rounded-lg shadow-md p-6">
-								<h2 className="text-2xl font-bold text-gray-900 mb-6">Points de vigilance</h2>
-								<div className="space-y-4">
-									{theme.vigilancePoints.map((point) => (
-										<div key={point.id} className={`p-4 rounded-lg border-l-4 ${point.type === 'deadline' ? 'bg-red-50 border-red-400' :
-											point.type === 'trap' ? 'bg-yellow-50 border-yellow-400' :
-												'bg-blue-50 border-blue-400'
-											}`}>
-											<h3 className="font-semibold text-gray-900 mb-1">{point.title}</h3>
-											<p className="text-sm text-gray-600">{point.description}</p>
+				{/* Sections supplémentaires en pleine largeur */}
+				<div className="space-y-8">
+					{/* Guides */}
+					{themeGuides.length > 0 && (
+						<div id="guides" className="bg-white rounded-lg shadow-md p-6">
+							<h2 className="text-2xl font-bold text-gray-900 mb-6">Guides pratiques</h2>
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+								{themeGuides.map((guide) => (
+									<Link
+										key={guide.id}
+										href={`/guide/${guide.slug}`}
+										className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
+									>
+										<h3 className="text-lg font-semibold text-gray-900 mb-2">{guide.title}</h3>
+										<p className="text-gray-600 mb-3 text-sm">{guide.description}</p>
+										<div className="flex items-center text-xs text-gray-500 space-x-3 mb-2">
+											<span>⏱️ {guide.readingTime} min</span>
+											<span>👤 {guide.author}</span>
+											{guide.featured && (
+												<span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">
+													⭐ À la une
+												</span>
+											)}
 										</div>
-									))}
-								</div>
+										<div className="flex flex-wrap gap-1">
+											{guide.tags.slice(0, 3).map((tag: string) => (
+												<span key={tag} className="bg-gray-200 text-gray-700 px-2 py-0.5 rounded text-xs">
+													{tag}
+												</span>
+											))}
+										</div>
+									</Link>
+								))}
 							</div>
-						)}
+						</div>
+					)}
 
-						{/* Liens utiles */}
-						{theme.usefulLinks.length > 0 && (
-							<div id="liens" className="bg-white rounded-lg shadow-md p-6">
-								<h2 className="text-2xl font-bold text-gray-900 mb-6">Liens utiles</h2>
-								<div className="space-y-3">
-									{theme.usefulLinks.map((link) => (
-										<Link
-											key={link.id}
-											href={link.url}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-										>
-											<h3 className="font-semibold text-blue-600 mb-1">{link.title}</h3>
-											<p className="text-sm text-gray-600">{link.description}</p>
-											<p className="text-xs text-gray-500 truncate" title={link.url}>{link.url}</p>
-										</Link>
-									))}
-								</div>
+					{/* Points de vigilance */}
+					{theme.vigilancePoints.length > 0 && (
+						<div id="vigilance" className="bg-white rounded-lg shadow-md p-6">
+							<h2 className="text-2xl font-bold text-gray-900 mb-6">Points de vigilance</h2>
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+								{theme.vigilancePoints.map((point) => (
+									<div key={point.id} className={`p-4 rounded-lg border-l-4 ${point.type === 'deadline' ? 'bg-red-50 border-red-400' :
+										point.type === 'trap' ? 'bg-yellow-50 border-yellow-400' :
+											'bg-blue-50 border-blue-400'
+										}`}>
+										<h3 className="font-semibold text-gray-900 mb-1">{point.title}</h3>
+										<p className="text-sm text-gray-600">{point.description}</p>
+									</div>
+								))}
 							</div>
-						)}
+						</div>
+					)}
 
-						{/* Section vide avec message si aucun contenu */}
-						{themeGuides.length === 0 && theme.vigilancePoints.length === 0 && theme.usefulLinks.length === 0 && (
-							<div className="bg-white rounded-lg shadow-md p-6">
-								<div className="text-center py-8">
-									<span className="text-2xl mb-4 block">🚧</span>
-									<h3 className="text-lg font-semibold text-gray-900 mb-2">Contenu en cours de développement</h3>
-									<p className="text-gray-600">
-										Les guides, points de vigilance et liens utiles pour ce thème seront bientôt disponibles.
-									</p>
-								</div>
+					{/* Liens utiles */}
+					{theme.usefulLinks.length > 0 && (
+						<div id="liens" className="bg-white rounded-lg shadow-md p-6">
+							<h2 className="text-2xl font-bold text-gray-900 mb-6">Liens utiles</h2>
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+								{theme.usefulLinks.map((link) => (
+									<Link
+										key={link.id}
+										href={link.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+									>
+										<h3 className="font-semibold text-blue-600 mb-1 text-sm">{link.title}</h3>
+										<p className="text-xs text-gray-600 mb-2">{link.description}</p>
+										<p className="text-xs text-gray-500 truncate" title={link.url}>{link.url}</p>
+									</Link>
+								))}
 							</div>
-						)}
-					</div>
+						</div>
+					)}
 				</div>
 
 				{/* Navigation vers autres thèmes */}

@@ -235,9 +235,9 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 	return (
 		<div className="bg-white rounded-lg shadow-md p-6">
 			<div className="mb-6">
-				<div className="flex justify-between items-center mb-2">
+				<div className="mb-2">
 					<h2 className="text-2xl font-bold text-gray-900">Checklist</h2>
-					<div className="flex items-center space-x-3">
+					<div className="flex items-center justify-between">
 						<span className="text-sm text-gray-600">
 							{completedCount}/{totalCount} terminées
 						</span>
@@ -259,8 +259,8 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 				</div>
 
 				{progressPercentage === 100 && (
-					<div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-md">
-						<p className="text-green-800 text-sm font-medium">
+					<div className="mt-3 p-3 bg-green-200 border border-green-100 rounded-md">
+						<p className="text-sm font-medium">
 							🎉 Félicitations ! Vous avez terminé toutes les tâches de cette section.
 						</p>
 					</div>
@@ -287,12 +287,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 											<h3 className="text-lg font-semibold text-gray-900 mb-1">
 												{section.title}
 											</h3>
-											{/* Badge de completion */}
-											{completedItems === totalItems && totalItems > 0 && (
-												<span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-													✓ Terminé
-												</span>
-											)}
+
 										</div>
 										<p className="text-sm text-gray-600">
 											{section.description}
@@ -327,7 +322,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 
 							{/* Items de la section (conditionnellement affichés) */}
 							{isExpanded && (
-								<div className="space-y-3 ml-4">
+								<div className="space-y-3">
 									{section.items.map((item) => {
 										const deadline = formatDeadline(item.deadline);
 
@@ -336,7 +331,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 												key={item.id}
 												className={`border rounded-lg p-4 transition-all duration-200 ${item.completed
 													? 'bg-green-50 border-green-200'
-													: 'bg-white border-gray-200 hover:border-gray-300'
+													: 'bg-white border-gray-200'
 													}`}
 											>
 												<div className="flex items-start space-x-3">
@@ -344,7 +339,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 													<button
 														onClick={() => toggleItem(item.id)}
 														className={`flex-shrink-0 w-6 h-6 rounded border-2 transition-colors duration-200 ${item.completed
-															? 'bg-green-600 border-green-600'
+															? 'bg-green-500 border-green-500'
 															: 'border-gray-300 hover:border-gray-400'
 															}`}
 													>
@@ -368,7 +363,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 															</div>
 
 															{/* Badge priorité */}
-															<span className={`inline-block px-2 py-1 text-xs font-medium rounded-md border ${getPriorityColor(item.priority)}`}>
+															<span className={`px-2 py-1 text-xs font-medium rounded-md border ${getPriorityColor(item.priority)}`}>
 																{getPriorityLabel(item.priority)}
 															</span>
 														</div>

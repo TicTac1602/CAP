@@ -31,8 +31,8 @@ export default function ThemesPage() {
 					<div className="text-center">
 						<h2 className="text-2xl font-bold text-gray-900 mb-4">Besoin d&apos;aide pour commencer ?</h2>
 						<p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-							Chaque thème est conçu pour vous guider étape par étape. Commencez par les tâches
-							marquées &quot;priorité haute&quot; et suivez nos guides détaillés.
+							Chaque thème est conçu pour vous guider étape par étape. Commencez par valider les tâches
+							que vous jugez avoir déjà accomplies et approfondissez votre démarche avec les autres tâches.
 						</p>
 						<div className="flex flex-wrap justify-center gap-4">
 							<Link
@@ -45,7 +45,7 @@ export default function ThemesPage() {
 								href="/simulateurs"
 								className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
 							>
-								Simulateurs budget
+								Simulateurs
 							</Link>
 						</div>
 					</div>

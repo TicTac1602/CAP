@@ -88,7 +88,7 @@ export default function Home() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-							<div className="text-center">
+							<Link href="/theme" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 									<span className="text-2xl">📋</span>
 								</div>
@@ -96,9 +96,9 @@ export default function Home() {
 								<p className="text-gray-600 text-sm">
 									Cochez vos tâches accomplies et suivez votre progression
 								</p>
-							</div>
+							</Link>
 
-							<div className="text-center">
+							<Link href="/calendrier" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 									<span className="text-2xl">📅</span>
 								</div>
@@ -106,9 +106,9 @@ export default function Home() {
 								<p className="text-gray-600 text-sm">
 									Ne ratez plus aucune échéance importante
 								</p>
-							</div>
+							</Link>
 
-							<div className="text-center">
+							<Link href="/simulateurs" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 									<span className="text-2xl">🧮</span>
 								</div>
@@ -116,17 +116,17 @@ export default function Home() {
 								<p className="text-gray-600 text-sm">
 									Calculez vos impôts, votre budget et plus encore
 								</p>
-							</div>
+							</Link>
 
-							<div className="text-center">
+							<Link href="/faq" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 									<span className="text-2xl">📚</span>
 								</div>
-								<h3 className="text-lg font-semibold mb-2">Guides détaillés</h3>
+								<h3 className="text-lg font-semibold mb-2">FAQ</h3>
 								<p className="text-gray-600 text-sm">
-									Des explications claires pour chaque démarche
+									Réponses aux questions les plus fréquentes
 								</p>
-							</div>
+							</Link>
 						</div>
 					</div>
 				</section>

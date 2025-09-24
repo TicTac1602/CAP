@@ -12,7 +12,7 @@ export default function ContactPage() {
 						📬 Contactez-nous
 					</h1>
 					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-						Une question ? Une suggestion d'amélioration ? Nous sommes là pour vous aider !
+						Une question ? Une suggestion d&apos;amélioration ? Nous sommes là pour vous aider !
 					</p>
 				</div>
 

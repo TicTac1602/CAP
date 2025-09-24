@@ -87,6 +87,14 @@ export const themes: ThemeSection[] = [
 				description: 'Impôts et déclarations fiscales',
 				items: [
 					{
+						id: 'admin-0',
+						title: 'Vérifier le montant des prélèvements à la source',
+						description: 'S\'assurer que ses prélèvements à la source sont corrects et calculer sa partie d\'impôts à payer en fin d\'année',
+						completed: false,
+						priority: 'medium',
+						deadline: new Date('2026-01-31'),
+					}
+					{
 						id: 'admin-2',
 						title: 'Déclarer ses revenus',
 						description: 'Généralement entre avril et juin chaque année il faut déclarer ses revenus sur le site des impôts',
@@ -111,6 +119,14 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'medium',
 					},
+					{
+						id: 'admin-10',
+						title: 'Paiement taxe foncière',
+						description: 'Effectuer le paiement de la taxe foncière si concerné',
+						completed: false,
+						priority: 'high',
+						deadline: new Date('2025-10-20'),
+					}
 					{
 						id: 'admin-8',
 						title: 'Paiement des impôts sur le revenu',
@@ -277,7 +293,7 @@ export const themes: ThemeSection[] = [
 			},
 			{
 				id: 'logement-achat',
-				title: 'Achat immobilier',
+				title: 'Recherche et Achat immobilier',
 				description: 'Étapes pour acheter son premier logement',
 				items: [
 					{
@@ -438,13 +454,6 @@ export const themes: ThemeSection[] = [
 						description: 'Complémentaire santé pour réduire le reste à charge',
 						completed: false,
 						priority: 'medium'
-					},
-					{
-						id: 'health-4',
-						title: 'Comprendre les remboursements de l\'Assurance Maladie',
-						description: 'Savoir comment sont calculés les remboursements',
-						completed: false,
-						priority: 'low'
 					},
 					{
 						id: 'health-5',

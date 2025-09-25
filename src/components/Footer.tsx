@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<footer className="bg-gray-50 border-t">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{/* À propos */}
 					<div>
 						<h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">
@@ -15,27 +15,6 @@ export default function Footer() {
 								Cap Adulte vous accompagne dans vos démarches administratives
 								et vous aide à bien démarrer votre vie indépendante.
 							</p>
-						</div>
-					</div>
-
-					{/* Liens rapides */}
-					<div>
-						<h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">
-							Liens rapides
-						</h3>
-						<div className="mt-4 space-y-4">
-							<Link href="/theme/administration" className="text-sm text-gray-600 hover:text-blue-600 block">
-								Administration
-							</Link>
-							<Link href="/theme/logement" className="text-sm text-gray-600 hover:text-blue-600 block">
-								Logement
-							</Link>
-							<Link href="/theme/sante" className="text-sm text-gray-600 hover:text-blue-600 block">
-								Santé
-							</Link>
-							<Link href="/theme/banque-budget" className="text-sm text-gray-600 hover:text-blue-600 block">
-								Banque & Budget
-							</Link>
 						</div>
 					</div>
 
@@ -66,6 +45,9 @@ export default function Footer() {
 							Aide
 						</h3>
 						<div className="mt-4 space-y-4">
+							<Link href="/contact" className="text-sm text-gray-600 hover:text-blue-600 block">
+								Contact
+							</Link>
 							<Link
 								href="https://www.service-public.fr"
 								target="_blank"

@@ -135,10 +135,10 @@ export default function Home() {
 				<section className="py-16 bg-blue-600">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 						<h2 className="text-3xl font-bold text-white mb-4">
-							Prêt à commencer votre checklist ?
+							Prêt à commencer votre vie d&apos;adulte ?
 						</h2>
 						<p className="text-xl text-blue-100 mb-8">
-							Choisissez votre premier thème et commencez dès maintenant
+							Choisissez votre premier thème dans notre bibliothèque et commencez dès maintenant
 						</p>
 						<Link
 							href="/theme"

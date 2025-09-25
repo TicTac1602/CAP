@@ -10,7 +10,7 @@ const simulateurs = [
 		description: 'Calculez et optimisez votre budget mensuel personnel',
 		icon: '💰',
 		color: 'bg-green-500',
-		available: false,
+		available: true,
 		difficulty: 'Facile',
 		duration: '5 min'
 	},

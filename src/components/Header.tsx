@@ -16,7 +16,7 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-white shadow-sm">
+		<header className="bg-white shadow-sm relative">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center py-4">
 					{/* Logo */}
@@ -56,13 +56,13 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="md:hidden">
+					<div className="absolute top-full left-0 right-0 md:hidden bg-white shadow-lg border-t z-50">
 						<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 							{navigation.map((item) => (
 								<Link
 									key={item.name}
 									href={item.href}
-									className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium"
+									className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium hover:bg-gray-50 rounded"
 									onClick={() => setIsMenuOpen(false)}
 								>
 									{item.name}

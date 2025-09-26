@@ -24,6 +24,9 @@ export default function Footer() {
 							Ressources
 						</h3>
 						<div className="mt-4 space-y-4">
+							<Link href="/theme" className="text-sm text-gray-600 hover:text-blue-600 block">
+								Thèmes
+							</Link>
 							<Link href="/simulateurs" className="text-sm text-gray-600 hover:text-blue-600 block">
 								Simulateurs
 							</Link>
@@ -32,9 +35,6 @@ export default function Footer() {
 							</Link>
 							<Link href="/faq" className="text-sm text-gray-600 hover:text-blue-600 block">
 								FAQ
-							</Link>
-							<Link href="/telechargements" className="text-sm text-gray-600 hover:text-blue-600 block">
-								Téléchargements
 							</Link>
 						</div>
 					</div>
@@ -78,7 +78,8 @@ export default function Footer() {
 
 				<div className="mt-8 border-t border-gray-200 pt-8">
 					<p className="text-sm text-gray-400 text-center">
-						© 2025 Cap Adulte. Conçu pour faciliter votre transition vers l&apos;autonomie.
+						© 2025 Cap Adulte. Tous droits réservés.
+						<span>Made with ❤️ by <a href="https://github.com/TicTac1602" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer">Emil</a>.</span>
 					</p>
 				</div>
 			</div>

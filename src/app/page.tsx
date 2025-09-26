@@ -27,7 +27,7 @@ export default function Home() {
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
 								<Link
 									href="#themes"
-									className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+									className="border-2 border-white bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
 								>
 									Explorer les thèmes
 								</Link>
@@ -43,7 +43,7 @@ export default function Home() {
 				</section>
 
 				{/* Section Thèmes principaux */}
-				<section id="themes" className="py-16 bg-gray-50">
+				<section id="themes" className="py-16 bg-gray-50 mt-8">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -142,7 +142,7 @@ export default function Home() {
 						</p>
 						<Link
 							href="/theme"
-							className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-lg"
+							className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-lg"
 						>
 							Commencer maintenant
 							<svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

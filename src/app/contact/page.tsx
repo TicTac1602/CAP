@@ -30,13 +30,13 @@ export default function ContactPage() {
 								Pour toute question, suggestion ou signalement de problème
 							</p>
 							<a
-								href="mailto:contact@cap-autonomie.fr"
+								href="mailto:contact.capadulte@gmail.com"
 								className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
 							>
 								Contactez-nous !
 							</a>
 							<span className="text-sm text-gray-500 mt-2 block">
-								contact@cap-autonomie.fr
+								contact.capadulte@gmail.com
 							</span>
 						</div>
 					</div>

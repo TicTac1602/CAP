@@ -236,7 +236,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 		<div className="bg-white rounded-lg shadow-md p-6">
 			<div className="mb-6">
 				<div className="mb-2">
-					<h2 className="text-2xl font-bold text-gray-900">Checklist</h2>
+					<h2 className="text-xl font-bold text-gray-900">Checklist</h2>
 					<div className="flex items-center justify-between">
 						<span className="text-sm text-gray-600">
 							{completedCount}/{totalCount} terminées

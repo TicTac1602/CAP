@@ -328,8 +328,8 @@ export default function CalendrierPage() {
 				{/* En-tête */}
 				<div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
 					<div className="text-center sm:text-left">
-						<h1 className="text-2xl sm:text-3xl font-bold text-gray-900">📅 Calendrier des échéances</h1>
-						<p className="text-base sm:text-lg text-gray-600 mt-1 sm:mt-2">
+						<h1 className="text-3xl font-bold text-gray-900">Calendrier des échéances</h1>
+						<p className="text-xl text-gray-600 mt-1 sm:mt-2">
 							Suivez toutes vos deadlines importantes
 						</p>
 					</div>

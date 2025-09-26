@@ -8,10 +8,10 @@ export default function ContactPage() {
 
 			<main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				<div className="text-center mb-12">
-					<h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-						📬 Contactez-nous
+					<h1 className="text-3xl font-bold text-gray-900 mb-4">
+						Contactez-nous
 					</h1>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
 						Une question ? Une suggestion d&apos;amélioration ? Nous sommes là pour vous aider !
 					</p>
 				</div>

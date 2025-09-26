@@ -12,7 +12,7 @@ export default function ThemesPage() {
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				{/* En-tête de la page */}
 				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold text-gray-900 mb-4">Tous les thèmes</h1>
+					<h1 className="text-3xl font-bold text-gray-900 mb-4">Tous les thèmes</h1>
 					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						Explorez tous les domaines essentiels de la vie adulte. Chaque thème contient
 						des checklists pratiques, des guides détaillés et des conseils personnalisés.

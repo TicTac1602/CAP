@@ -36,8 +36,8 @@ export default async function ThemePage({ params }: ThemePageProps) {
 							<span className="text-2xl">{theme.icon}</span>
 						</div>
 						<div>
-							<h1 className="text-2xl font-bold text-gray-900 mb-2">{theme.title}</h1>
-							<p className="text-xl text-gray-600">{theme.description}</p>
+							<h1 className="text-xl font-bold text-gray-900 mb-2">{theme.title}</h1>
+							<p className="text-l text-gray-600">{theme.description}</p>
 						</div>
 					</div>
 

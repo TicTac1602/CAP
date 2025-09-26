@@ -93,6 +93,12 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'medium',
 						deadline: new Date('2026-01-31'),
+						resources: [
+							{
+								title: 'Gerer mon prélèvement à la source - Impots.gouv',
+								url: 'https://www.impots.gouv.fr/questions/theme/avis-impot/3'
+							}
+						]
 					},
 					{
 						id: 'admin-2',
@@ -113,19 +119,18 @@ export const themes: ThemeSection[] = [
 						]
 					},
 					{
-						id: 'admin-7',
-						title: 'Vérifier ses prélèvements et budgéter ses impôts',
-						description: 'S\'assurer que ses prélèvements à la source sont corrects et calculer sa partie d\'impôts à payer en fin d\'année',
-						completed: false,
-						priority: 'medium',
-					},
-					{
 						id: 'admin-10',
 						title: 'Paiement taxe foncière',
 						description: 'Effectuer le paiement de la taxe foncière si concerné',
 						completed: false,
 						priority: 'high',
 						deadline: new Date('2025-10-20'),
+						resources: [
+							{
+								title: 'Site officiel des impôts',
+								url: 'https://www.impots.gouv.fr'
+							}
+						]
 					},
 					{
 						id: 'admin-8',
@@ -135,6 +140,10 @@ export const themes: ThemeSection[] = [
 						priority: 'high',
 						deadline: new Date('2025-12-31'),
 						resources: [
+							{
+								title: 'Notre simulateur d\'impôt sur le revenu',
+								url: '../simulateurs'
+							},
 							{
 								title: 'Site officiel des impôts',
 								url: 'https://www.impots.gouv.fr'
@@ -432,14 +441,16 @@ export const themes: ThemeSection[] = [
 						title: 'Effectuer un bilan de santé annuel',
 						description: 'Consulter son médecin traitant pour un check-up complet',
 						completed: false,
-						priority: 'medium'
+						priority: 'medium',
+						deadline: new Date('2026-09-01')
 					},
 					{
 						id: 'health-7',
 						title: 'Effectuer un bilan dentaire annuel',
 						description: 'Consulter son dentiste pour un contrôle et un nettoyage',
 						completed: false,
-						priority: 'medium'
+						priority: 'medium',
+						deadline: new Date('2026-09-01')
 					}
 				]
 			},
@@ -482,7 +493,7 @@ export const themes: ThemeSection[] = [
 					{
 						id: 'health-3',
 						title: 'Mettre à jour ses vaccins',
-						description: 'Vérifier son carnet de vaccination',
+						description: 'Vérifier son carnet de vaccination et le calendrier vaccinal',
 						completed: false,
 						priority: 'medium',
 						resources: [
@@ -734,4 +745,20 @@ export const getThemesByPriority = (): ThemeSection[] => {
 		const highPriorityB = getAllItems(b).filter(item => item.priority === 'high').length;
 		return highPriorityB - highPriorityA;
 	});
+};
+
+export const getOtherThemes = (currentIndex: number, themeCount: number): ThemeSection[] => {
+	const otherThemes: ThemeSection[] = [];
+	const usedIndices = new Set([currentIndex]);
+
+	for (let shift = -2; shift <= 2; shift++) {
+		if (shift === 0) continue;
+		const newIndex = (currentIndex + shift + themeCount) % themeCount;
+
+		if (!usedIndices.has(newIndex)) {
+			otherThemes.push(themes[newIndex]);
+			usedIndices.add(newIndex);
+		}
+	}
+	return otherThemes;
 };

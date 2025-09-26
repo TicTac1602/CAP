@@ -1,20 +1,20 @@
 import { GuideArticle } from '@/types';
 
 export const guideArticles: GuideArticle[] = [
-	// {
-	// 	id: 'guide-declaration-impots',
-	// 	title: 'Guide complet : Faire sa première déclaration d\'impôts',
-	// 	description: 'Tout ce qu\'il faut savoir pour déclarer ses impôts en ligne pour la première fois',
-	// 	slug: 'declaration-impots-premiere-fois',
-	// 	themeId: 'administration',
-	// 	author: 'Équipe Cap Adulte',
-	// 	publishedAt: '2025-09-19',
-	// 	readingTime: 8,
-	// 	priority: 'high',
-	// 	tags: ['impôts', 'déclaration', 'administration', 'première fois'],
-	// 	featured: true,
-	// 	filePath: '/data/articles/declaration-impots-premiere-fois.md'
-	// },
+	{
+		id: 'guide-declaration-impots',
+		title: 'Guide complet : Faire sa déclaration d\'impôts',
+		description: 'Tout ce qu\'il faut savoir pour déclarer ses impôts en ligne',
+		slug: 'declaration-impots-premiere-fois',
+		themeId: 'administration',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-09-26',
+		readingTime: 8,
+		priority: 'high',
+		tags: ['impôts', 'déclaration', 'administration', 'première fois'],
+		featured: true,
+		filePath: '/data/articles/declaration-impots-premiere-fois.md'
+	},
 	// {
 	// 	id: 'guide-choisir-mutuelle',
 	// 	title: 'Comment bien choisir sa première mutuelle santé',

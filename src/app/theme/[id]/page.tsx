@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Checklist from '@/components/Checklist';
-import { getThemeById, themes } from '@/data/themes';
+import { getThemeById, themes, getOtherThemes } from '@/data/themes';
 import { getGuidesByTheme } from '@/data/guides';
 
 interface ThemePageProps {
@@ -21,14 +21,16 @@ export default async function ThemePage({ params }: ThemePageProps) {
 	// Récupérer les guides pour ce thème
 	const themeGuides = getGuidesByTheme(id);
 
-	// Filtrer les autres thèmes pour la navigation
-	const otherThemes = themes.filter(t => t.id !== theme.id).slice(0, 3);
+
+	const currentIndex = themes.findIndex(t => t.id === id);
+	const themeCount = themes.length;
+	const otherThemes = getOtherThemes(currentIndex, themeCount);
 
 	return (
 		<div className="min-h-screen bg-gray-50">
 			<Header />
 
-			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+			<main className="max-w-7xl mx-auto px-4 sm:px-6 sm:py-8 lg:px-8">
 				{/* En-tête de la page */}
 				<div className="bg-white rounded-lg shadow-md p-8 mb-8">
 					<div className="flex items-center mb-6">
@@ -77,7 +79,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					{/* Guides */}
 					{themeGuides.length > 0 && (
 						<div id="guides" className="bg-white rounded-lg shadow-md p-6">
-							<h2 className="text-2xl font-bold text-gray-900 mb-6">Guides pratiques</h2>
+							<h2 className="text-xl font-bold text-gray-900 mb-6">Guides pratiques</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 								{themeGuides.map((guide) => (
 									<Link
@@ -112,7 +114,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					{/* Points de vigilance */}
 					{theme.vigilancePoints.length > 0 && (
 						<div id="vigilance" className="bg-white rounded-lg shadow-md p-6">
-							<h2 className="text-2xl font-bold text-gray-900 mb-6">Points de vigilance</h2>
+							<h2 className="text-xl font-bold text-gray-900 mb-6">Points de vigilance</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 								{theme.vigilancePoints.map((point) => (
 									<div key={point.id} className={`p-4 rounded-lg border-l-4 ${point.type === 'deadline' ? 'bg-red-50 border-red-400' :
@@ -130,7 +132,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					{/* Liens utiles */}
 					{theme.usefulLinks.length > 0 && (
 						<div id="liens" className="bg-white rounded-lg shadow-md p-6">
-							<h2 className="text-2xl font-bold text-gray-900 mb-6">Liens utiles</h2>
+							<h2 className="text-xl font-bold text-gray-900 mb-6">Liens utiles</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 								{theme.usefulLinks.map((link) => (
 									<Link
@@ -162,7 +164,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 									className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
 								>
 									<div className="flex items-center">
-										<span className="text-2xl mr-3">{otherTheme.icon}</span>
+										<span className="text-xl mr-3">{otherTheme.icon}</span>
 										<div>
 											<h3 className="font-semibold">{otherTheme.title}</h3>
 											<p className="text-sm text-gray-600">{otherTheme.description}</p>

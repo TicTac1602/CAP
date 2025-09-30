@@ -28,7 +28,6 @@
 - 📋 3 derniers bulletins de salaire
 - 📋 Contrat de travail
 - 📋 2 derniers avis d'imposition
-- 📋 3 derniers relevés bancaires
 - 📋 Justificatif de domicile actuel
 - 📋 Justificatifs d'épargne
 

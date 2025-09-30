@@ -692,43 +692,276 @@ export const themes: ThemeSection[] = [
 		color: 'bg-indigo-500',
 		checklistSections: [
 			{
-				id: 'emploi-recherche',
-				title: 'Recherche d\'emploi',
-				description: 'Outils et démarches pour trouver un emploi',
+				id: 'emploi-droits',
+				title: 'Bases du droit du travail',
+				description: 'Connaître ses droits et obligations fondamentaux',
 				items: [
 					{
-						id: 'job-1',
-						title: 'Créer son CV',
-						description: 'Rédiger un CV attractif et professionnel',
+						id: 'job-2',
+						title: 'Connaître ses droits aux congés payés',
+						description: 'Calculer ses congés acquis (2,5 jours par mois) et comprendre les règles de prise de congés',
 						completed: false,
-						priority: 'high'
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Congés payés - Service Public',
+								url: 'https://www.economie.gouv.fr/entreprises/gerer-ses-ressources-humaines-et-ses-salaries/les-conges-payes-de-vos-salaries-en-8#-comprendre-les-cong-s-pay-s-des_0'
+							}
+						]
 					},
 					{
-						id: 'job-2',
-						title: 'S\'inscrire à Pôle Emploi',
-						description: 'Obtenir son numéro d\'identifiant Pôle Emploi',
+						id: 'job-3',
+						title: 'Comprendre son bulletin de paie',
+						description: 'Vérifier les cotisations, salaire net, net imposable et identifier d\'éventuelles erreurs',
 						completed: false,
 						priority: 'medium'
+					},
+					{
+						id: 'job-4',
+						title: 'Connaître les procédures de démission',
+						description: 'Respecter le préavis et les démarches pour quitter son emploi en bonne et due forme',
+						completed: false,
+						priority: 'low',
+						resources: [
+							{
+								title: 'Démission - Service Public',
+								url: 'https://www.droit-travail-france.fr/demission.php'
+							}
+						]
+					},
+					{
+						id: 'job-5',
+						title: 'Comprendre ses droits en cas de licenciement',
+						description: 'Connaître les motifs valables, indemnités légales et recours possibles',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Licenciement - Service Public',
+								url: 'https://code.travail.gouv.fr/themes/licenciement-droits-des-salaries-et-procedures'
+							}
+						]
 					}
 				]
 			},
 			{
-				id: 'emploi-contrat',
-				title: 'Contrat de travail',
-				description: 'Comprendre ses droits et devoirs',
+				id: 'emploi-profil',
+				title: 'Création et mise à jour du profil emploi',
+				description: 'Construire et maintenir sa présence professionnelle',
 				items: [
 					{
-						id: 'job-3',
-						title: 'Comprendre son contrat de travail',
-						description: 'Lire et vérifier les clauses importantes',
+						id: 'job-8',
+						title: 'Créer ou mettre à jour son CV',
+						description: 'Rédiger un CV attractif, professionnel et adapté aux postes visés',
 						completed: false,
-						priority: 'high'
+						priority: 'high',
+						resources: [
+							{
+								title: 'France Travail - Préparer sa candidature',
+								url: 'https://www.francetravail.fr/candidat/votre-recherche-demploi.html#preparer-candidature'
+							},
+							{
+								title: 'Modèles de CV - Canva',
+								url: 'https://www.canva.com/fr_fr/creer/cv/'
+							}
+						]
+					},
+					{
+						id: 'job-11',
+						title: 'Rédiger une lettre de motivation type',
+						description: 'Préparer une base personnalisable pour ses candidatures',
+						completed: false,
+						priority: 'low',
+						resources: [
+							{
+								title: 'Exemples de lettres de motivation - France Travail',
+								url: 'https://www.emploi-store.fr/portail/services/maLettreDeMotivation'
+							}
+						]
+					},
+					{
+						id: 'job-9',
+						title: 'Avoir ou Mettre à jour son profil LinkedIn',
+						description: 'Compléter son profil, ajouter des compétences, photo professionnelle et réseau',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'LinkedIn',
+								url: 'https://www.linkedin.com/'
+							}
+						]
+					},
+					{
+						id: 'job-12',
+						title: 'Créer un portfolio professionnel',
+						description: 'Rassembler ses réalisations, projets et témoignages pour les présenter si applicable dans votre domaine',
+						completed: false,
+						priority: 'low'
+					}
+				]
+			},
+			{
+				id: 'emploi-recherche',
+				title: 'Recherche d\'emploi active',
+				description: 'Stratégies et démarches pour trouver un emploi',
+				items: [
+					{
+						id: 'job-10',
+						title: 'Mettre à jour son profil France Travail',
+						description: 'Actualiser ses compétences, expériences et critères de recherche',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'France Travail - Mon espace personnel',
+								url: 'https://authentification-candidat.francetravail.fr/connexion/XUI/?realm=/individu&goto=https://authentification-candidat.francetravail.fr/connexion/oauth2/realms/root/realms/individu/authorize?realm%3D/individu%26response_type%3Did_token%2520token%26scope%3Dapplication_USG_PN073-tdbcandidat_6408B42F17FC872440D4FF01BA6BAB16999CD903772C528808D1E6FA2B585CF2%2520compteUsager%2520contexteAuthentification%2520coordonnees%2520courrier%2520email%2520etatcivil%2520idIdentiteExterne%2520idRci%2520individu%2520logW%2520messagerieintegree%2520navigation%2520nomenclature%2520notifications%2520openid%2520pilote%2520pole_emploi%2520prdvl%2520profile%2520reclamation%2520suggestions%2520mesrdvs%2520offre%2520criteresrecherchesoffres%2520profilpro%26client_id%3DUSG_PN073-tdbcandidat_6408B42F17FC872440D4FF01BA6BAB16999CD903772C528808D1E6FA2B585CF2%26state%3DbM3OltINeffKt0xc%26nonce%3DDx9PEi5taedla8E5%26redirect_uri%3Dhttps://candidat.francetravail.fr/espacepersonnel/#login/'
+							}
+						]
+					},
+					{
+						id: 'job-14',
+						title: 'Faire un bilan de compétences',
+						description: 'Identifier ses forces, axes d\'amélioration et projet professionnel',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'France Travail - Bilan de compétences',
+								url: 'https://www.francetravail.fr/candidat/votre-recherche-demploi.html?at_medium=CMP&at_campaign=dircom&at_cmp_indicateur1=partage_contenu_contribue&at_cmp_indicateur2=lien_court#preparer-candidature'
+							}
+						]
+					},
+					{
+						id: 'job-15',
+						title: 'Définir sa stratégie de recherche',
+						description: 'Cibler les secteurs, types de postes et entreprises qui correspondent à son profil',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'France Travail - Trouver un emploi',
+								url: 'https://www.francetravail.fr/candidat/votre-recherche-demploi.html?at_medium=CMP&at_campaign=dircom&at_cmp_indicateur1=partage_contenu_contribue&at_cmp_indicateur2=lien_court#trouver-un-emploi'
+							}
+						]
+					},
+					{
+						id: 'job-18',
+						title: 'Suivre une formation pour améliorer ses compétences',
+						description: 'Identifier les compétences manquantes et utiliser son CPF si nécessaire',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Mon Compte Formation',
+								url: 'https://www.moncompteformation.gouv.fr/'
+							}
+						]
+					},
+					{
+						id: 'job-19',
+						title: 'Organiser ses candidatures',
+						description: 'Tenir un tableau de suivi des candidatures envoyées, relances et réponses reçues. Cela sera utile pour les entretiens, choix et aperçu de votre progression.',
+						completed: false,
+						priority: 'medium'
 					}
 				]
 			}
 		],
-		vigilancePoints: [],
-		usefulLinks: []
+		vigilancePoints: [
+			{
+				id: 'vigilance-job-0',
+				title: 'Comprendre son contrat de travail',
+				description: 'Lire et vérifier toutes les clauses importantes (salaire, horaires, congés, préavis) et signature uniquement si tout est clair',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-job-1',
+				title: 'Actualisation Pôle Emploi',
+				description: 'Ne pas oublier son actualisation mensuelle sous peine de perdre ses droits aux allocations',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-job-2',
+				title: 'Déclaration des revenus d\'activité',
+				description: 'Tout travail, même ponctuel, doit être déclaré à Pôle Emploi et aux impôts',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-job-3',
+				title: 'Période d\'essai',
+				description: 'Connaître la durée de sa période d\'essai. Généralement 1 à 3 mois renouvelable une fois',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-job-4',
+				title: 'Préavis de démission',
+				description: 'Respecter le délai de préavis mentionné dans son contrat ou la convention collective',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-job-5',
+				title: 'Discrimination à l\'embauche',
+				description: 'Un recruteur ne peut pas poser certaines questions (vie privée, santé, syndicats...)',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-job-6',
+				title: 'Harcèlement au travail',
+				description: 'Connaître ses recours et les personnes à contacter en cas de harcèlement moral ou sexuel',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-job-7',
+				title: 'Règles du temps de travail',
+				description: 'Durée légale 35h/semaine, heures supplémentaires majorées, repos compensateur obligatoire et repos hebdomadaire de 24h consécutives minimum',
+				type: 'important'
+			}
+		],
+		usefulLinks: [
+			{
+				id: 'link-job-6',
+				title: 'APEC',
+				url: 'https://www.apec.fr/',
+				description: 'Emploi des cadres et jeunes diplômés'
+			},
+			{
+				id: 'link-job-7',
+				title: '1 jeune 1 solution',
+				url: 'https://www.1jeune1solution.gouv.fr/',
+				description: 'Aides et services pour les jeunes de 16 à 30 ans'
+			},
+			{
+				id: 'link-job-1',
+				title: 'France Travail (Pôle Emploi)',
+				url: 'https://www.francetravail.fr/',
+				description: 'Services aux demandeurs d\'emploi et offres'
+			},
+			{
+				id: 'link-job-2',
+				title: 'Mon Compte Formation',
+				url: 'https://www.moncompteformation.gouv.fr/',
+				description: 'Utiliser ses droits à la formation'
+			},
+			{
+				id: 'link-job-4',
+				title: 'LinkedIn',
+				url: 'https://www.linkedin.com/',
+				description: 'Réseau professionnel et recherche d\'emploi'
+			},
+			{
+				id: 'link-job-5',
+				title: 'Indeed',
+				url: 'https://fr.indeed.com/',
+				description: 'Moteur de recherche d\'emploi'
+			},
+			{
+				id: 'link-job-3',
+				title: 'Code du travail numérique',
+				url: 'https://code.travail.gouv.fr/',
+				description: 'Connaître ses droits et obligations'
+			},
+		]
 	}
 ];
 

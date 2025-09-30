@@ -26,7 +26,6 @@
 - 📋 Pièce d'identité
 - 📋 3 derniers bulletins de salaire
 - 📋 Contrat de travail
-- 📋 3 derniers relevés bancaires
 - 📋 Justificatif de domicile actuel
 - 📋 Assurance habitation
 

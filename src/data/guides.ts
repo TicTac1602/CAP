@@ -10,7 +10,6 @@ export const guideArticles: GuideArticle[] = [
 		author: 'Équipe Cap Adulte',
 		publishedAt: '2025-09-26',
 		readingTime: 8,
-		priority: 'high',
 		tags: ['impôts', 'déclaration', 'administration', 'première fois'],
 		featured: true,
 		filePath: '/data/articles/declaration-impots-premiere-fois.md'
@@ -37,7 +36,6 @@ export const guideArticles: GuideArticle[] = [
 		author: 'Équipe Cap Adulte',
 		publishedAt: '2025-09-21',
 		readingTime: 12,
-		priority: 'high',
 		tags: ['logement', 'location', 'bail', 'appartement', 'première fois'],
 		filePath: '/data/articles/premier-logement-location.md'
 	},
@@ -50,9 +48,46 @@ export const guideArticles: GuideArticle[] = [
 		author: 'Équipe Cap Adulte',
 		publishedAt: '2025-09-22',
 		readingTime: 10,
-		priority: 'high',
 		tags: ['logement', 'achat', 'immobilier', 'première fois'],
 		filePath: '/data/articles/premier-achat-immobilier.md'
+	},
+	{
+		id: 'guide-reussir-entretiens',
+		title: 'Réussir ses entretiens d\'embauche',
+		description: 'De la préparation au suivi : méthodologie complète pour décrocher le poste',
+		slug: 'reussir-entretiens-embauche',
+		themeId: 'emploi',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-09-30',
+		readingTime: 8,
+		tags: ['entretien', 'préparation', 'questions', 'suivi', 'recrutement'],
+		featured: true,
+		filePath: '/data/articles/reussir-entretiens-embauche.md'
+	},
+	{
+		id: 'guide-cv-lettre-motivation',
+		title: 'Créer un CV et une lettre de motivation qui se démarquent',
+		description: 'Guide complet avec exemples concrets et modèles pour candidater efficacement',
+		slug: 'cv-lettre-motivation-efficaces',
+		themeId: 'emploi',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-09-30',
+		readingTime: 12,
+		tags: ['CV', 'lettre de motivation', 'candidature', 'recherche emploi', 'modèles'],
+		featured: true,
+		filePath: '/data/articles/cv-lettre-motivation-efficaces.md'
+	},
+	{
+		id: 'guide-comprendre-fiche-paie',
+		title: 'Comprendre sa fiche de paie',
+		description: 'Décryptage ligne par ligne de votre bulletin de salaire et vos droits',
+		slug: 'comprendre-fiche-paie',
+		themeId: 'emploi',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-09-30',
+		readingTime: 6,
+		tags: ['fiche de paie', 'bulletin salaire', 'cotisations', 'droits', 'salaire'],
+		filePath: '/data/articles/comprendre-fiche-paie.md'
 	}
 ];
 

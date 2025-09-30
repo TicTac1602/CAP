@@ -1,4 +1,4 @@
-import { BudgetCalculations } from '@/app/simulateurs/budget/page';
+import { BudgetCalculations } from '@/types';
 
 interface BudgetAlertsProps {
 	calculations: BudgetCalculations;

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, memo } from 'react';
-import { BudgetData } from '@/app/simulateurs/budget/page';
+import { BudgetData } from '@/types';
 
 interface BudgetFormProps {
 	budgetData: BudgetData;

@@ -52,7 +52,7 @@ export default function GuidesPage() {
 						Tous nos guides
 					</h1>
 					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-						Des guides pratiques et détaillés pour vous accompagner dans toutes vos démarches d'adulte
+						Des guides pratiques et détaillés pour vous accompagner dans toutes vos démarches d&apos;adulte
 					</p>
 				</div>
 

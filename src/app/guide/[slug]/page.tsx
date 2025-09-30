@@ -52,25 +52,22 @@ export default async function GuidePage({ params }: PageProps) {
 	return (
 		<div className="min-h-screen bg-white">
 			<div className="max-w-4xl mx-auto px-6 py-8">
-				{/* Breadcrumb */}
-				<nav className="mb-6">
-					<Link href="/" className="text-blue-600 hover:text-blue-800">
-						Accueil
+				{/* Retour arriere*/}
+				<div className="mb-6">
+					<Link
+						href={`/theme/${guide.themeId}`}
+						className="inline-flex items-center text-blue-600 hover:text-blue-800"
+					>
+						← Retour au thème
 					</Link>
-					<span className="mx-2 text-gray-500">/</span>
-					<Link href={`/theme/${guide.themeId}`} className="text-blue-600 hover:text-blue-800">
-						{guide.themeId === 'logement' ? 'Logement' : 'Administration'}
-					</Link>
-					<span className="mx-2 text-gray-500">/</span>
-					<span className="text-gray-700">{guide.title}</span>
-				</nav>
+				</div>
 
 				{/* Guide Header */}
 				<header className="mb-8">
 					<h1 className="text-3xl font-bold text-gray-900 mb-4">{guide.title}</h1>
 					<p className="text-lg text-gray-600 mb-4">{guide.description}</p>
 					<div className="flex items-center text-sm text-gray-500">
-						<span>Temps de lecture: {guide.readingTime}</span>
+						<span>Temps de lecture: {guide.readingTime} min</span>
 						<span className="mx-2">•</span>
 						<span>Dernière mise à jour: {guide.updatedAt || guide.publishedAt}</span>
 					</div>
@@ -122,7 +119,7 @@ export default async function GuidePage({ params }: PageProps) {
 						href={`/theme/${guide.themeId}`}
 						className="inline-flex items-center text-blue-600 hover:text-blue-800"
 					>
-						← Retour aux guides {guide.themeId === 'logement' ? 'Logement' : 'Administration'}
+						← Retour au thème
 					</Link>
 				</div>
 			</div>

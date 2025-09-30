@@ -9,6 +9,7 @@ export default function Header() {
 	const navigation = [
 		{ name: 'Accueil', href: '/' },
 		{ name: 'Thèmes', href: '/theme' },
+		{ name: 'Guides', href: '/guide' },
 		{ name: 'Calendrier', href: '/calendrier' },
 		{ name: 'Simulateurs', href: '/simulateurs' },
 		{ name: 'FAQ', href: '/faq' },

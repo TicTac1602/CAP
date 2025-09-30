@@ -30,7 +30,7 @@ export default function ThemesPage() {
 				<div className="mt-8 bg-blue-50 rounded-lg p-8">
 					<div>
 						<h2 className="text-2xl font-bold text-gray-900 mb-4">Vous avez une question ?</h2>
-						<p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+						<p className="text-lg text-gray-600 mb-6">
 							D&apos;autres personnes ont peut-être eu la même question. Consultez notre FAQ pour
 							trouver votre réponse. Sinon n&apos;hésitez pas à nous contacter directement !
 						</p>

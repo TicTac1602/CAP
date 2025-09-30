@@ -69,18 +69,18 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					</div>
 				</div>
 
-				{/* Checklist principale */}
-				<div id="checklist" className="mb-8">
-					<Checklist checklistSections={theme.checklistSections} themeId={theme.id} />
-				</div>
+				{/* Checklist et Guides côte à côte */}
+				<div className="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+					{/* Checklist principale */}
+					<div id="checklist">
+						<Checklist checklistSections={theme.checklistSections} themeId={theme.id} />
+					</div>
 
-				{/* Sections supplémentaires en pleine largeur */}
-				<div className="space-y-8">
 					{/* Guides */}
 					{themeGuides.length > 0 && (
 						<div id="guides" className="bg-white rounded-lg shadow-md p-6">
 							<h2 className="text-xl font-bold text-gray-900 mb-6">Guides pratiques</h2>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+							<div className="space-y-4">
 								{themeGuides.map((guide) => (
 									<Link
 										key={guide.id}
@@ -110,7 +110,10 @@ export default async function ThemePage({ params }: ThemePageProps) {
 							</div>
 						</div>
 					)}
+				</div>
 
+				{/* Sections supplémentaires en pleine largeur */}
+				<div className="space-y-8">
 					{/* Points de vigilance */}
 					{theme.vigilancePoints.length > 0 && (
 						<div id="vigilance" className="bg-white rounded-lg shadow-md p-6">

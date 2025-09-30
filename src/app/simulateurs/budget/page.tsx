@@ -3,58 +3,10 @@
 import { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { BudgetData, BudgetCalculations } from '@/types';
 import { BudgetForm } from '@/components/budget/BudgetForm';
 import { BudgetResults } from '@/components/budget/BudgetResults';
 import { BudgetAlerts } from '@/components/budget/BudgetAlerts';
-
-export interface BudgetData {
-	// Revenus
-	salaire: number;
-	autresRevenus: number;
-
-	// Dépenses fixes (ne devraient pas dépasser 50% des revenus)
-	loyer: number;
-	assurances: number;
-	abonnements: number;
-	transport: number;
-	autresChargesFixes: number;
-
-	// Dépenses flexibles (30% recommandé)
-	alimentation: number;
-	loisirs: number;
-	vetements: number;
-	sorties: number;
-	autresDepensesFlexibles: number;
-
-	// Épargne et placements (20% recommandé)
-	epargneUrgence: number;
-	placements: number;
-	remboursementDettes: number;
-}
-
-export interface BudgetCalculations {
-	revenuTotal: number;
-	chargesFixes: number;
-	depensesFlexibles: number;
-	epargneTotal: number;
-	depensesTotales: number;
-	solde: number;
-
-	// Pourcentages
-	pourcentageChargesFixes: number;
-	pourcentageFlexible: number;
-	pourcentageEpargne: number;
-
-	// Recommandations 50-30-20
-	recommandeChargesFixes: number;
-	recommandeFlexible: number;
-	recommandeEpargne: number;
-
-	// Écarts par rapport aux recommandations
-	ecartChargesFixes: number;
-	ecartFlexible: number;
-	ecartEpargne: number;
-}
 
 export default function BudgetSimulatorPage() {
 	const [budgetData, setBudgetData] = useState<BudgetData>({
@@ -123,11 +75,10 @@ export default function BudgetSimulatorPage() {
 			<main className="container mx-auto px-4 py-8">
 				<div className="text-center mb-8">
 					<h1 className="text-3xl font-bold text-gray-900 mb-4">
-						💰 Simulateur de Budget Personnel
+						Simulateur de Budget Personnel
 					</h1>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-						Optimisez votre budget avec la règle 50-30-20 : 50% pour les besoins essentiels,
-						30% pour les loisirs et 20% pour l&apos;épargne
+					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
+						Optimisez votre budget avec la règle 50-30-20
 					</p>
 				</div>
 

@@ -78,11 +78,59 @@ export interface GuideArticle {
 	filePath: string;
 	themeId: string;
 	tags: string[];
-	priority: 'low' | 'medium' | 'high';
 	slug: string;
 	featured?: boolean;
 	readingTime?: number;
 	author?: string;
 	publishedAt?: string;
 	updatedAt?: string;
+}
+
+export interface BudgetData {
+	// Revenus
+	salaire: number;
+	autresRevenus: number;
+
+	// Dépenses fixes (ne devraient pas dépasser 50% des revenus)
+	loyer: number;
+	assurances: number;
+	abonnements: number;
+	transport: number;
+	autresChargesFixes: number;
+
+	// Dépenses flexibles (30% recommandé)
+	alimentation: number;
+	loisirs: number;
+	vetements: number;
+	sorties: number;
+	autresDepensesFlexibles: number;
+
+	// Épargne et placements (20% recommandé)
+	epargneUrgence: number;
+	placements: number;
+	remboursementDettes: number;
+}
+
+export interface BudgetCalculations {
+	revenuTotal: number;
+	chargesFixes: number;
+	depensesFlexibles: number;
+	epargneTotal: number;
+	depensesTotales: number;
+	solde: number;
+
+	// Pourcentages
+	pourcentageChargesFixes: number;
+	pourcentageFlexible: number;
+	pourcentageEpargne: number;
+
+	// Recommandations 50-30-20
+	recommandeChargesFixes: number;
+	recommandeFlexible: number;
+	recommandeEpargne: number;
+
+	// Écarts par rapport aux recommandations
+	ecartChargesFixes: number;
+	ecartFlexible: number;
+	ecartEpargne: number;
 }

@@ -72,7 +72,7 @@ export default function ContactPage() {
 								</a>
 
 								<a
-									href="https://instagram.com/cap_autonomie"
+									href="https://instagram.com/"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-colors"
@@ -87,7 +87,7 @@ export default function ContactPage() {
 								</a>
 
 								<a
-									href="https://linkedin.com/company/cap-autonomie"
+									href="https://linkedin.com/company/"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-3 px-4 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"

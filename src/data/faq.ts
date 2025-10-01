@@ -117,7 +117,7 @@ export const faqData: FAQItem[] = [
 	},
 	{
 		id: '20',
-		question: 'Dois-je m\'inscrire à Pôle Emploi même si j\'ai un job ?',
+		question: 'Dois-je m\'inscrire à France Travail même si j\'ai un job ?',
 		answer: 'Si vous cherchez un emploi ou une formation, oui. L\'inscription vous donne accès aux offres, conseils et certaines aides. Vous pouvez aussi vous inscrire en cas de contrat précaire pour sécuriser vos droits.',
 		category: 'Emploi'
 	},
@@ -144,10 +144,160 @@ export const faqData: FAQItem[] = [
 		question: 'Mon propriétaire peut-il garder tout mon dépôt de garantie ?',
 		answer: 'Non, il ne peut garder que ce qui correspond aux réparations nécessaires (hors usure normale). Il doit vous restituer le reste dans les 2 mois maximum, avec un état des lieux détaillé des retenues.',
 		category: 'Logement'
+	},
+	{
+		id: '25',
+		question: 'À partir de quel salaire dois-je payer des impôts ?',
+		answer: 'En 2024, vous commencez à payer des impôts à partir d\'environ 17 275€ de revenus nets annuels pour une personne seule. Mais vous devez déclarer vos revenus dès le premier euro, même si vous ne payez rien.',
+		category: 'Administration'
+	},
+	{
+		id: '26',
+		question: 'Comment économiser quand on gagne le SMIC ?',
+		answer: 'Appliquez la règle 50/30/20 : 50% pour les besoins essentiels, 30% pour les loisirs, 20% pour l\'épargne. Commencez par 50€/mois si possible. Profitez des apps anti-gaspi, des bons plans étudiants et négociez vos abonnements.',
+		category: 'Budget'
+	},
+	{
+		id: '27',
+		question: 'Combien d\'argent dois-je avoir de côté "au cas où" ?',
+		answer: 'L\'idéal est d\'avoir 3 à 6 mois de charges courantes de côté (loyer, nourriture, transport). Si vous débutez, commencez par 1000€ d\'urgence, puis augmentez progressivement.',
+		category: 'Budget'
+	},
+	{
+		id: '28',
+		question: 'Est-ce que je peux vivre sans assurance habitation ?',
+		answer: 'Non si vous êtes locataire, c\'est obligatoire par la loi. Si vous êtes propriétaire, ce n\'est pas obligatoire mais fortement recommandé. Sans assurance, vous risquez de tout perdre en cas d\'incendie ou dégât des eaux.',
+		category: 'Assurances'
+	},
+	{
+		id: '29',
+		question: 'Dois-je prendre l\'assurance proposée avec mon téléphone/ordinateur ?',
+		answer: 'Vérifiez d\'abord si votre assurance habitation ou carte bancaire ne couvre pas déjà ces appareils. Les assurances vendeurs sont souvent chères avec beaucoup d\'exclusions. Lisez bien les conditions avant de souscrire.',
+		category: 'Assurances'
+	},
+	{
+		id: '30',
+		question: 'Comment négocier mon premier salaire ?',
+		answer: 'Renseignez-vous sur les salaires du secteur sur des sites comme Glassdoor. Mettez en avant vos compétences spécifiques, stages et projets. Pour un premier emploi, négociez aussi les avantages : formation, télétravail, mutuelle.',
+		category: 'Emploi'
+	},
+	{
+		id: '31',
+		question: 'Que faire si mon employeur ne me paie pas ?',
+		answer: 'Envoyez d\'abord une mise en demeure par courrier recommandé. Si pas de réponse sous 15 jours, contactez l\'inspection du travail et le conseil de prud\'hommes. Vous pouvez aussi demander une avance à France Travail sur vos droits.',
+		category: 'Emploi'
+	},
+	{
+		id: '32',
+		question: 'Comment démissionner sans perdre mes droits au chômage ?',
+		answer: 'Depuis 2019, vous pouvez toucher le chômage après démission si vous avez travaillé 5 ans dans les 45 derniers mois ET que vous avez un "projet professionnel sérieux" (formation, création d\'entreprise, reconversion).',
+		category: 'Emploi'
+	},
+	{
+		id: '33',
+		question: 'Combien coûte vraiment un déménagement ?',
+		answer: 'Comptez 800-1500€ pour un déménageur professionnel (studio/T2), 300-600€ si vous le faites vous-même (location camion + essence + aides). Ajoutez les frais : caution nouveau logement, changements d\'adresse, nouveaux contrats.',
+		category: 'Déménagement'
+	},
+	{
+		id: '35',
+		question: 'Dois-je prévenir tout le monde quand je déménage ?',
+		answer: 'Oui ! Faites votre changement d\'adresse à La Poste, puis prévenez : impôts, CAF, sécurité sociale, banque, assurances, employeur, fournisseurs d\'énergie. Utilisez le service en ligne pour certains organismes.',
+		category: 'Déménagement'
+	},
+	{
+		id: '36',
+		question: 'Ai-je besoin d\'un visa pour voyager en Europe ?',
+		answer: 'Non, avec une carte d\'identité ou un passeport français valide, vous pouvez voyager librement dans l\'Union Européenne. Pour certains pays (Royaume-Uni, Russie, Balkans hors UE), vérifiez les conditions sur diplomatie.gouv.fr.',
+		category: 'Voyages'
+	},
+	{
+		id: '37',
+		question: 'Mon assurance carte bancaire suffit-elle pour voyager ?',
+		answer: 'Pour l\'Europe, souvent oui si vous avez une carte haut de gamme. Pour l\'étranger lointain, vérifiez les plafonds de couverture médicale (souvent insuffisants). Une assurance voyage dédiée est recommandée pour l\'Amérique ou l\'Asie.',
+		category: 'Voyages'
+	},
+	{
+		id: '38',
+		question: 'Que faire si je perds mes papiers en voyage ?',
+		answer: 'Contactez immédiatement le consulat français le plus proche avec vos photocopies. Ils peuvent émettre un laissez-passer. C\'est pourquoi il faut toujours avoir des copies physiques et numériques de vos documents séparées des originaux.',
+		category: 'Voyages'
+	},
+	{
+		id: '39',
+		question: 'Peut-on créer son entreprise quand on est salarié ?',
+		answer: 'Oui, mais vérifiez votre contrat de travail (clause de non-concurrence). Vous devez informer votre employeur si votre entreprise fait de la concurrence. Le statut de micro-entrepreneur est compatible avec un emploi salarié.',
+		category: 'Entreprendre'
+	},
+	{
+		id: '40',
+		question: 'Combien ça coûte de créer son entreprise ?',
+		answer: 'Micro-entreprise : gratuit. SASU/EURL : environ 200-500€ (frais greffe, publication légale). SARL/SAS : 500-1000€. Ajoutez les frais annexes : comptable, assurances, domiciliation. Certaines aides peuvent réduire ces coûts.',
+		category: 'Entreprendre'
+	},
+	{
+		id: '41',
+		question: 'Micro-entreprise ou vraie société : comment choisir ?',
+		answer: 'Micro-entreprise si CA prévisible < 77 000€ (services) ou 188 000€ (vente), peu d\'investissements, activité simple. Société (SASU/EURL) si CA plus élevé, besoin de déduire des charges, protection patrimoine personnelle.',
+		category: 'Entreprendre'
+	},
+	{
+		id: '42',
+		question: 'Puis-je toucher le chômage si je crée mon entreprise ?',
+		answer: 'Oui, avec l\'ARCE (45% de vos droits en capital) ou l\'ARE maintenue partiellement selon vos revenus d\'entrepreneur. L\'ACRE vous exonère aussi de cotisations sociales la première année. Rapprochez-vous de France Travail.',
+		category: 'Entreprendre'
+	},
+	{
+		id: '43',
+		question: 'Comment savoir si mon idée d\'entreprise est viable ?',
+		answer: 'Testez votre idée : sondez votre entourage, créez un MVP (produit minimum viable), vendez en précommande. Analysez la concurrence, calculez vos coûts réels. Utilisez les outils gratuits de Bpifrance pour valider votre business model.',
+		category: 'Entreprendre'
+	},
+	{
+		id: '44',
+		question: 'À quoi sert vraiment le Livret A ?',
+		answer: 'Le Livret A est votre épargne de sécurité : argent disponible immédiatement, sans risque, défiscalisé. Taux bas (3% en 2024) mais c\'est normal, c\'est pour vos urgences, pas pour faire fortune. Plafond : 22 950€.',
+		category: 'Budget'
+	},
+	{
+		id: '45',
+		question: 'Découvert ou crédit conso : qu\'est-ce qui coûte le moins cher ?',
+		answer: 'Le découvert coûte très cher (15-20% par an) et doit rester exceptionnel. Un crédit conso a des taux plus bas (3-8%) mais vous engage sur la durée. Pour un besoin ponctuel, demandez plutôt une avance à un proche.',
+		category: 'Budget'
+	},
+	{
+		id: '46',
+		question: 'Mes parents peuvent-ils se porter garants pour mon logement ?',
+		answer: 'Oui, c\'est très courant et souvent exigé par les propriétaires pour les jeunes. Vos parents s\'engagent à payer si vous ne pouvez plus. Alternative : la garantie Visale (gratuite) pour les moins de 30 ans ou apprentis.',
+		category: 'Logement'
+	},
+	{
+		id: '47',
+		question: 'Colocation : qui paie quoi si un coloc part sans prévenir ?',
+		answer: 'Si vous êtes tous sur le bail (clause de solidarité), vous êtes tous responsables du loyer total. Le propriétaire peut vous demander de payer la part du coloc parti. D\'où l\'importance d\'une bonne entente et d\'un règlement de colocation écrit.',
+		category: 'Logement'
+	},
+	{
+		id: '48',
+		question: 'Que faire si je tombe malade à l\'étranger ?',
+		answer: 'En Europe : utilisez votre carte européenne d\'assurance maladie (CEAM) pour être remboursé. Hors Europe : avancez les frais, gardez tous les justificatifs. Votre mutuelle et assurance voyage vous rembourseront selon les garanties.',
+		category: 'Santé'
+	},
+	{
+		id: '49',
+		question: 'Contraception : qu\'est-ce qui est gratuit ?',
+		answer: 'Depuis 2022, pour les moins de 26 ans : pilule, stérilet, implant, préservatifs sont gratuits en pharmacie sur prescription. Pour tous : centres de planification familiale gratuits, préservatifs gratuits dans certains lieux (universités, centres de santé).',
+		category: 'Santé'
+	},
+	{
+		id: '50',
+		question: 'Dois-je déclarer mes jobs d\'été/étudiants aux impôts ?',
+		answer: 'Oui, tous vos revenus doivent être déclarés (jobs, stages rémunérés, auto-entreprise). Mais si vous gagnez moins de 4 936€ par an en jobs étudiants (2024), vous êtes exonéré d\'impôt. Déclarez quand même pour justifier vos ressources.',
+		category: 'Administration'
 	}
 ];
 
-export const faqCategories = ['Tous', 'Administration', 'Santé', 'Logement', 'Banque', 'Assurances', 'Budget', 'Emploi'];
+export const faqCategories = ['Tous', 'Administration', 'Santé', 'Logement', 'Banque', 'Assurances', 'Budget', 'Emploi', 'Déménagement', 'Voyages', 'Entreprendre'];
 
 // Fonction utilitaire pour obtenir les FAQ par catégorie
 export const getFAQByCategory = (category: string): FAQItem[] => {

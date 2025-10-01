@@ -604,42 +604,226 @@ export const themes: ThemeSection[] = [
 		checklistSections: [
 			{
 				id: 'banque-ouverture',
-				title: 'Ouverture de compte',
-				description: 'Premier compte bancaire',
+				title: 'Ouverture et gestion de compte',
+				description: 'Premier compte bancaire et services essentiels',
 				items: [
 					{
 						id: 'bank-1',
-						title: 'Ouvrir un compte bancaire',
-						description: 'Choisir sa banque et ouvrir son premier compte',
+						title: 'Choisir et ouvrir un compte bancaire',
+						description: 'Comparer les banques (frais, services) et ouvrir son premier compte courant',
 						completed: false,
-						priority: 'high'
+						priority: 'high',
+						resources: [
+							{
+								title: 'Comparateur banques - UFC Que Choisir',
+								url: 'https://www.tarifs-bancaires.gouv.fr/'
+							}
+						]
+					},
+					{
+						id: 'bank-2',
+						title: 'Obtenir une carte bancaire',
+						description: 'Choisir le type de carte adapté (débit, crédit, internationale)',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Les différents types de cartes - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F2424'
+							}
+						]
+					},
+					{
+						id: 'bank-4',
+						title: 'Comprendre les frais bancaires',
+						description: 'Identifier tous les frais (tenue de compte, virements, découvert)',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Frais bancaires - Banque de France',
+								url: 'https://www.banque-france.fr/fr/a-votre-service/particuliers/connaitre-pratiques-bancaires-assurance/compte-frais/les-frais-bancaires'
+							}
+						]
 					}
 				]
 			},
 			{
-				id: 'banque-gestion',
-				title: 'Gestion financière',
-				description: 'Budget et épargne',
+				id: 'banque-budget',
+				title: 'Gestion du budget',
+				description: 'Planification et suivi financier',
 				items: [
 					{
-						id: 'bank-2',
-						title: 'Créer un budget mensuel',
-						description: 'Établir ses revenus et dépenses',
+						id: 'budget-1',
+						title: 'Établir un budget mensuel',
+						description: 'Lister revenus, charges fixes et variables pour équilibrer ses finances',
 						completed: false,
-						priority: 'medium'
+						priority: 'high',
+						resources: [
+							{
+								title: 'Notre simulateur de budget',
+								url: '/simulateurs/budget'
+							},
+							{
+								title: 'Notre template de budget (Excel)',
+								url: '/documents/template-budget.xlsx'
+							}
+						]
 					},
 					{
-						id: 'bank-3',
-						title: 'Mettre en place une épargne',
-						description: 'Ouvrir un livret A ou LDD',
+						id: 'budget-2',
+						title: 'Suivre ses dépenses quotidiennes',
+						description: 'Utiliser une app pour tracker vos dépenses. Bankin, Linxo, etc.',
 						completed: false,
-						priority: 'low'
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'budget-4',
+						title: 'Anticiper les dépenses exceptionnelles',
+						description: 'Dans son budget, prévoir les vacances, cadeaux, réparations, impôts, etc.',
+						completed: false,
+						priority: 'medium',
+						resources: []
 					}
 				]
+			},
+			{
+				id: 'banque-epargne',
+				title: 'Épargne et investissement',
+				description: 'Constituer et faire fructifier son épargne',
+				items: [
+					{
+						id: 'budget-3',
+						title: 'Définir des objectifs d\'épargne',
+						description: 'Fixer un montant mensuel à épargner selon ses moyens',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'epargne-1',
+						title: 'Ouvrir un Livret A/LDDS/LEP',
+						description: 'Épargne disponible, défiscalisée et sécurisée. Attentions aux plafonds et intérêts faibles quand l\'inflation est élevée',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Livret A - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F2365'
+							}
+						]
+					},
+					{
+						id: 'epargne-2',
+						title: 'Constituer une épargne de précaution',
+						description: 'Épargne équivalente à 3-6 mois de charges pour les urgences',
+						completed: false,
+						priority: 'high',
+						resources: []
+					},
+					{
+						id: 'epargne-3',
+						title: 'Découvrir le PEL (Plan Épargne Logement)',
+						description: 'Épargne bloquée pour un futur projet immobilier',
+						completed: false,
+						priority: 'low',
+						resources: [
+							{
+								title: 'PEL - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F16140'
+							}
+						]
+					},
+					{
+						id: 'epargne-4',
+						title: 'S\'informer sur l\'assurance vie',
+						description: 'Placement moyen/long terme avec avantages fiscaux',
+						completed: false,
+						priority: 'low',
+						resources: [
+							{
+								title: 'Assurance vie - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F15274'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'banque-credit',
+				title: 'Crédit et endettement',
+				description: 'Emprunter de manière responsable',
+				items: [
+					{
+						id: 'credit-1',
+						title: 'Connaître sa capacité d\'endettement',
+						description: 'Maximum 33% des revenus nets pour tous les crédits',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Calculateur d\'endettement simplifié - Service Public',
+								url: 'https://www.lafinancepourtous.com/outils/calculateurs/calculateur-d-endettement/'
+							}
+						]
+					},
+					{
+						id: 'credit-2',
+						title: 'Comprendre les différents types de crédit',
+						description: 'Crédit consommation, immobilier, revolving, leurs risques et avantages',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Types de crédits - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/N96'
+							}
+						]
+					}
+				]
+			},
+		],
+		vigilancePoints: [
+			{
+				id: 'vigilance-budget-1',
+				title: 'Frais bancaires excessifs',
+				description: 'Vérifier régulièrement ses relevés : commissions, frais de tenue de compte peuvent s\'accumuler',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-credit-1',
+				title: 'Éviter le surendettement',
+				description: 'Ne jamais emprunter plus que ce que l\'on peut rembourser. En cas de difficultés, contacter la Banque de France',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-budget-2',
+				title: 'Découvert autorisé piège',
+				description: 'Agios très élevés (15-20% par an) : éviter de rester à découvert',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-budget-3',
+				title: 'Règle des 33%',
+				description: 'Ne jamais dépasser 33% de ses revenus nets en remboursements de crédits',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-budget-4',
+				title: 'Épargne de précaution prioritaire',
+				description: 'Constituer d\'abord 3-6 mois de charges avant tout placement risqué',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-budget-5',
+				title: 'Crédit à la consommation',
+				description: 'Taux d\'intérêt souvent très élevé, bien lire le contrat avant de s\'engager',
+				type: 'trap'
 			}
 		],
-		vigilancePoints: [],
-		usefulLinks: []
+		usefulLinks: [
+		]
 	},
 	// #endregion
 	// #region ASSURANCES
@@ -651,36 +835,224 @@ export const themes: ThemeSection[] = [
 		color: 'bg-purple-500',
 		checklistSections: [
 			{
-				id: 'assurances-transport',
-				title: 'Assurances transport',
-				description: 'Véhicules et mobilité',
+				id: 'assurances-obligatoires',
+				title: 'Assurances obligatoires',
+				description: 'Couvertures imposées par la loi selon votre situation',
 				items: [
 					{
-						id: 'insurance-1',
-						title: 'Souscrire une assurance auto',
-						description: 'Obligatoire pour conduire (au minimum au tiers)',
+						id: 'assurances-1',
+						title: 'Assurance habitation (locataires)',
+						description: 'Obligation légale pour tous les locataires, garantie minimale risques locatifs',
 						completed: false,
-						priority: 'high'
+						priority: 'high',
+						resources: [
+							{
+								title: 'Assurance habitation - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F2123'
+							}
+						]
+					},
+					{
+						id: 'assurances-2',
+						title: 'Assurance auto (propriétaires véhicule)',
+						description: 'Responsabilité civile minimale obligatoire pour tout véhicule motorisé',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Assurance auto - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F2628'
+							}
+						]
+					},
+					{
+						id: 'assurances-3',
+						title: 'Assurance RC professionnelle (certains métiers)',
+						description: 'Obligatoire pour professions réglementées : médecins, avocats, experts-comptables, etc.',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'RC professionnelle - Service Public',
+								url: 'https://entreprendre.service-public.gouv.fr/vosdroits/F23667'
+							}
+						]
+					},
+					{
+						id: 'assurances-4',
+						title: 'Assurance décennale (BTP)',
+						description: 'Obligatoire pour tous les professionnels du bâtiment',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Assurance décennale - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F2034'
+							}
+						]
+					},
+					{
+						id: 'assurances-5',
+						title: 'Assurance chasse (chasseurs)',
+						description: 'Obligatoire pour tous les détenteurs de permis de chasser',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Assurance chasse',
+								url: 'https://www.chasse-assurances.com/'
+							}
+						]
 					}
 				]
 			},
 			{
-				id: 'assurances-responsabilite',
-				title: 'Responsabilité civile',
-				description: 'Protection contre les dommages causés',
+				id: 'assurances-recommandees',
+				title: 'Assurances recommandées',
+				description: 'Protections facultatives mais fortement conseillées',
 				items: [
 					{
-						id: 'insurance-2',
-						title: 'Vérifier sa responsabilité civile',
-						description: 'Souvent incluse dans l\'assurance habitation',
+						id: 'assurances-6',
+						title: 'Assurance habitation (propriétaires)',
+						description: 'Protection du bien et responsabilité civile propriétaire',
 						completed: false,
-						priority: 'medium'
+						priority: 'high',
+						resources: [
+							{
+								title: 'Assurance propriétaire - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F2123'
+							}
+						]
+					},
+					{
+						id: 'assurances-7',
+						title: 'Mutuelle santé complémentaire',
+						description: 'Complément Sécurité Sociale pour frais médicaux non remboursés',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Complémentaire santé - Ameli',
+								url: 'https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'assurances-specifiques',
+				title: 'Assurances spécifiques',
+				description: 'Selon activités et mode de vie particuliers',
+				items: [
+					{
+						id: 'assurances-11',
+						title: 'Assurance voyage',
+						description: 'Couverture médicale et rapatriement à l\'étranger',
+						completed: false,
+						priority: 'medium',
+						resources: [
+						]
+					},
+					{
+						id: 'assurances-12',
+						title: 'Assurance scolaire/extrascolaire',
+						description: 'Protection enfants à l\'école et activités périscolaires',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'assurances-14',
+						title: 'Assurance animaux',
+						description: 'Frais vétérinaires et responsabilité civile pour animaux de compagnie',
+						completed: false,
+						priority: 'low',
+						resources: []
+					}
+				]
+			},
+			{
+				id: 'assurances-gestion',
+				title: 'Gestion des assurances',
+				description: 'Optimisation et suivi de vos contrats',
+				items: [
+					{
+						id: 'assurances-16',
+						title: 'Faire un audit de ses assurances',
+						description: 'Vérifier les doublons, lacunes et sur-assurances',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'assurances-17',
+						title: 'Comparer les offres annuellement',
+						description: 'Utiliser les comparateurs et négocier avec son assureur',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Comparateur assurances - UFC Que Choisir',
+								url: 'https://www.quechoisir.org/rub-comparateur-t621/'
+							}
+						],
+						deadline: new Date("2026-01-01")
 					}
 				]
 			}
 		],
-		vigilancePoints: [],
-		usefulLinks: []
+		vigilancePoints: [
+			{
+				id: 'vigilance-assurances-1',
+				title: 'Franchises et plafonds cachés',
+				description: 'Vérifier les franchises (reste à charge) et plafonds de remboursement qui peuvent limiter la couverture réelle',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-assurances-2',
+				title: 'Exclusions de garanties',
+				description: 'Lire attentivement les exclusions : catastrophes naturelles, sports à risques, négligence peuvent être exclus',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-assurances-4',
+				title: 'Délais de carence',
+				description: 'Certaines garanties ne s\'activent qu\'après plusieurs mois : prévoir la transition entre contrats',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-assurances-5',
+				title: 'Sur-assurance par méconnaissance',
+				description: 'Éviter les doublons entre assurances : carte bancaire, mutuelle employeur, assurance habitation peuvent se chevaucher',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-assurances-6',
+				title: 'Résiliation automatique manquée',
+				description: 'La Loi Hamon vous permet la résiliation après 1 an sans préavis, ni frais.',
+				type: 'deadline'
+			}
+		],
+		usefulLinks: [
+			{
+				id: 'link-assurances-1',
+				title: 'France Assureurs',
+				url: 'https://www.franceassureurs.fr/',
+				description: 'Fédération française de l\'assurance'
+			},
+			{
+				id: 'link-assurances-2',
+				title: 'Service-Public.fr - Assurances',
+				url: 'https://www.service-public.fr/particuliers/vosdroits/N44',
+				description: 'Guide complet des assurances'
+			},
+			{
+				id: 'link-assurances-3',
+				title: 'Médiation Assurance',
+				url: 'https://www.mediation-assurance.org/',
+				description: 'Résoudre les litiges avec son assureur'
+			}
+		]
 	},
 	// #endregion
 	// #region EMPLOI
@@ -961,6 +1333,619 @@ export const themes: ThemeSection[] = [
 				url: 'https://code.travail.gouv.fr/',
 				description: 'Connaître ses droits et obligations'
 			},
+		]
+	},
+	//#endregion
+	// #region DÉMÉNAGEMENT
+	{
+		id: 'demenagement',
+		title: 'Déménagement',
+		description: 'Changement d\'adresse, transferts de contrats et démarches administratives',
+		icon: '📦',
+		color: 'bg-orange-500',
+		checklistSections: [
+			{
+				id: 'demenagement-avant',
+				title: 'Avant le déménagement',
+				description: 'Préparatifs et organisation',
+				items: [
+					{
+						id: 'demenagement-1',
+						title: 'Choisir une entreprise de déménagement',
+						description: 'Comparer les devis et vérifier les assurances',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Guide du déménagement - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F14128'
+							}
+						]
+					},
+					{
+						id: 'demenagement-2',
+						title: 'Résilier ou transférer les contrats du logement actuel',
+						description: 'Électricité, gaz, internet, assurance habitation',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Mes droits sur la garantie - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F31269'
+							}
+						]
+					},
+					{
+						id: 'demenagement-4',
+						title: 'Faire le tri dans ses affaires',
+						description: 'Donner, vendre ou jeter ce qui n\'est plus utile',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Emmaus France',
+								url: 'https://emmaus-france.org/'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'demenagement-changement-adresse',
+				title: 'Changement d\'adresse',
+				description: 'Déclarations et notifications officielles',
+				items: [
+					{
+						id: 'demenagement-5',
+						title: 'Faire sa demande de changement d\'adresse à La Poste',
+						description: 'Service de réexpédition du courrier',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Changement d\'adresse - La Poste',
+								url: 'https://www.laposte.fr/changement-adresse-demenagement-reexpedition'
+							}
+						]
+					},
+					{
+						id: 'demenagement-6',
+						title: 'Déclarer son changement d\'adresse aux différents organismes (impôts, CAF, sécurité sociale, etc.)',
+						description: 'Mettre à jour son adresse fiscale',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Changement d\'adresse - Impôts',
+								url: 'https://www.impots.gouv.fr/'
+							},
+							{
+								title: 'Changement de situation - CAF',
+								url: 'https://www.caf.fr/'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'demenagement-nouveau-logement',
+				title: 'Nouveau logement',
+				description: 'Installation et souscription aux services',
+				items: [
+					{
+						id: 'demenagement-10',
+						title: 'Souscrire aux contrats',
+						description: 'Électricité, eau, internet, téléphone et gaz dans le nouveau logement. Si vous avez déjà transféré vos contrats vous pouvez ignorer.',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Comparateur énergie - Médiateur National',
+								url: 'https://www.energie-info.fr/'
+							},
+							{
+								title: 'Comparateur internet - France Conso',
+								url: 'https://comparateur.france-conso.info/#etape-1'
+							}
+						]
+					},
+					{
+						id: 'demenagement-11',
+						title: 'Souscrire à une assurance habitation',
+						description: 'Obligatoire pour les locataires, recommandée pour les propriétaires',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Assurance habitation - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/F2123'
+							}
+						]
+					},
+					{
+						id: 'demenagement-13',
+						title: 'S\'inscrire dans une nouvelle commune',
+						description: 'Inscription sur les listes électorales si changement de commune',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Inscription listes électorales - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/R16396'
+							}
+						]
+					}
+				]
+			}
+		],
+		vigilancePoints: [
+			{
+				id: 'vigilance-demenagement-1',
+				title: 'Délais de préavis',
+				description: 'Respecter les délais de préavis (1 à 3 mois selon le bail)',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-demenagement-2',
+				title: 'État des lieux de sortie',
+				description: 'Effectuer l\'état des lieux complets pour récupérer le dépôt de garantie sans litige',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-demenagement-3',
+				title: 'Assurance déménagement',
+				description: 'Vérifier la couverture assurance de l\'entreprise de déménagement',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-demenagement-4',
+				title: 'Changement d\'adresse tardif',
+				description: 'Effectuer tous les changements d\'adresse rapidement pour éviter les complications administratives',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-demenagement-5',
+				title: 'Frais cachés du déménagement',
+				description: 'Bien lire les devis : étages, distance, emballage, assurance peuvent être facturés en supplément',
+				type: 'trap'
+			}
+		],
+		usefulLinks: [
+		]
+	},
+	// #endregion
+	// #region VOYAGES
+	{
+		id: 'voyages',
+		title: 'Voyages',
+		description: 'Préparation, formalités et conseils pour voyager à l\'étranger',
+		icon: '✈️',
+		color: 'bg-teal-500',
+		checklistSections: [
+			{
+				id: 'voyages-avant-depart',
+				title: 'Avant le départ',
+				description: 'Préparatifs et formalités essentielles',
+				items: [
+					{
+						id: 'voyages-1',
+						title: 'Vérifier la validité de son passeport',
+						description: 'Le passeport doit être valide au moins 6 mois après le retour',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Démarches passeport - Service Public',
+								url: 'https://www.service-public.fr/particuliers/vosdroits/R62483'
+							}
+						]
+					},
+					{
+						id: 'voyages-2',
+						title: 'Vérifier les exigences de visa',
+						description: 'Se renseigner sur les formalités d\'entrée du pays de destination',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Conseils aux voyageurs - France Diplomatie',
+								url: 'https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/'
+							}
+						]
+					},
+					{
+						id: 'voyages-3',
+						title: 'Souscrire une assurance voyage',
+						description: 'Couverture médicale et rapatriement indispensables',
+						completed: false,
+						priority: 'low',
+						resources: [
+						]
+					},
+					{
+						id: 'voyages-4',
+						title: 'Vérifier les vaccinations obligatoires',
+						description: 'Consulter un centre de vaccinations internationales',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Vaccinations voyage - Institut Pasteur',
+								url: 'https://www.pasteur.fr/fr/centre-medical/preparer-son-voyage'
+							}
+						]
+					},
+					{
+						id: 'voyages-5',
+						title: 'Utiliser sa banque à l\'étranger',
+						description: 'Éviter le blocage des cartes bancaires à l\'étranger',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'voyages-6',
+						title: 'Faire des copies de documents',
+						description: 'Pour les voyages hors de France : photocopies et versions numériques des documents importants (passeport, visa, assurance, cartes bancaires). Utile en cas de perte ou vol.',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'voyages-9',
+						title: 'Se renseigner sur la situation sécuritaire',
+						description: 'Consulter les conseils aux voyageurs actualisés',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'France Diplomatie - Conseils par pays',
+								url: 'https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/'
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 'voyages-pratique',
+				title: 'Aspects pratiques',
+				description: 'Organisation et logistique du voyage',
+				items: [
+					{
+						id: 'voyages-10',
+						title: 'Organiser les transports sur place',
+						description: 'Réservations et solutions de transport local',
+						completed: false,
+						priority: 'medium',
+						resources: []
+					},
+					{
+						id: 'voyages-11',
+						title: 'Préparer un budget voyage',
+						description: 'Estimer les coûts et prévoir les moyens de paiement',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Convertisseur de devises - XE',
+								url: 'https://www.xe.com/fr/currencyconverter/'
+							}
+						]
+					},
+					{
+						id: 'voyages-12',
+						title: 'Souscrire une protection annulation',
+						description: 'Assurance pour annulation ou modification de voyage',
+						completed: false,
+						priority: 'low',
+						resources: []
+					}
+				]
+			}
+		],
+		vigilancePoints: [
+			{
+				id: 'vigilance-voyages-1',
+				title: 'Destinations tropicales',
+				description: 'Afrique, Asie du Sud-Est, Amérique du Sud : risques de paludisme, fièvre jaune, dengue. Vaccinations et prophylaxie indispensables',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-voyages-2',
+				title: 'Pays en tension géopolitique',
+				description: 'Moyen-Orient, certaines zones d\'Afrique et d\'Asie : surveiller les conseils France Diplomatie, éviter les zones rouges',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-voyages-3',
+				title: 'Destinations froides (Russie, Canada, Scandinavie)',
+				description: 'Si besoin prévoir un équipement spécialisé (vêtements thermiques, chaussures adaptées)',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-voyages-5',
+				title: 'Destinations isolées (îles du Pacifique, Antarctique)',
+				description: 'Évacuation médicale très coûteuse (>100 000€), assurance spécialisée obligatoire',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-voyages-7',
+				title: 'Formalités USA/Canada/Australie',
+				description: 'ESTA, eTA, ETA obligatoires même pour transit, demandes 72h minimum avant départ',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-voyages-8',
+				title: 'Bagages et objets interdits',
+				description: 'Réglementations strictes variables selon pays : drones, médicaments, produits alimentaires peuvent être interdits',
+				type: 'trap'
+			}
+		],
+		usefulLinks: [
+			{
+				id: 'link-voyages-1',
+				title: 'France Diplomatie - Conseils aux voyageurs',
+				url: 'https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/',
+				description: 'Conseils officiels par destination'
+			},
+			{
+				id: 'link-voyages-2',
+				title: 'Institut Pasteur - Médecine des voyages',
+				url: 'https://www.pasteur.fr/fr/centre-medical/preparer-son-voyage',
+				description: 'Conseils médicaux et vaccinations'
+			},
+			{
+				id: 'link-voyages-4',
+				title: 'Douanes françaises',
+				url: 'https://www.douane.gouv.fr/particuliers',
+				description: 'Règles douanières et déclarations'
+			},
+			{
+				id: 'link-voyages-6',
+				title: 'IATA - Exigences de voyage',
+				url: 'https://www.iatatravelcentre.com/',
+				description: 'Vérifier visas et documents requis'
+			}
+		]
+	},
+
+	// #region ENTREPRENDRE
+	{
+		id: 'entreprendre',
+		title: 'Entreprendre',
+		description: 'Création d\'entreprise, statuts juridiques et démarches entrepreneuriales',
+		icon: '🚀',
+		color: 'bg-pink-500',
+		checklistSections: [
+			{
+				id: 'entreprendre-projet',
+				title: 'Définir son projet',
+				description: 'Validation et structuration de l\'idée',
+				items: [
+					{
+						id: 'entreprendre-1',
+						title: 'Étudier la faisabilité et viabilité du projet',
+						description: 'Analyse de marché, concurrence et besoins clients',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Bpifrance - Outils interactifs',
+								url: 'https://bpifrance-creation.fr/outils-interactifs'
+							}
+						]
+					},
+					{
+						id: 'entreprendre-3',
+						title: 'Déterminer les besoins de financement',
+						description: 'Estimation du capital nécessaire et sources de financement',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'CCI - Aides à la création d\'entreprise',
+								url: 'https://www.cci.fr/ressources/creation-dentreprise/accompagnement-et-aides/les-aides-principales-pour-entreprendre-ou-reprendre'
+							}
+						]
+					},
+					{
+						id: 'entreprendre-5',
+						title: 'Comparer et choisir les statuts juridiques',
+						description: 'Micro-entreprise, EURL, SASU, SARL, SAS selon activité',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Comparateur statuts - Service Public',
+								url: 'https://www.service-public.fr/professionnels-entreprises/vosdroits/N31901'
+							},
+							{
+								title: 'Aide au choix du statut - Bpifrance',
+								url: 'https://bpifrance-creation.fr/aideauchoixdustatut'
+							}]
+					}
+				]
+			},
+			{
+				id: 'entreprendre-creation',
+				title: 'Formalités de création',
+				description: 'Démarches administratives et immatriculation',
+				items: [
+					{
+						id: 'entreprendre-8',
+						title: 'Domicilier son entreprise',
+						description: 'Siège social : domicile, local commercial, pépinière',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Domiciliation - Service Public',
+								url: 'https://entreprendre.service-public.gouv.fr/vosdroits/F2160'
+							}
+						]
+					},
+					{
+						id: 'entreprendre-9',
+						title: 'Rédiger les statuts si nécessaire (EURL, SASU, SARL, SAS)',
+						description: 'Acte constitutif et règles de fonctionnement',
+						completed: false,
+						priority: 'high',
+						resources: [
+						]
+					},
+					{
+						id: 'entreprendre-10',
+						title: 'Immatriculer l\'entreprise',
+						description: 'Guichet unique des formalités entreprises',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Guichet unique - Formalités',
+								url: 'https://formalites.entreprises.gouv.fr/'
+							}
+						]
+					},
+					{
+						id: 'entreprendre-11',
+						title: 'Ouvrir un compte bancaire professionnel',
+						description: 'Séparation patrimoine personnel et professionnel',
+						completed: false,
+						priority: 'high',
+						resources: []
+					}
+				]
+			},
+			{
+				id: 'entreprendre-lancement',
+				title: 'Lancer son activité',
+				description: 'Premiers clients et développement',
+				items: [
+					{
+						id: 'entreprendre-13',
+						title: 'Mettre en place la comptabilité',
+						description: 'Logiciel comptable ou expert-comptable',
+						completed: false,
+						priority: 'high',
+						resources: [
+						]
+					},
+					{
+						id: 'entreprendre-14',
+						title: 'Développer sa clientèle',
+						description: 'Stratégie commerciale et marketing',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Développement commercial - CCI',
+								url: 'https://www.cci.fr/ressources/booster-son-business/trouver-des-clients-partenaires-fournisseurs'
+							}
+						]
+					},
+					{
+						id: 'entreprendre-15',
+						title: 'Se faire accompagner',
+						description: 'Rejoindre un réseau d\'entrepreneurs ou un incubateur',
+						completed: false,
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Réseau Entreprendre',
+								url: 'https://www.reseau-entreprendre.org/fr/creation-entreprise/'
+							}
+						]
+					}
+				]
+			}
+		],
+		vigilancePoints: [
+			{
+				id: 'vigilance-entreprendre-1',
+				title: 'Charges sociales sous-estimées',
+				description: 'Au-delà des seuils micro-entreprise, les charges sociales peuvent représenter 25-45% du CA selon le statut',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-entreprendre-2',
+				title: 'Trésorerie de démarrage',
+				description: 'Prévoir 6-12 mois de charges fixes : les premiers clients n\'arrivent pas immédiatement',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-entreprendre-3',
+				title: 'Micro-entreprise : plafonds à surveiller',
+				description: '77 700€ (services) ou 188 700€ (vente) : dépassement = bascule automatique vers régime réel',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-entreprendre-4',
+				title: 'Responsabilité du dirigeant',
+				description: 'En EURL/entreprise individuelle : patrimoine personnel engagé. Préférer SASU pour protection',
+				type: 'important'
+			},
+			{
+				id: 'vigilance-entreprendre-5',
+				title: 'CFE et obligations déclaratives',
+				description: 'Cotisation Foncière des Entreprises due dès la 2e année. Déclarations TVA, sociales à dates fixes',
+				type: 'deadline'
+			},
+			{
+				id: 'vigilance-entreprendre-6',
+				title: 'Secteurs réglementés',
+				description: 'Alimentaire, santé, bâtiment, sécurité : qualifications obligatoires et autorisations spécifiques',
+				type: 'trap'
+			},
+			{
+				id: 'vigilance-entreprendre-7',
+				title: 'Propriété intellectuelle',
+				description: 'Protéger sa marque, nom de domaine et innovations avant le lancement public',
+				type: 'important'
+			}
+		],
+		usefulLinks: [
+			{
+				id: 'link-entreprendre-1',
+				title: 'Guichet unique des formalités',
+				url: 'https://formalites.entreprises.gouv.fr/',
+				description: 'Toutes les démarches de création'
+			},
+			{
+				id: 'link-entreprendre-2',
+				title: 'Bpifrance Création',
+				url: 'https://bpifrance-creation.fr/',
+				description: 'Guides et outils pour créer son entreprise'
+			},
+			{
+				id: 'link-entreprendre-3',
+				title: 'CCI - Chambre de Commerce',
+				url: 'https://www.cci.fr/',
+				description: 'Accompagnement local des entrepreneurs'
+			},
+			{
+				id: 'link-entreprendre-4',
+				title: 'APCE - Agence France Entrepreneur',
+				url: 'https://www.afecreation.fr/',
+				description: 'Informations et conseils création'
+			},
+			{
+				id: 'link-entreprendre-5',
+				title: 'URSSAF Entreprises',
+				url: 'https://www.urssaf.fr/',
+				description: 'Cotisations sociales et micro-entreprise'
+			},
+			{
+				id: 'link-entreprendre-6',
+				title: 'Infogreffe',
+				url: 'https://www.infogreffe.fr/',
+				description: 'Registre du commerce et des sociétés'
+			},
+			{
+				id: 'link-entreprendre-7',
+				title: 'INPI - Propriété intellectuelle',
+				url: 'https://www.inpi.fr/',
+				description: 'Protection marques et brevets'
+			}
 		]
 	}
 ];

@@ -52,6 +52,19 @@ export const guideArticles: GuideArticle[] = [
 		featured: true,
 		filePath: '/data/articles/comprendre-fiche-paie.md'
 	},
+	{
+		id: 'guide-comprendre-impots',
+		title: 'Comprendre les impôts en France : guide complet',
+		description: 'Panorama complet du système fiscal français : types d\'impôts, objectifs, collecte et répartition des recettes',
+		slug: 'comprendre-les-impots',
+		themeId: 'administration',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-10-06',
+		readingTime: 15,
+		tags: ['impôts', 'fiscalité', 'TVA', 'cotisations sociales', 'taxes locales', 'IR', 'système fiscal', 'prélèvements obligatoires'],
+		featured: true,
+		filePath: '/data/articles/comprendre-les-impots.md'
+	},
 	// {
 	// 	id: 'guide-premier-achat-immobilier',
 	// 	title: 'Guide complet pour son premier achat immobilier',

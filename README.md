@@ -1,44 +1,80 @@
 # Cap Adulte 📋
 
-Une plateforme web qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante.
+Une plateforme web moderne qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante. Cap Adulte accompagne les 18-30 ans dans leur transition vers l'autonomie grâce à des outils interactifs, des guides pratiques et des simulateurs personnalisés.
 
 ## 🎯 Objectif
 
-Offrir des guides clairs, des checklists interactives, des rappels et des outils pour éviter les oublis et les erreurs lors de la transition vers l'autonomie.
+Simplifier la vie des jeunes adultes en proposant :
+- **Des checklists interactives** pour ne rien oublier dans ses démarches
+- **Des guides détaillés** pour comprendre les procédures administratives
+- **Des simulateurs pratiques** pour prendre les bonnes décisions financières
+- **Un calendrier personnalisé** pour gérer ses échéances importantes
+- **Une FAQ complète** pour répondre aux questions les plus fréquentes
 
-## ✨ Fonctionnalités
+## ✨ Fonctionnalités principales
 
-### 🏠 Pages thématiques
-- **Administration** : Impôts, carte d'identité, sécurité sociale
-- **Logement** : Location, achat, assurance habitation, aides
-- **Santé** : Mutuelle, médecin traitant, remboursements
-- **Banque & Budget** : Compte bancaire, budget, épargne
-- **Assurances** : Auto, habitation, responsabilité civile
-- **Emploi** : CV, entretiens, contrats de travail
+### 🏠 **9 Thèmes essentiels**
+- **👨‍💼 Administration** : Impôts, carte d'identité, sécurité sociale, aides publiques
+- **🏠 Logement** : Location, achat, assurance habitation, aides au logement
+- **🏥 Santé** : Mutuelle, médecin traitant, remboursements, urgences
+- **💳 Banque & Budget** : Compte bancaire, budget, épargne, crédit
+- **🚗 Assurances** : Auto, habitation, responsabilité civile, garanties
+- **💼 Emploi** : CV, entretiens, contrats de travail, droits du travail
+- **📦 Déménagement** : Préparation, organisation, astuces
+- **✈️ Voyages** : Passeport, visas, assurances, conseils pratiques
+- **🚀 Entreprendre** : Statuts juridiques, démarches, fiscalité, aides
 
-### 📋 Checklists interactives
-- Progression sauvegardée localement
-- Priorités visuelles (haute, moyenne, basse)
-- Échéances et rappels
-- Liens vers ressources utiles
+### 📋 **Checklists intelligentes**
+- **Progression sauvegardée** automatiquement en local
+- **Système de priorités** avec codes couleurs (haute/moyenne/basse)
+- **Ressources contextuelles** avec liens vers sites officiels
+- **Statistiques de progression** par thème
 
-### 🧮 Simulateurs
-- **Budget mensuel** : Calcul revenus/charges avec conseils personnalisés
-- Répartition recommandée des dépenses
-- Conseils d'épargne
+### 📚 **Guides détaillés avec Markdown enrichi**
+- **Articles complets** sur les démarches importantes
+- **Rendu moderne** avec composants React optimisés
+- **Navigation par ancres** pour accès direct aux sections
+- **Design cohérent** avec le reste de la plateforme
+- **Liens externes** clairement identifiés
 
-### ❓ FAQ complète
-- Questions fréquentes par thème
-- Filtres par catégorie
-- Réponses détaillées et pratiques
+### 🧮 **Simulateurs financiers**
+- **💰 Simulateur de budget** : Règle 50-30-20 avec conseils personnalisés
+- **📊 Analyse des dépenses** avec recommandations
+- **⚠️ Alertes budgétaires** pour une meilleure gestion
+- **📈 Prochains simulateurs** : Impôts, capacité d'emprunt, épargne, retraite
 
-## 🛠 Technologies utilisées
+### 📅 **Calendrier personnalisé**
+- **Échéances importantes** regroupées par mois
+- **Rappels automatiques** pour les démarches à ne pas oublier
 
-- **Frontend** : Next.js 15, React, TypeScript
-- **Styling** : Tailwind CSS
-- **Stockage** : Pas de base de données, tout est statique et stocké localement
-- **Déploiement** : Vercel
-- **Package Manager** : npm
+### ❓ **FAQ complète et searchable**
+- **80+ questions** couvrant tous les thèmes
+- **Filtres par catégorie** pour recherche ciblée
+
+## 🛠 Stack technologique
+
+### **Frontend moderne**
+- **⚛️ Next.js 15** : Framework React avec App Router et SSG
+- **🔷 TypeScript** : Typage strict pour un code robuste
+- **🎨 Tailwind CSS 4** : Styling utilitaire et responsive design
+- **📝 React Markdown** : Rendu enrichi des guides avec `remark-gfm`
+
+### **Développement et qualité**
+- **🔍 ESLint 9** : Linting avec config Next.js
+- **📊 Vercel Analytics** : Mesure de performance et usage
+- **⚡ PostCSS** : Optimisation CSS avancée
+- **🏗️ TypeScript strict mode** : Configuration type-safe
+
+### **Architecture et données**
+- **📂 App Router** : Routing moderne de Next.js 15
+- **💾 LocalStorage** : Sauvegarde côté client sans backend
+- **📊 Données statiques** : JSON/TypeScript pour contenu structuré
+- **🔗 Génération statique** : SSG pour des performances optimales
+
+### **Déploiement et performance**
+- **☁️ Vercel** : Déploiement automatique avec preview
+- **🚀 Edge Functions** : Performance globale optimisée
+- **♿ Accessibilité** : Standards WCAG respectés
 
 ## 🚀 Installation et développement
 
@@ -62,57 +98,38 @@ npm start
 
 Le site sera accessible sur `http://localhost:3000`
 
-## 📁 Structure du projet
+## � Roadmap et évolutions
 
-```
-src/
-├── app/                 # Pages Next.js (App Router)
-│   ├── page.tsx        # Page d'accueil
-│   ├── administration/ # Page Administration
-│   ├── logement/       # Page Logement
-│   ├── simulateurs/    # Simulateurs
-│   └── faq/           # Questions fréquentes
-├── components/         # Composants React réutilisables
-│   ├── Header.tsx     # Navigation principale
-│   ├── Footer.tsx     # Pied de page
-│   ├── ThemeCard.tsx  # Carte de thème
-│   └── Checklist.tsx  # Checklist interactive
-├── data/              # Données statiques
-│   └── themes.ts      # Contenu des thèmes
-└── types/             # Types TypeScript
-    └── index.ts       # Interfaces et types
-```
+### **🔄 Version actuelle (1.0)**
+- ✅ 9 thèmes complets avec checklists interactives
+- ✅ 8 guides détaillés en Markdown enrichi
+- ✅ Simulateur de budget avec règle 50-30-20
+- ✅ FAQ complète avec 80+ questions
+- ✅ Interface responsive et accessible
+- ✅ Sauvegarde locale des progressions
 
-## 🎨 Design et UX
+### **📈 Version 2.0 (Q1 2026)**
+- [ ] **🧮 Nouveaux simulateurs** : Impôts, capacité d'emprunt, épargne
+- [ ] **📅 Calendrier avancé** : Rappels personnalisés et notifications
+- [ ] **🔍 Recherche globale** : Moteur de recherche dans tout le contenu
+- [ ] **📸 Guides visuels** : Screenshots et vidéos tutorielles
+- [ ] **💬 Système de commentaires** : Intégration Giscus/Disqus
+- [ ] **📊 Analytics avancées** : Tableaux de bord utilisateur
 
-- **Mobile-first** : Interface responsive
-- **Accessible** : Couleurs contrastées, navigation claire
-- **Progressif** : Sauvegarde automatique des checklists
-- **Intuitif** : Navigation simple, pas de jargon technique
+### **🌟 Version 3.0 (Q3 2026)**
+- [ ] **🔔 Notifications intelligentes** : Push notifications web
+- [ ] **🌙 Mode sombre** : Thème dark/light avec préférence système
+- [ ] **📄 Génération PDF** : Export de checklists et modèles de lettres
+- [ ] **🔗 API externe** : Intégration données temps réel (barèmes, taux)
+- [ ] **👥 Profils utilisateur** : Comptes optionnels pour sync multi-device
+- [ ] **🎯 Personnalisation** : Recommandations basées sur le profil
 
-## 📊 Données et contenu
-
-Les données sont organisées en thèmes contenant :
-- **Checklists** : Tâches avec priorités et échéances
-- **Guides** : Explications étape par étape
-- **Points de vigilance** : Dates limites, pièges à éviter
-- **Liens utiles** : Sites officiels et ressources
-
-## 🔄 Évolutions prévues
-
-### Version 2.0
-- [ ] Calendrier de rappels personnalisé
-- [ ] Simulateur d'impôts avancé
-- [ ] Guides avec captures d'écran
-- [ ] Système de commentaires (Disqus/Giscus)
-- [ ] Recherche globale
-
-### Version 3.0
-- [ ] Notifications push
-- [ ] Mode sombre
-- [ ] Téléchargements PDF (modèles de lettres)
-- [ ] API pour les mises à jour de contenu
-- [ ] Statistiques d'usage anonymes
+### **💡 Idées à long terme**
+- [ ] **🤖 Assistant IA** : Chatbot pour questions personnalisées
+- [ ] **📲 App mobile native** : iOS/Android avec notifications push
+- [ ] **🏛️ Partenariats officiels** : Intégrations directes administrations
+- [ ] **🌍 Localisation** : Support multi-régional (DOM-TOM)
+- [ ] **📊 Comparateurs** : Banques, assurances, mutuelles
 
 ## 🤝 Contribution
 
@@ -127,17 +144,18 @@ Les contributions sont les bienvenues ! Merci de :
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-## 🙏 Ressources et remerciements
-
-- [Service-Public.fr](https://www.service-public.fr) - Informations officielles
-- [CAF](https://www.caf.fr) - Aides au logement
-- [Impôts.gouv.fr](https://www.impots.gouv.fr) - Déclaration de revenus
-- [Ameli.fr](https://www.ameli.fr) - Sécurité sociale
-
-## 📞 Contact
-
-Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur GitHub.
+## **🤝 Contribution**
+Les contributions sont encouragées ! Voir [CONTRIBUTING.md](./CONTRIBUTING.md) pour :
+- 📝 **Améliorer le contenu** : Corriger, enrichir, actualiser
+- 🐛 **Reporter des bugs** : Issues détaillées avec reproductions
+- ✨ **Proposer des fonctionnalités** : Nouvelles idées et améliorations  
+- 🔧 **Contribuer au code** : Pull requests avec tests
 
 ---
 
-**Cap Adulte** - Parce que devenir adulte, ça s'apprend ! 🎓✨
+## 🎯 Mission
+
+> **Cap Adulte accompagne la transition vers l'autonomie en rendant l'administratif français accessible, compréhensible et moins stressant pour tous les jeunes adultes.**
+
+**Parce que devenir adulte, ça s'apprend ! 🎓✨**
+

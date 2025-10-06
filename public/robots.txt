@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cap-adulte.vercel.app/sitemap.xml
+
+# Disallow admin or sensitive paths (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow specific crawling of important pages
+Allow: /theme/
+Allow: /guide/
+Allow: /simulateurs/
+Allow: /faq/
+Allow: /calendrier/
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 1

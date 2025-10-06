@@ -132,41 +132,98 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 					const dayDeadlines = getDeadlinesForDate(date);
 					const isCurrentMonthDay = isCurrentMonth(date);
 					const isTodayDate = isToday(date);
+					const hasDeadlines = dayDeadlines.length > 0;
+					const hasCompletedDeadlines = dayDeadlines.some(d => d.completed);
+					const hasIncompleteDeadlines = dayDeadlines.some(d => !d.completed);
 
 					return (
 						<div
 							key={index}
-							className={`min-h-[60px] sm:min-h-[100px] p-0.5 sm:p-1 border border-gray-100 ${!isCurrentMonthDay ? 'bg-gray-50' : ''
-								} ${isTodayDate ? 'bg-blue-50 border-blue-200' : ''}`}
+							className={`min-h-[60px] sm:min-h-[100px] border border-gray-100 relative overflow-hidden
+								${!isCurrentMonthDay ? 'bg-gray-50' : ''} 
+								${isTodayDate ? 'bg-blue-50 border-blue-200' : ''}
+								${hasDeadlines ? 'sm:cursor-default' : ''}
+								${hasDeadlines && hasIncompleteDeadlines ? 'cursor-pointer sm:cursor-default' : ''}
+							`}
+							onClick={() => {
+								// Sur mobile, toute la case est cliquable s'il y a des événements
+								if (hasDeadlines && window.innerWidth < 640) {
+									setSelectedDeadline(dayDeadlines[0]);
+								}
+							}}
 						>
-							<div className={`text-xs sm:text-sm font-medium mb-0.5 sm:mb-1 text-center sm:text-left ${!isCurrentMonthDay ? 'text-gray-400' :
-								isTodayDate ? 'text-blue-600' : 'text-gray-900'
-								}`}>
-								{date.getDate()}
-							</div>
+							{/* Indicateur mobile - toute la case change d'apparence */}
+							{hasDeadlines && (
+								<div className={`absolute inset-0 sm:hidden ${
+									hasIncompleteDeadlines 
+										? 'bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-blue-300' 
+										: 'bg-gradient-to-br from-green-100 to-green-200 border-2 border-green-300'
+								}`} />
+							)}
 
-							<div className="space-y-0.5 sm:space-y-1">
-								{dayDeadlines.slice(0, 2).map((deadline) => (
-									<div
-										key={deadline.id}
-										className={`text-xs p-0.5 sm:p-1 rounded truncate cursor-pointer transition-colors ${deadline.completed
-											? 'bg-green-100 text-green-800 line-through'
-											: 'bg-blue-100 text-blue-800 hover:bg-blue-200'
+							{/* Contenu de la case */}
+							<div className={`relative p-0.5 sm:p-1 h-full ${hasDeadlines ? 'sm:p-2' : ''}`}>
+								{/* Numéro du jour */}
+								<div className={`text-xs sm:text-sm font-medium mb-0.5 sm:mb-1 text-center sm:text-left relative z-10 ${
+									!isCurrentMonthDay ? 'text-gray-400' :
+									isTodayDate ? 'text-blue-600 font-bold' : 
+									hasDeadlines && hasIncompleteDeadlines ? 'text-blue-800 sm:text-gray-900 font-bold sm:font-medium' :
+									hasDeadlines && hasCompletedDeadlines ? 'text-green-800 sm:text-gray-900 font-bold sm:font-medium' :
+									'text-gray-900'
+								}`}>
+									{date.getDate()}
+								</div>
+
+								{/* Indicateur mobile simple */}
+								<div className="sm:hidden relative z-10">
+									{hasDeadlines && (
+										<div className="text-center">
+											<div className={`text-lg ${hasIncompleteDeadlines ? 'text-blue-700' : 'text-green-700'}`}>
+												{hasIncompleteDeadlines ? '📌' : '✅'}
+											</div>
+											{dayDeadlines.length > 1 && (
+												<div className={`text-xs font-bold ${hasIncompleteDeadlines ? 'text-blue-800' : 'text-green-800'}`}>
+													{dayDeadlines.length}
+												</div>
+											)}
+										</div>
+									)}
+								</div>
+
+								{/* Événements desktop - version améliorée */}
+								<div className="hidden sm:block space-y-1">
+									{dayDeadlines.slice(0, 3).map((deadline) => (
+										<div
+											key={deadline.id}
+											className={`text-xs sm:text-sm p-1 sm:p-2 rounded-md cursor-pointer transition-all duration-200 transform hover:scale-105 shadow-sm ${
+												deadline.completed
+													? 'bg-green-100 text-green-800 line-through border border-green-200'
+													: 'bg-blue-100 text-blue-800 hover:bg-blue-200 hover:shadow-md border border-blue-200'
 											}`}
-										onClick={() => setSelectedDeadline(deadline)}
-										title={`${deadline.title} (${deadline.themeTitle})`}
-									>
-										<span className="sm:hidden">📌</span>
-										<span className="hidden sm:inline">{deadline.themeIcon}</span>
-										<span className="ml-0.5 sm:ml-1 truncate">{deadline.title}</span>
-									</div>
-								))}
-								{dayDeadlines.length > 2 && (
-									<div className="text-xs text-gray-500 text-center cursor-pointer hover:text-gray-700"
-										onClick={() => dayDeadlines.length > 0 && setSelectedDeadline(dayDeadlines[0])}>
-										+{dayDeadlines.length - 2}
-									</div>
-								)}
+											onClick={(e) => {
+												e.stopPropagation();
+												setSelectedDeadline(deadline);
+											}}
+											title={`${deadline.title} (${deadline.themeTitle})`}
+										>
+											<div className="flex items-center gap-1">
+												<span className="text-sm">{deadline.themeIcon}</span>
+												<span className="truncate font-medium">{deadline.title}</span>
+											</div>
+										</div>
+									))}
+									{dayDeadlines.length > 3 && (
+										<div 
+											className="text-xs text-gray-600 text-center cursor-pointer hover:text-gray-800 hover:bg-gray-100 rounded p-1 transition-colors"
+											onClick={(e) => {
+												e.stopPropagation();
+												setSelectedDeadline(dayDeadlines[0]);
+											}}
+										>
+											+{dayDeadlines.length - 3} autres
+										</div>
+									)}
+								</div>
 							</div>
 						</div>
 					);

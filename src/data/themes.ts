@@ -235,7 +235,7 @@ export const themes: ThemeSection[] = [
 	{
 		id: 'logement',
 		title: 'Logement',
-		description: 'Location, achat, assurance habitation et aides au logement',
+		description: 'Location, achat et aides au logement',
 		icon: '🏠',
 		color: 'bg-green-500',
 		checklistSections: [

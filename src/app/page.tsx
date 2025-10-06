@@ -21,12 +21,12 @@ export default function Home() {
 							</h1>
 							<p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
 								Toutes les informations et démarches pratiques pour bien démarrer
-								votre vie indépendante. Guides clairs, checklists et rappels
+								votre vie indépendante. Guides, checklists et rappels
 								pour éviter les oublis et les erreurs.
 							</p>
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
 								<Link
-									href="#themes"
+									href="/theme"
 									className="border-2 border-white bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
 								>
 									Explorer les thèmes

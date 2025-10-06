@@ -151,7 +151,7 @@ export default function SimulateursPage() {
 				{/* Simulateurs à venir */}
 				{upcomingSimulators.length > 0 && (
 					<section>
-						<h2 className="text-2xl font-bold text-gray-900 mb-6">� Prochainement disponibles</h2>
+						<h2 className="text-2xl font-bold text-gray-900 mb-6">🚧 Prochainement disponibles</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{upcomingSimulators.map((simulateur) => (
 								<div

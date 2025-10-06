@@ -14,7 +14,7 @@ Ce guide vous aide à la lire facilement, ligne par ligne.
 
 ## Décomposer son salaire : côté salarié et côté employeur
 
-| **Côté salarié** | **Côté employeur** |
+| Côté salarié | Côté employeur |
 |------------------|-------------------|
 | **Salaire brut** : rémunération totale avant déductions | **Cotisations patronales** (~40 à 45% du brut) : Sécurité sociale, chômage, retraite complémentaire, accidents du travail... |
 | **Cotisations salariales** (~23% du brut) : santé, retraite, chômage |  |

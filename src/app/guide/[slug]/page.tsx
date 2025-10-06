@@ -97,7 +97,7 @@ export default async function GuidePage({ params }: PageProps) {
 								const text = typeof children === 'string' ? children : children?.toString() || '';
 								const id = createAnchorId(text);
 								return (
-									<h1 id={id} className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mt-8 mb-6 pb-3 border-b-2 border-blue-100 first:mt-0">
+									<h1 id={id} className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mt-8 mb-6 pb-3 border-b-2 border-blue-100 first:mt-0">
 										{children}
 									</h1>
 								);
@@ -106,7 +106,7 @@ export default async function GuidePage({ params }: PageProps) {
 								const text = typeof children === 'string' ? children : children?.toString() || '';
 								const id = createAnchorId(text);
 								return (
-									<h2 id={id} className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mt-8 mb-4 first:mt-0">
+									<h2 id={id} className="text-xl sm:text-xl lg:text-2xl font-bold text-gray-800 mt-8 mb-4 first:mt-0">
 										{children}
 									</h2>
 								);
@@ -115,7 +115,7 @@ export default async function GuidePage({ params }: PageProps) {
 								const text = typeof children === 'string' ? children : children?.toString() || '';
 								const id = createAnchorId(text);
 								return (
-									<h3 id={id} className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-700 mt-6 mb-3">
+									<h3 id={id} className="text-lg sm:text-lg lg:text-xl font-semibold text-gray-700 mt-6 mb-3">
 										{children}
 									</h3>
 								);
@@ -124,7 +124,7 @@ export default async function GuidePage({ params }: PageProps) {
 								const text = typeof children === 'string' ? children : children?.toString() || '';
 								const id = createAnchorId(text);
 								return (
-									<h4 id={id} className="text-base sm:text-lg font-semibold text-gray-600 mt-4 mb-2">
+									<h4 id={id} className="text-base sm:text-md font-semibold text-gray-600 mt-4 mb-2">
 										{children}
 									</h4>
 								);
@@ -227,7 +227,7 @@ export default async function GuidePage({ params }: PageProps) {
 								</tbody>
 							),
 							tr: ({ children }) => (
-								<tr className="hover:bg-gray-50 transition-colors">
+								<tr>
 									{children}
 								</tr>
 							),

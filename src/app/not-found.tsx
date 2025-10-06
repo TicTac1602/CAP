@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export default function NotFound() {
 	return (
@@ -31,7 +29,7 @@ export default function NotFound() {
 							href="/"
 							className="inline-block w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
 						>
-							← Retour à l'accueil
+							← Retour à l&apos;accueil
 						</Link>
 						
 						<div className="text-sm text-gray-500">
@@ -63,11 +61,11 @@ export default function NotFound() {
 					{/* Message d'aide supplémentaire */}
 					<div className="mt-12 p-4 bg-blue-50 rounded-lg border border-blue-200">
 						<p className="text-sm text-blue-800">
-							<strong>Besoin d'aide ?</strong> Utilisez la navigation ci-dessus ou{' '}
+							<strong>Besoin d&apos;aide ?</strong> Utilisez la navigation ci-dessus ou{' '}
 							<Link href="/contact" className="underline hover:no-underline">
 								contactez-nous
 							</Link>{' '}
-							si vous pensez qu'il s'agit d'une erreur.
+							si vous pensez qu&apos;il s&apos;agit d&apos;une erreur.
 						</p>
 					</div>
 				</div>

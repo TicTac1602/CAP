@@ -83,6 +83,12 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 						onChange={(value) => updateField('loyer', value)}
 					/>
 					<InputField
+						label="Remboursement de dettes (crédits, prêts)"
+						placeholder="100"
+						value={budgetData.remboursementDettes}
+						onChange={(value) => updateField('remboursementDettes', value)}
+					/>
+					<InputField
 						label="Assurances (auto, habitation, santé)"
 						placeholder="150"
 						value={budgetData.assurances}
@@ -167,12 +173,6 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 						placeholder="200"
 						value={budgetData.placements}
 						onChange={(value) => updateField('placements', value)}
-					/>
-					<InputField
-						label="Remboursement de dettes"
-						placeholder="100"
-						value={budgetData.remboursementDettes}
-						onChange={(value) => updateField('remboursementDettes', value)}
 					/>
 				</div>
 			</div>

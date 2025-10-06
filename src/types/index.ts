@@ -96,6 +96,7 @@ export interface BudgetData {
 	assurances: number;
 	abonnements: number;
 	transport: number;
+	remboursementDettes: number;
 	autresChargesFixes: number;
 
 	// Dépenses flexibles (30% recommandé)
@@ -108,7 +109,6 @@ export interface BudgetData {
 	// Épargne et placements (20% recommandé)
 	epargneUrgence: number;
 	placements: number;
-	remboursementDettes: number;
 }
 
 export interface BudgetCalculations {

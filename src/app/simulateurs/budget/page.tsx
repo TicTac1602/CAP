@@ -30,10 +30,10 @@ export default function BudgetSimulatorPage() {
 	const calculations: BudgetCalculations = useMemo(() => {
 		const revenuTotal = budgetData.salaire + budgetData.autresRevenus;
 		const chargesFixes = budgetData.loyer + budgetData.assurances + budgetData.abonnements +
-			budgetData.transport + budgetData.autresChargesFixes;
+			budgetData.transport + budgetData.remboursementDettes + budgetData.autresChargesFixes;
 		const depensesFlexibles = budgetData.alimentation + budgetData.loisirs + budgetData.vetements +
 			budgetData.sorties + budgetData.autresDepensesFlexibles;
-		const epargneTotal = budgetData.epargneUrgence + budgetData.placements + budgetData.remboursementDettes;
+		const epargneTotal = budgetData.epargneUrgence + budgetData.placements;
 		const depensesTotales = chargesFixes + depensesFlexibles + epargneTotal;
 		const solde = revenuTotal - depensesTotales;
 

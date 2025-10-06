@@ -1,59 +1,77 @@
-Dans un marché du travail concurrentiel, votre CV et lettre de motivation sont vos premiers ambassadeurs. Ce guide vous donne toutes les clés pour créer des candidatures qui sortent du lot et décrocher des entretiens.
+Votre CV et lettre de motivation sont **les premiers filtres** de votre candidature. Ils déterminent si votre profil passera les **systèmes ATS** et si un recruteur vous accordera un entretien.  
+Ce guide vous accompagne pour créer des candidatures **optimisées techniquement** et **adaptées aux standards** actuels, y compris pour les entreprises internationales.
 
-## 📄 Le CV parfait : Structure et contenu
+---
 
-### Format et présentation
+## Sommaire
+- [Structurer son CV : optimisation technique et visuelle](#structurer-son-cv--optimisation-technique-et-visuelle)
+- [Lettre de motivation : structure et optimisation ATS](#lettre-de-motivation--structure-et-optimisation-ats)
+- [Stratégie double : CV visuel et version ATS](#strategie-double--cv-visuel-et-ats)
+- [Optimisation ATS : comprendre et s'adapter aux robots recruteurs](#optimisation-ats--comprendre-et-sadapter-aux-robots-recruteurs)
+- [Vérifications essentielles](#verifications-essentielles)
+- [Erreurs critiques et bonnes pratiques](#erreurs-critiques-et-bonnes-pratiques)
+- [Candidatures internationales : CV et Cover Letter en anglais](#candidatures-internationales--cv-et-cover-letter-en-anglais)
+- [Outils et ressources pratiques](#outils-et-ressources-pratiques)
 
-#### Règles de base
-- **1 page maximum** pour un junior (2 pages max pour +10 ans d'expérience)
-- **Police lisible** : Arial, Calibri, ou Helvetica (taille 11-12)
-- **Format PDF** pour préserver la mise en forme
-- **Nom du fichier** : "Nom_Prénom_CV_Poste.pdf"
+---
 
-#### Structure optimale
+## Structurer son CV : optimisation technique et visuelle
+
+### 🔹 Spécifications techniques essentielles
+
+| **Critère** | **Standard français** | **Standard international** |
+|-------------|----------------------|---------------------------|
+| **Longueur** | 1 page (junior) / 2 pages (senior) | 1-2 pages (US) / 2-3 pages (UK) |
+| **Police** | Arial, Calibri, Helvetica (11-12pt) | Times New Roman, Arial (11-12pt) |
+| **Format** | PDF de préférence | PDF (ATS) + Word (backup) |
+| **Nom fichier** | Nom_Prénom_CV_Poste.pdf | LastName_FirstName_Resume_Position.pdf |
+
+### 🔹 Architecture du CV
+
+1. **État civil** : nom, contact, titre professionnel  
+2. **Expérience professionnelle** : antichronologique  
+3. **Formation** : diplômes et certifications  
+4. **Compétences** : techniques et linguistiques  
+5. **Informations complémentaires** : centres d'intérêt si pertinents  
+
+> 💡 Exemple d'en-tête:  
+> **MARTIN Claire**  
+> **Développeuse Full Stack JavaScript**  
+> 📧 claire.martin@email.com | 📱 06 XX XX XX XX | 💼 linkedin.com/in/clairemartin
+
+### 🔹 En-tête et contact
+
+#### Éléments indispensables
+| **Information** | **Format recommandé** | **ATS-friendly** |
+|----------------|----------------------|------------------|
+| **Nom** | PRÉNOM NOM (majuscules) | ✅ Texte simple |
+| **Titre** | Intitulé exact du poste visé | ✅ Mots-clés de l'offre |
+| **Email** | prenom.nom@provider.com | ✅ Format professionnel |
+| **LinkedIn** | URL complète ou personnalisée | ✅ Lien cliquable |
+
+#### À éviter absolument
+- Photo (sauf secteurs spécifiques : mode, média), cela peut être un vecteur de discrimination
+- Âge, situation familiale, nationalité, cela n'a plus lieu d'être en France
+- Adresse complète (ville suffisante)  
+- Emails fantaisistes ou providers obsolètes, une pensée à yahoo/hotmail
+
+### 🔹 Expérience professionnelle : structure STAR
+
 ```
-PRÉNOM NOM
-[Titre du poste visé]
-
-📧 email@exemple.com | 📱 06 XX XX XX XX
-🏠 Ville, Code postal | 💼 LinkedIn | 🌐 Portfolio (si applicable)
-
-EXPÉRIENCE PROFESSIONNELLE
-FORMATION
-COMPÉTENCES
-CENTRES D'INTÉRÊT (optionnel)
+TITRE DU POSTE
+Entreprise | Période | Lieu
+• [Action] qui a généré [Résultat chiffré] 
+• [Compétence] mise en œuvre sur [Projet/Contexte]
+• [Réalisation] ayant impacté [Métrique business]
 ```
 
-### Section par section : Comment optimiser
+> 💡 Exemple :  
+> **Chef de projet digital**  
+> Agence XYZ | Jan 2022 - Déc 2024 | Paris  
+> • Coordonné **15 projets web** générant **+2M€ de CA** pour les clients  
+> • Réduit les délais de livraison de **30%** via méthodes Agile  
+> • Formé **8 développeurs** aux bonnes pratiques UX/UI
 
-#### 1. En-tête professionnel
-**✅ À faire :**
-- Photo professionnelle (optionnelle mais recommandée)
-- Titre accrocheur correspondant au poste visé
-- Coordonnées complètes et professionnelles
-
-**❌ À éviter :**
-- Email non professionnel (kikoulol@...)
-- Informations personnelles (âge, situation familiale)
-- Titre générique ("Étudiant" ou "Demandeur d'emploi")
-
-#### 2. Expérience professionnelle
-**Format recommandé :**
-```
-TITRE DU POSTE | Entreprise
-Période | Lieu
-• Réalisation concrète avec résultat chiffré
-• Action importante avec impact mesurable  
-• Compétence développée pertinente pour le poste visé
-```
-
-**Exemples d'impact :**
-- "Augmenté les ventes de 15% en 6 mois"
-- "Géré une équipe de 5 personnes"
-- "Réduit les délais de traitement de 30%"
-- "Formé 20 nouveaux collaborateurs"
-
-#### 3. Formation
 **Pour les diplômés récents :**
 - Mettez la formation avant l'expérience
 - Mentionnez projets, mémoires pertinents
@@ -64,7 +82,7 @@ Période | Lieu
 - Seuls les diplômes significatifs
 - Formations continues récentes
 
-#### 4. Compétences techniques
+### 🔹 Compétences techniques
 **Organisation par catégories :**
 - **Langues** : Niveau précis (A1-C2 ou CECRL)
 - **Informatique** : Logiciels, langages, certifications
@@ -75,7 +93,7 @@ Période | Lieu
 - Ou notation /5 étoiles
 - Évitez "Notions" qui ne veut rien dire
 
-### CV selon votre profil
+### 🔹 CV selon votre profil
 
 #### Étudiant / Premier emploi
 - **Mettez en avant** : Formation, projets, stages
@@ -92,32 +110,42 @@ Période | Lieu
 - **Valorisez** : Compétences transférables
 - **Formations** : Mettez en avant celles liées à votre nouveau secteur
 
-## 💌 La lettre de motivation efficace
+---
 
-### Structure en 3 paragraphes
+## Lettre de motivation : structure et optimisation ATS
 
-#### Paragraphe 1 : L'accroche
-**Objectif :** Expliquer pourquoi vous candidatez
+### 🔹 Architecture en 3 blocs efficaces
 
-**Exemple :**
-*"Passionné(e) par [domaine] et fort(e) de [X années] d'expérience en [spécialité], je souhaite rejoindre [Entreprise] en tant que [Poste] pour contribuer à [projet/mission de l'entreprise]."*
+| **Section** | **Objectif** | **Contenu clé** |
+|-------------|--------------|-----------------|
+| **Paragraphe 1** | Accroche ciblée | Poste visé + résumé profil + motivation entreprise |
+| **Paragraphe 2** | Démonstration | 2-3 compétences de l'offre + exemples chiffrés |
+| **Paragraphe 3** | Ouverture | Disponibilité + demande d'entretien + formule de politesse |
 
-#### Paragraphe 2 : Vos atouts
-**Objectif :** Démontrer votre adéquation avec le poste
+### 🔹 Optimisation ATS pour lettres de motivation
 
-**Structure :**
-- Reprenez 2-3 compétences clés de l'offre
-- Illustrez chacune par un exemple concret
-- Montrez la valeur ajoutée que vous apporterez
+#### Mots-clés stratégiques
+- **Reprenez** l'intitulé exact du poste  
+- **Intégrez** les compétences mentionnées dans l'offre  
+- **Utilisez** le vocabulaire technique du secteur  
+- **Variez** les formulations sans perdre la cohérence  
 
-**Exemple :**
-*"Mon expérience de [situation] m'a permis de développer [compétence], comme en témoigne [réalisation concrète]. Cette expertise me permettra de [contribution future à l'entreprise]."*
+#### Structure lisible par les robots
+```
+Objet : Candidature [Intitulé exact du poste] - [Votre nom]
 
-#### Paragraphe 3 : L'ouverture
-**Objectif :** Proposer un entretien et montrer votre motivation
+Madame/Monsieur [Nom si connu],
 
-**Exemple :**
-*"Convaincu(e) que mon profil correspond à vos attentes, je serais ravi(e) de vous rencontrer pour échanger sur ma candidature et vous présenter mes motivations de vive voix."*
+[Paragraphe 1 : Motivation et adéquation]
+[Paragraphe 2 : Compétences et réalisations]  
+[Paragraphe 3 : Ouverture et disponibilité]
+
+Cordialement,
+[Votre nom]
+```
+
+> 💡 À retenir :  
+> Les ATS analysent aussi les lettres de motivation. **Personnalisez** chaque candidature avec les mots-clés de l'offre.
 
 ### Conseils de rédaction
 
@@ -133,107 +161,239 @@ Période | Lieu
 - **Concis** : 3 paragraphes, 1 page maximum
 - **Sans fautes** : Relisez plusieurs fois !
 
-## 🎨 Modèles et design
+---
 
-### CV Classique
-**Idéal pour :** Secteurs traditionnels (banque, juridique, fonction publique)
-- Design sobre et épuré
-- Couleurs neutres (noir, gris, bleu marine)
-- Mise en page claire et aérée
+## Stratégie double : CV visuel et ATS
 
-### CV Moderne
-**Idéal pour :** Start-ups, communication, marketing, tech
-- Couleurs dynamiques mais professionnelles
-- Pictogrammes pour les compétences
-- Mise en page créative mais lisible
+### 🔹 Approche recommandée : deux versions complémentaires
 
-### CV Créatif
-**Idéal pour :** Métiers artistiques, design, communication visuelle
-- Design original reflétant votre créativité
-- Attention à rester professionnel
-- Testez la lisibilité sur différents supports
+| **Version** | **Usage** | **Caractéristiques** |
+|-------------|-----------|---------------------|
+| **ATS-friendly** | Candidatures en ligne, grandes entreprises | Format simple, mots-clés optimisés |
+| **Design/Canva** | Networking, salons, PME/startups | Visuel attractif, créativité |
 
-## 🔍 Optimisation pour les ATS (Applicant Tracking Systems)
+#### Création efficace
+1. **Commencez** par la version ATS (contenu optimisé)  
+2. **Adaptez** visuellement pour la version design  
+3. **Conservez** le même contenu textuel  
+4. **Testez** les deux versions selon le canal  
 
-### Format ATS-friendly
-- **Évitez** : Tableaux, colonnes complexes, images avec texte
-- **Préférez** : Structure linéaire, titres clairs
-- **Mots-clés** : Reprenez ceux de l'offre d'emploi
-- **Format** : PDF de préférence, Word accepté
+### 🔹 Templates par secteur d'activité
 
-### Test de lisibilité
-- Copiez votre CV dans un document texte brut
-- Vérifiez que toutes les informations importantes restent lisibles
-- Reformulez si nécessaire
+#### CV traditionnel (ATS prioritaire)
+**Secteurs :** Finance, juridique, fonction publique, industrie  
+- **Structure** : linéaire et claire  
+- **Couleurs** : noir, gris, bleu marine  
+- **Police** : Arial, Calibri (11-12pt)  
+- **Éléments** : texte uniquement, pas d'icônes  
 
-## ✅ Check-lists de relecture
+#### CV moderne équilibré
+**Secteurs :** Tech, consulting, marketing, RH  
+- **Structure** : sections bien délimitées  
+- **Couleurs** : 1-2 couleurs corporate  
+- **Éléments** : pictogrammes simples autorisés  
+- **Test ATS** : obligatoire avant envoi  
 
-### CV - Points de contrôle
-- [ ] Coordonnées à jour et professionnelles
-- [ ] Titre correspond au poste visé
-- [ ] Expériences en ordre antichronologique
-- [ ] Verbes d'action et résultats chiffrés
-- [ ] Aucune faute d'orthographe ou de frappe
-- [ ] Format PDF, nom de fichier professionnel
-- [ ] 1 page (2 max si expérimenté)
-
-### Lettre de motivation - Points de contrôle
-- [ ] Nom de l'entreprise et du poste corrects
-- [ ] Personnalisation visible (pas de copier-coller)
-- [ ] 3 paragraphes équilibrés
-- [ ] Exemples concrets et pertinents
-- [ ] Formules de politesse adaptées
-- [ ] Signature manuscrite si version papier
-- [ ] Cohérence avec le CV
-
-## 🚀 Conseils d'experts
-
-### Erreurs fréquentes à éviter
-
-#### CV
-- ❌ **CV générique** envoyé à tout le monde
-- ❌ **Informations obsolètes** ou mensonges
-- ❌ **Trop de détails** sur des expériences anciennes
-- ❌ **Design surchargé** qui nuit à la lisibilité
-- ❌ **Fautes d'orthographe** = élimination directe
-
-#### Lettre de motivation
-- ❌ **Répéter le CV** : Apportez de nouveaux éléments
-- ❌ **Parler uniquement de soi** : Montrez votre intérêt pour l'entreprise
-- ❌ **Être trop modeste** : Assumez vos réussites
-- ❌ **Formules bateau** : "Suite à votre annonce..."
-
-### Bonus : Candidature digitale
-
-#### LinkedIn optimisé
-- Photo professionnelle de qualité
-- Titre accrocheur avec mots-clés
-- Résumé engageant (à la 1ère personne)
-- Recommandations de collègues/managers
-
-#### Portfolio en ligne
-**Indispensable pour :** Développeurs, designers, journalistes, marketeurs
-- Sélection de vos meilleurs projets
-- Description du contexte et de votre contribution
-- Résultats obtenus si possible
-- Contact facilement accessible
-
-## 📈 Suivi et optimisation
-
-### Analysez vos résultats
-- **Taux de réponse** : Si <10%, révisez votre CV/lettre
-- **Types de retours** : Identifiez les points d'amélioration
-- **Entretiens obtenus** : Votre candidature fonctionne !
-
-### Adaptez selon les retours
-- Feedback des recruteurs : Intégrez leurs conseils
-- Tendances du marché : Ajustez le vocabulaire/compétences
-- Évolution de votre profil : Mettez à jour régulièrement
+#### CV créatif (avec version ATS de backup)
+**Secteurs :** Design, communication, média, arts  
+- **Liberté créative** : reflet de vos compétences  
+- **Attention** : toujours avoir la version ATS prête  
+- **Usage** : portfolio en ligne, entretiens physiques
 
 ---
 
-**🎯 Message clé :** Votre candidature doit raconter une histoire cohérente et montrer clairement pourquoi VOUS êtes le/la candidat(e) idéal(e) pour CE poste dans CETTE entreprise.
+## Optimisation ATS : comprendre et s'adapter aux robots recruteurs
 
-**📝 Action immédiate :** Choisissez une offre qui vous intéresse et appliquez ces conseils pour créer une candidature sur-mesure. La personnalisation fait toute la différence !
+### 🔹 Fonctionnement des ATS : ce qu'il faut savoir
 
-*Prêt(e) à transformer vos candidatures en entretiens ? C'est parti !* ✨
+#### Processus de scanning automatique
+| **Étape ATS** | **Critères analysés** | **Votre action** |
+|---------------|----------------------|------------------|
+| **1. Parsing** | Structure, format, lisibilité | Format simple, titres standards |
+| **2. Matching** | Mots-clés, compétences, expérience | Vocabulaire de l'offre d'emploi |
+| **3. Scoring** | Adéquation profil/poste | Personnalisation par candidature |
+| **4. Ranking** | Classement des candidatures | Optimisation continue |
+
+### 🔹 Règles d'or pour passer les filtres ATS
+
+#### ✅ Structure ATS-compatible
+
+| **Élément** | **Recommandé** | **À éviter** |
+|-------------|----------------|--------------|
+| **Titres de sections** | "EXPÉRIENCE PROFESSIONNELLE" | "Mon parcours" |
+| **Dates** | 01/2020 - 12/2022 | "Récemment" |
+| **Mise en forme** | Gras, italique simple | Colonnes, tableaux, zones de texte |
+| **Fichier** | .pdf ou .docx | .jpg, .png, formats exotiques |
+
+#### ✅ Stratégie de mots-clés
+
+**Analyse de l'offre d'emploi :**
+1. **Surlignez** tous les termes techniques  
+2. **Identifiez** les compétences répétées  
+3. **Intégrez** naturellement dans vos expériences  
+4. **Variez** les formulations (synonymes, abréviations)  
+
+> 💡 Exemple pour un poste de Data Analyst :  
+> Offre : "Python, SQL, Tableau, analyse de données, reporting"  
+> CV : "Développement en **Python** et requêtes **SQL** pour l'**analyse de données**. Création de **dashboards Tableau** et **reporting** mensuel."
+
+### 🔹 Test de compatibilité ATS
+
+#### Méthode de vérification
+1. **Copiez** votre CV dans un fichier texte (.txt)  
+2. **Vérifiez** que toutes les informations sont lisibles  
+3. **Corrigez** les éléments déformés  
+4. **Testez** avec des outils en ligne (Jobscan, Resume Worded)
+
+#### Points de contrôle critiques
+- Nom, contact et titre clairement identifiables  
+- Dates d'expérience dans l'ordre chronologique  
+- Compétences techniques extraites correctement  
+- Aucun caractère spécial qui déforme le texte
+
+---
+
+## Vérifications essentielles
+
+### ✅ Contrôles techniques CV
+- Coordonnées professionnelles à jour  
+- Titre correspondant exactement au poste visé  
+- Expériences classées par ordre antichronologique  
+- Verbes d'action et résultats quantifiés  
+- Zéro faute d'orthographe ou de syntaxe  
+- Format PDF + nom de fichier professionnel  
+- Test de compatibilité ATS effectué  
+
+### ✅ Contrôles optimisation ATS
+- Mots-clés de l'offre intégrés naturellement  
+- Titres de sections standards et reconnaissables  
+- Structure linéaire sans mise en forme complexe  
+- Dates au format standard (MM/AAAA)  
+- Compétences techniques clairement identifiables  
+
+### ✅ Contrôles lettre de motivation
+- Nom entreprise et poste exacts (copier-coller de l'offre)  
+- Personnalisation évidente et pertinente  
+- 3 paragraphes équilibrés et structurés  
+- Exemples concrets avec résultats mesurables  
+- Vocabulaire technique du secteur utilisé  
+- Cohérence parfaite avec le CV
+
+---
+
+## Erreurs critiques et bonnes pratiques
+
+### ⚠️ Erreurs qui éliminent votre candidature
+
+#### Défauts techniques majeurs
+- CV générique sans personnalisation  
+- Informations obsolètes ou incohérences  
+- Format incompatible ATS (colonnes complexes, images)  
+- Fautes d'orthographe ou de grammaire  
+- Contact non professionnel ou obsolète  
+
+#### Erreurs de contenu stratégique
+- Absence des mots-clés de l'offre d'emploi  
+- Expériences non pertinentes mises en avant  
+- Manque de quantification des résultats  
+- Lettre de motivation répétant le CV  
+- Formulations trop génériques ou "bateau"
+
+### 🔍 Optimisation continue
+
+#### Suivi des performances
+| **Métrique** | **Objectif** | **Action si sous-performant** |
+|--------------|--------------|------------------------------|
+| **Taux de réponse** | >10% | Réviser CV et mots-clés |
+| **Entretiens obtenus** | >5% des candidatures | Améliorer lettre de motivation |
+| **Feedback recruteurs** | Positif | Intégrer suggestions reçues |
+
+---
+
+## Candidatures internationales : CV et Cover Letter en anglais
+
+### 🔹 Spécificités culturelles par zone géographique
+
+| **Zone** | **Format CV** | **Longueur** | **Photo** | **Informations personnelles** |
+|----------|---------------|--------------|-----------|-------------------------------|
+| **États-Unis** | Resume | 1 page | ❌ Interdite | Nom, contact, pas d'âge/statut |
+| **Royaume-Uni** | CV | 2 pages max | ❌ Déconseillée | Similaire US + références |
+| **Canada** | Resume/CV | 1-2 pages | ❌ Interdite | Format US + bilinguisme |
+| **Allemagne** | Lebenslauf | 2-3 pages | ✅ Recommandée | Complètes (âge, situation) |
+
+### 🔹 Structure du Resume anglophone (US/UK)
+
+#### En-tête international
+```
+FIRSTNAME LASTNAME
+Professional Title
+Email: firstname.lastname@email.com | Phone: +33 X XX XX XX XX
+LinkedIn: linkedin.com/in/firstnamelastname | Location: City, Country
+```
+
+#### Sections standards
+1. **Professional Summary** (2-3 lignes)  
+2. **Professional Experience** (antichronologique)  
+3. **Education** (post-experience si expérimenté)  
+4. **Skills** (Technical + Languages)  
+5. **Additional Information** (certifications, projets)  
+
+### 🔹 Cover Letter : structure anglophone
+
+#### Format britannique/américain
+**Paragraph 1:** Position applied for + brief introduction  
+**Paragraph 2:** Relevant experience and achievements  
+**Paragraph 3:** Why this company + added value  
+**Paragraph 4:** Call to action + availability  
+
+> 💡 Exemple d'ouverture :  
+> "I am writing to apply for the **Senior Marketing Manager** position at [Company]. With **5+ years of digital marketing experience** and a proven track record of **increasing ROI by 40%**, I am excited to contribute to [Company]'s growth in the European market."
+
+### 🔹 Vocabulaire et expressions clés
+
+#### Verbes d'action anglophones
+| **Français** | **Anglais (US)** | **Anglais (UK)** |
+|-------------|------------------|------------------|
+| Gérer | Managed, Led | Managed, Oversaw |
+| Développer | Developed, Built | Developed, Established |
+| Améliorer | Improved, Enhanced | Enhanced, Optimised |
+| Réaliser | Achieved, Accomplished | Achieved, Delivered |
+
+#### Formules de politesse
+- **US** : "Sincerely," / "Best regards,"  
+- **UK** : "Yours sincerely," (nom connu) / "Yours faithfully," (nom inconnu)  
+- **Informel** : "Kind regards," / "Best wishes,"
+
+---
+
+## Outils et ressources pratiques
+
+### 🔹 Tests ATS recommandés
+
+| **Outil** | **Fonction** | **Usage** |
+|-----------|-------------|-----------|
+| **Jobscan** | Analyse CV vs offre d'emploi | Optimisation mots-clés |
+| **Resume Worded** | Score ATS + suggestions | Amélioration globale |
+| **CVVisualiseur** | Test parsing ATS | Vérification technique |
+
+### 🔹 Plateformes de création
+
+#### Version ATS (prioritaire)
+- **Google Docs/Word** : templates simples  
+- **CVDesignR** mode "ATS-friendly"  
+- **Zety** : formats optimisés robots  
+
+#### Version design (complémentaire)
+- **Canva** : templates modernes  
+- **Adobe InDesign** : pour les créatifs  
+- **Figma** : pour les designers UX/UI  
+
+> 💡 À retenir :  
+> **Créez toujours la version ATS en premier**, puis adaptez visuellement. Les deux versions doivent contenir **strictement le même contenu**.
+
+### 📚 Sites de référence
+- [Pôle emploi](https://www.pole-emploi.fr) - Conseils CV et lettre  
+- [APEC](https://www.apec.fr) - Standards cadres et internationaux  
+- [Indeed Career Guide](https://indeed.com/career-advice) - Bonnes pratiques internationales  
+
+💡 **Bon à savoir :** **85% des grandes entreprises** utilisent des ATS. Optimisez systématiquement vos candidatures pour ces systèmes, même pour des postes créatifs.

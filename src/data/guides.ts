@@ -27,18 +27,19 @@ export const guideArticles: GuideArticle[] = [
 	// 	tags: ['mutuelle', 'santé', 'remboursement', 'couverture'],
 	// 	filePath: '/data/articles/choisir-mutuelle-sante.md'
 	// },
-	// {
-	// 	id: 'guide-premier-logement',
-	// 	title: 'Trouver et louer son premier logement',
-	// 	description: 'De la recherche à la signature du bail : toutes les étapes pour bien louer son premier appartement',
-	// 	slug: 'premier-logement-location',
-	// 	themeId: 'logement',
-	// 	author: 'Équipe Cap Adulte',
-	// 	publishedAt: '2025-09-21',
-	// 	readingTime: 12,
-	// 	tags: ['logement', 'location', 'bail', 'appartement', 'première fois'],
-	// 	filePath: '/data/articles/premier-logement-location.md'
-	// },
+	{
+		id: 'guide-constituer-dossier-logement',
+		title: 'Trouver et constituer son dossier pour louer un logement',
+		description: 'De la recherche à la signature du bail : étapes clés et conseils pratiques',
+		slug: 'premier-logement-location',
+		themeId: 'logement',
+		author: 'Équipe Cap Adulte',
+		publishedAt: '2025-10-08',
+		readingTime: 15,
+		tags: ['logement', 'location', 'bail', 'appartement', 'première fois', 'budget', 'dossier locataire', 'visite', 'négociation', 'aides au logement', 'APL', 'état des lieux', 'DPE'],
+		featured: true,
+		filePath: '/data/articles/premier-logement-location.md'
+	},
 	{
 		id: 'guide-comprendre-fiche-paie',
 		title: 'Comprendre sa fiche de paie',

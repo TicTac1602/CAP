@@ -1,5 +1,3 @@
-# Comprendre les impôts en France : guide complet
-
 La fiscalité française peut sembler complexe, mais comprendre **les différents types d'impôts**, leurs **objectifs** et leur **répartition** vous aide à mieux appréhender votre contribution citoyenne et à optimiser votre situation fiscale.  
 Ce guide détaille le système fiscal français de manière claire et accessible.
 

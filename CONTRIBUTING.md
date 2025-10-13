@@ -1,10 +1,10 @@
-# Guide de contribution - Cap Adulte 🤝
+# Guide de contribution - AdulPath
 
-Merci de votre intérêt pour contribuer à Cap Adulte ! Ce guide vous explique comment participer efficacement au développement de la plateforme.
+Merci de votre intérêt pour contribuer à AdulPath ! Ce guide vous explique comment participer efficacement au développement de la plateforme.
 
 ## 🎯 Vision du projet
 
-Cap Adulte vise à simplifier la transition vers l'autonomie pour les jeunes adultes en France. Toute contribution doit s'aligner sur cette mission :
+AdulPath vise à simplifier la transition vers l'autonomie pour les jeunes adultes en France. Toute contribution doit s'aligner sur cette mission :
 
 - **🎓 Pédagogie** : Rendre l'information accessible et compréhensible
 - **🛡️ Fiabilité** : Garantir des informations exactes et à jour

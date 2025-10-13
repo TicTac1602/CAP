@@ -400,7 +400,7 @@ export default function CalendrierPage() {
 								: 'text-gray-600 hover:text-gray-900'
 								}`}
 						>
-							📋 Liste
+							Liste
 						</button>
 						<button
 							onClick={() => setViewMode('calendar')}
@@ -409,7 +409,7 @@ export default function CalendrierPage() {
 								: 'text-gray-600 hover:text-gray-900'
 								}`}
 						>
-							📅 Calendrier
+							Calendrier
 						</button>
 					</div>
 				</div>

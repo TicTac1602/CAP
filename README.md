@@ -1,6 +1,6 @@
-# Cap Adulte 📋
+# AdulPath
 
-Une plateforme web moderne qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante. Cap Adulte accompagne les 18-30 ans dans leur transition vers l'autonomie grâce à des outils interactifs, des guides pratiques et des simulateurs personnalisés.
+Une plateforme web moderne qui centralise toutes les informations et démarches pratiques qu'un jeune adulte doit connaître pour bien démarrer sa vie indépendante. AdulPath accompagne les 18-30 ans dans leur transition vers l'autonomie grâce à des outils interactifs, des guides pratiques et des simulateurs personnalisés.
 
 ## 🎯 Objectif
 
@@ -13,16 +13,16 @@ Simplifier la vie des jeunes adultes en proposant :
 
 ## ✨ Fonctionnalités principales
 
-### 🏠 **9 Thèmes essentiels**
-- **👨‍💼 Administration** : Impôts, carte d'identité, sécurité sociale, aides publiques
-- **🏠 Logement** : Location, achat, assurance habitation, aides au logement
-- **🏥 Santé** : Mutuelle, médecin traitant, remboursements, urgences
-- **💳 Banque & Budget** : Compte bancaire, budget, épargne, crédit
-- **🚗 Assurances** : Auto, habitation, responsabilité civile, garanties
-- **💼 Emploi** : CV, entretiens, contrats de travail, droits du travail
-- **📦 Déménagement** : Préparation, organisation, astuces
-- **✈️ Voyages** : Passeport, visas, assurances, conseils pratiques
-- **🚀 Entreprendre** : Statuts juridiques, démarches, fiscalité, aides
+### **9 Thèmes essentiels**
+- **Administration** : Impôts, carte d'identité, sécurité sociale, aides publiques
+- **Logement** : Location, achat, assurance habitation, aides au logement
+- **Santé** : Mutuelle, médecin traitant, remboursements, urgences
+- **Banque & Budget** : Compte bancaire, budget, épargne, crédit
+- **Assurances** : Auto, habitation, responsabilité civile, garanties
+- **Emploi** : CV, entretiens, contrats de travail, droits du travail
+- **Déménagement** : Préparation, organisation, astuces
+- **Voyages** : Passeport, visas, assurances, conseils pratiques
+- **Entreprendre** : Statuts juridiques, démarches, fiscalité, aides
 
 ### 📋 **Checklists intelligentes**
 - **Progression sauvegardée** automatiquement en local
@@ -37,11 +37,11 @@ Simplifier la vie des jeunes adultes en proposant :
 - **Design cohérent** avec le reste de la plateforme
 - **Liens externes** clairement identifiés
 
-### 🧮 **Simulateurs financiers**
-- **💰 Simulateur de budget** : Règle 50-30-20 avec conseils personnalisés
-- **📊 Analyse des dépenses** avec recommandations
-- **⚠️ Alertes budgétaires** pour une meilleure gestion
-- **📈 Prochains simulateurs** : Impôts, capacité d'emprunt, épargne, retraite
+### **Simulateurs financiers**
+- **Simulateur de budget** : Règle 50-30-20 avec conseils personnalisés
+- **Analyse des dépenses** avec recommandations
+- **Alertes budgétaires** pour une meilleure gestion
+- **Prochains simulateurs** : Impôts, capacité d'emprunt, épargne, retraite
 
 ### 📅 **Calendrier personnalisé**
 - **Échéances importantes** regroupées par mois
@@ -54,29 +54,29 @@ Simplifier la vie des jeunes adultes en proposant :
 ## 🛠 Stack technologique
 
 ### **Frontend moderne**
-- **⚛️ Next.js 15** : Framework React avec App Router et SSG
-- **🔷 TypeScript** : Typage strict pour un code robuste
-- **🎨 Tailwind CSS 4** : Styling utilitaire et responsive design
-- **📝 React Markdown** : Rendu enrichi des guides avec `remark-gfm`
+- **Next.js 15** : Framework React avec App Router et SSG
+- **TypeScript** : Typage strict pour un code robuste
+- **Tailwind CSS 4** : Styling utilitaire et responsive design
+- **React Markdown** : Rendu enrichi des guides avec `remark-gfm`
 
 ### **Développement et qualité**
-- **🔍 ESLint 9** : Linting avec config Next.js
-- **📊 Vercel Analytics** : Mesure de performance et usage
-- **⚡ PostCSS** : Optimisation CSS avancée
-- **🏗️ TypeScript strict mode** : Configuration type-safe
+- **ESLint 9** : Linting avec config Next.js
+- **Vercel Analytics** : Mesure de performance et usage
+- **PostCSS** : Optimisation CSS avancée
+- **TypeScript strict mode** : Configuration type-safe
 
 ### **Architecture et données**
-- **📂 App Router** : Routing moderne de Next.js 15
-- **💾 LocalStorage** : Sauvegarde côté client sans backend
-- **📊 Données statiques** : JSON/TypeScript pour contenu structuré
-- **🔗 Génération statique** : SSG pour des performances optimales
+- **App Router** : Routing moderne de Next.js 15
+- **LocalStorage** : Sauvegarde côté client sans backend
+- **Données statiques** : JSON/TypeScript pour contenu structuré
+- **Génération statique** : SSG pour des performances optimales
 
 ### **Déploiement et performance**
-- **☁️ Vercel** : Déploiement automatique avec preview
-- **🚀 Edge Functions** : Performance globale optimisée
-- **♿ Accessibilité** : Standards WCAG respectés
+- **Vercel** : Déploiement automatique avec preview
+- **Edge Functions** : Performance globale optimisée
+- **Accessibilité** : Standards WCAG respectés
 
-## 🚀 Installation et développement
+## Installation et développement
 
 ```bash
 # Cloner le projet
@@ -98,9 +98,9 @@ npm start
 
 Le site sera accessible sur `http://localhost:3000`
 
-## � Roadmap et évolutions
+## Roadmap et évolutions
 
-### **🔄 Version actuelle (1.0)**
+### **Version actuelle (1.0)**
 - ✅ 9 thèmes complets avec checklists interactives
 - ✅ 8 guides détaillés en Markdown enrichi
 - ✅ Simulateur de budget avec règle 50-30-20
@@ -108,30 +108,30 @@ Le site sera accessible sur `http://localhost:3000`
 - ✅ Interface responsive et accessible
 - ✅ Sauvegarde locale des progressions
 
-### **📈 Version 2.0 (Q1 2026)**
-- [ ] **🧮 Nouveaux simulateurs** : Impôts, capacité d'emprunt, épargne
-- [ ] **📅 Calendrier avancé** : Rappels personnalisés et notifications
-- [ ] **🔍 Recherche globale** : Moteur de recherche dans tout le contenu
-- [ ] **📸 Guides visuels** : Screenshots et vidéos tutorielles
-- [ ] **💬 Système de commentaires** : Intégration Giscus/Disqus
-- [ ] **📊 Analytics avancées** : Tableaux de bord utilisateur
+### **Version 2.0 (Q1 2026)**
+- [ ] **Nouveaux simulateurs** : Impôts, capacité d'emprunt, épargne
+- [ ] **Calendrier avancé** : Rappels personnalisés et notifications
+- [ ] **Recherche globale** : Moteur de recherche dans tout le contenu
+- [ ] **Guides visuels** : Screenshots et vidéos tutorielles
+- [ ] **Système de commentaires** : Intégration Giscus/Disqus
+- [ ] **Analytics avancées** : Tableaux de bord utilisateur
 
-### **🌟 Version 3.0 (Q3 2026)**
-- [ ] **🔔 Notifications intelligentes** : Push notifications web
-- [ ] **🌙 Mode sombre** : Thème dark/light avec préférence système
-- [ ] **📄 Génération PDF** : Export de checklists et modèles de lettres
-- [ ] **🔗 API externe** : Intégration données temps réel (barèmes, taux)
-- [ ] **👥 Profils utilisateur** : Comptes optionnels pour sync multi-device
-- [ ] **🎯 Personnalisation** : Recommandations basées sur le profil
+### **Version 3.0 (Q3 2026)**
+- [ ] **Notifications intelligentes** : Push notifications web
+- [ ] **Mode sombre** : Thème dark/light avec préférence système
+- [ ] **Génération PDF** : Export de checklists et modèles de lettres
+- [ ] **API externe** : Intégration données temps réel (barèmes, taux)
+- [ ] **Profils utilisateur** : Comptes optionnels pour sync multi-device
+- [ ] **Personnalisation** : Recommandations basées sur le profil
 
-### **💡 Idées à long terme**
-- [ ] **🤖 Assistant IA** : Chatbot pour questions personnalisées
-- [ ] **📲 App mobile native** : iOS/Android avec notifications push
-- [ ] **🏛️ Partenariats officiels** : Intégrations directes administrations
-- [ ] **🌍 Localisation** : Support multi-régional (DOM-TOM)
-- [ ] **📊 Comparateurs** : Banques, assurances, mutuelles
+### **Idées à long terme**
+- [ ] **Assistant IA** : Chatbot pour questions personnalisées
+- [ ] **App mobile native** : iOS/Android avec notifications push
+- [ ] **Partenariats officiels** : Intégrations directes administrations
+- [ ] **Localisation** : Support multi-régional (DOM-TOM)
+- [ ] **Comparateurs** : Banques, assurances, mutuelles
 
-## 🤝 Contribution
+## Contribution
 
 Les contributions sont les bienvenues ! Merci de :
 1. Créer une issue pour discuter des changements

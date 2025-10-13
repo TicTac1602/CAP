@@ -24,7 +24,7 @@ export default function Header() {
 					<div className="flex items-center">
 						<Link href="/" className="flex items-center">
 							<span className="text-2xl font-bold text-blue-600">
-								📋 Cap Adulte
+								AdulPath
 							</span>
 						</Link>
 					</div>

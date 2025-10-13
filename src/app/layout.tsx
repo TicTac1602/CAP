@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: "Cap Adulte - Guide pratique pour jeunes adultes",
-		template: "%s | Cap Adulte"
+		default: "AdulPath - Guide pratique pour jeunes adultes",
+		template: "%s | AdulPath"
 	},
 	description: "Votre guide pratique pour bien démarrer votre vie d'adulte indépendant. Checklists interactives, guides détaillés et simulateurs pour réussir vos démarches administratives en France.",
 	keywords: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 		"France",
 		"administration"
 	],
-	authors: [{ name: "Équipe Cap Adulte" }],
-	creator: "Cap Adulte",
-	publisher: "Cap Adulte",
+	authors: [{ name: "Équipe AdulPath" }],
+	creator: "AdulPath",
+	publisher: "AdulPath",
 	robots: {
 		index: true,
 		follow: true,
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 	other: {
 		"apple-mobile-web-app-capable": "yes",
 		"apple-mobile-web-app-status-bar-style": "default",
-		"apple-mobile-web-app-title": "Cap Adulte",
+		"apple-mobile-web-app-title": "AdulPath",
 		"mobile-web-app-capable": "yes",
 		"msapplication-TileColor": "#2563eb",
 		"msapplication-config": "/browserconfig.xml",

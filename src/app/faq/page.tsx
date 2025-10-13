@@ -125,7 +125,7 @@ export default function FAQPage() {
 				{/* Suggestions d'amélioration */}
 				<div className="mt-8 bg-gray-100 rounded-lg p-6">
 					<h3 className="text-lg font-semibold text-gray-900 mb-2">
-						💡 Aidez-nous à améliorer cette FAQ
+						Aidez-nous à améliorer cette FAQ
 					</h3>
 					<p className="text-gray-600 text-sm">
 						Cette FAQ évolue constamment. Si vous avez des suggestions de questions

@@ -12,7 +12,7 @@ export default function Footer() {
 						</h3>
 						<div className="mt-4 space-y-4">
 							<p className="text-sm text-gray-600">
-								Cap Adulte vous accompagne dans vos démarches administratives
+								AdulPath vous accompagne dans vos démarches administratives
 								et vous aide à bien démarrer votre vie indépendante.
 							</p>
 						</div>
@@ -78,7 +78,7 @@ export default function Footer() {
 
 				<div className="mt-8 border-t border-gray-200 pt-8">
 					<p className="text-sm text-gray-400 text-center">
-						© 2025 Cap Adulte. Tous droits réservés.
+						© 2025 AdulPath. Tous droits réservés.
 					</p>
 					<p className="text-sm text-gray-400 text-center">
 						Made with ❤️ by <span className="font-semibold"><a href="https://github.com/TicTac1602" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer">Emil</a></span>.

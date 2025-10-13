@@ -62,7 +62,7 @@ export default function GuidesPage() {
 						{/* Barre de recherche */}
 						<div>
 							<label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
-								🔍 Rechercher un guide
+								Rechercher un guide
 							</label>
 							<input
 								id="search"
@@ -77,7 +77,7 @@ export default function GuidesPage() {
 						{/* Filtre par thème */}
 						<div>
 							<label htmlFor="theme" className="block text-sm font-medium text-gray-700 mb-2">
-								🏷️ Catégorie
+								Catégorie
 							</label>
 							<select
 								id="theme"
@@ -183,7 +183,7 @@ export default function GuidesPage() {
 				<div className="mt-12 text-center">
 					<div className="bg-blue-500 rounded-lg p-6 text-white">
 						<h3 className="text-xl font-semibold mb-2">
-							💡 Vous ne trouvez pas ce que vous cherchez ?
+							Vous ne trouvez pas ce que vous cherchez ?
 						</h3>
 						<p className="mb-4">
 							Proposez-nous de nouveaux guides ou sujets à traiter !
@@ -192,7 +192,7 @@ export default function GuidesPage() {
 							href="/contact"
 							className="inline-flex items-center px-6 py-3 bg-white text-blue-500 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
 						>
-							📝 Faire une suggestion
+							Faire une suggestion
 						</Link>
 					</div>
 				</div>

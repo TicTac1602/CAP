@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 	}
 
 	return {
-		title: `Cap Adulte`,
+		title: `AdulPath`,
 		description: guide.description,
 	};
 }

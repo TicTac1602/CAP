@@ -48,6 +48,9 @@ export default function Footer() {
 							<Link href="/contact" className="text-sm text-gray-600 hover:text-blue-600 block">
 								Contact
 							</Link>
+							<Link href="/mentions-legales" className="text-sm text-gray-600 hover:text-blue-600 block">
+								Mentions légales
+							</Link>
 							<Link
 								href="https://www.service-public.fr"
 								target="_blank"

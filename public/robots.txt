@@ -1,12 +1,13 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://cap-adulte.vercel.app/sitemap.xml
+# Sitemaps
+Sitemap: https://adulpath.fr/sitemap.xml
 
-# Disallow admin or sensitive paths (if any)
-# Disallow: /admin/
-# Disallow: /api/
+# Disallow admin or sensitive paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
 # Allow specific crawling of important pages
 Allow: /theme/
@@ -14,6 +15,12 @@ Allow: /guide/
 Allow: /simulateurs/
 Allow: /faq/
 Allow: /calendrier/
+Allow: /contact/
+
+# Priority pages for better indexing
+# Main pages: /, /theme, /guide, /simulateurs
+# Theme pages: /theme/*
+# Guide pages: /guide/*
 
 # Crawl delay (optional, in seconds)
 Crawl-delay: 1

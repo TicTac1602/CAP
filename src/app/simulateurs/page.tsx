@@ -1,6 +1,23 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: "Simulateurs financiers gratuits - Budget, impôts, épargne",
+	description: "Outils de simulation gratuits pour gérer vos finances : calculateur de budget personnel, simulateur d'impôts, estimation capacité d'emprunt. Conseils personnalisés inclus.",
+	keywords: [
+		"simulateur budget gratuit", "calculateur budget personnel", "simulateur impôts",
+		"règle 50-30-20", "gestion budget étudiant", "calculateur épargne",
+		"simulation capacité emprunt", "outil financier gratuit",
+		"budget mensuel", "optimisation budget", "conseil financier"
+	],
+	openGraph: {
+		title: "Simulateurs financiers gratuits | AdulPath",
+		description: "Outils gratuits pour optimiser votre budget et vos finances personnelles. Calculs instantanés avec conseils personnalisés.",
+		url: "https://adulpath.fr/simulateurs",
+	}
+};
 
 // Liste des simulateurs disponibles
 const simulateurs = [

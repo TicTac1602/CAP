@@ -3,6 +3,18 @@ import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
 import { themes } from '@/data/themes';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: "Tous les thèmes essentiels - Guides pour devenir autonome",
+	description: "Découvrez les 9 thèmes essentiels pour votre autonomie : administration, logement, santé, budget, emploi, assurances. Checklists interactives et guides détaillés pour chaque domaine.",
+	keywords: ["thèmes autonomie", "guide administration", "guide logement", "guide santé", "guide budget", "guide emploi", "checklists jeunes adultes"],
+	openGraph: {
+		title: "Thèmes essentiels pour devenir autonome | AdulPath",
+		description: "9 thèmes complets avec checklists et guides : administration, logement, santé, budget, emploi, assurances, déménagement, voyages, entrepreneuriat.",
+		url: "https://adulpath.fr/theme",
+	}
+};
 
 export default function ThemesPage() {
 	return (

@@ -47,11 +47,11 @@ export default function Home() {
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
-								Les thèmes essentiels
+								9 thèmes essentiels pour votre autonomie
 							</h2>
 							<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-								Explorez les domaines clés de la vie adulte avec nos guides
-								complets et checklists interactives.
+								De l&apos;administration aux finances personnelles : tous les domaines 
+								indispensables pour réussir votre vie d&apos;adulte indépendant.
 							</p>
 						</div>
 
@@ -80,10 +80,10 @@ export default function Home() {
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
-								Vos outils pour réussir
+								Outils gratuits pour votre réussite
 							</h2>
 							<p className="text-lg text-gray-600">
-								Des fonctionnalités pensées pour vous simplifier la vie
+								Checklists, simulateurs et guides pour une transition réussie vers l&apos;autonomie
 							</p>
 						</div>
 

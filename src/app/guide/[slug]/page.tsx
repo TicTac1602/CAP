@@ -25,13 +25,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 	if (!guide) {
 		return {
-			title: "Guide non trouvé",
+			title: "Guide non trouvé | AdulPath",
+			description: "Le guide que vous recherchez n'existe pas ou a été déplacé.",
 		};
 	}
 
 	return {
-		title: `AdulPath`,
+		title: `${guide.title} - Guide complet pour jeunes adultes | AdulPath`,
 		description: guide.description,
+		keywords: guide.tags,
+		authors: [{ name: guide.author }],
+		openGraph: {
+			type: "article",
+			title: guide.title || '',
+			description: guide.description,
+			url: `https://adulpath.fr/guide/${guide.slug}`,
+			publishedTime: guide.publishedAt || '',
+			modifiedTime: guide.updatedAt || guide.publishedAt || '',
+			authors: [guide.author || ''],
+			tags: guide.tags,
+		},
+		alternates: {
+			canonical: `https://adulpath.fr/guide/${guide.slug}`
+		},
+		other: {
+			"article:published_time": guide.publishedAt || '',
+			"article:modified_time": guide.updatedAt || guide.publishedAt || '',
+			"article:author": guide.author || '',
+			"article:section": guide.themeId || '',
+		}
 	};
 }
 

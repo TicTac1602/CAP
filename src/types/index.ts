@@ -58,6 +58,18 @@ export interface Reminder {
 	recurring?: boolean;
 }
 
+export interface CalendarEvent {
+	id: string;
+	title: string;
+	description: string;
+	date: Date;
+	type: 'administrative' | 'fiscal' | 'health' | 'housing' | 'education' | 'other';
+	recurring?: 'yearly' | 'monthly' | 'none';
+	icon?: string;
+	color?: string;
+	url?: string;
+}
+
 export interface Calculator {
 	type: 'tax' | 'budget' | 'rent';
 	inputs: Record<string, number>;

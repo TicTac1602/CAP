@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { themes } from '@/data/themes';
 import { getChecklistState } from '@/components/Checklist';
+import { getUpcomingEvents } from '@/data/calendar-events';
 
 interface DeadlineItem {
 	id: string;
@@ -17,6 +18,8 @@ interface DeadlineItem {
 	themeIcon: string;
 	themeColor: string;
 	completed: boolean;
+	isCustomEvent?: boolean; // Pour distinguer les événements personnalisés
+	url?: string; // URL optionnelle pour les événements personnalisés
 }
 
 type ViewMode = 'list' | 'calendar';
@@ -276,13 +279,33 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 							)}
 						</div>
 
-						<Link
-							href={`/theme/${selectedDeadline.themeId}`}
-							className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
-							onClick={() => setSelectedDeadline(null)}
-						>
-							Voir le thème complet →
-						</Link>
+						{selectedDeadline.isCustomEvent ? (
+							// Pour les événements personnalisés, afficher le lien externe ou un badge
+							selectedDeadline.url ? (
+								<a
+									href={selectedDeadline.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
+									onClick={() => setSelectedDeadline(null)}
+								>
+									En savoir plus →
+								</a>
+							) : (
+								<div className="w-full text-center px-4 py-3 sm:py-2 bg-gray-100 text-gray-600 rounded-lg text-sm sm:text-base">
+									Événement administratif
+								</div>
+							)
+						) : (
+							// Pour les tâches des checklists, afficher le lien vers le thème
+							<Link
+								href={`/theme/${selectedDeadline.themeId}`}
+								className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
+								onClick={() => setSelectedDeadline(null)}
+							>
+								Voir le thème complet →
+							</Link>
+						)}
 					</div>
 				</div>
 			)}
@@ -296,7 +319,7 @@ export default function CalendrierPage() {
 	const [isHydrated, setIsHydrated] = useState(false);
 
 	useEffect(() => {
-		// Récupérer tous les items avec des deadlines
+		// Récupérer tous les items avec des deadlines des checklists
 		const allDeadlines: DeadlineItem[] = [];
 
 		themes.forEach(theme => {
@@ -314,10 +337,29 @@ export default function CalendrierPage() {
 							themeTitle: theme.title,
 							themeIcon: theme.icon,
 							themeColor: theme.color,
-							completed: checklistState[item.id] ?? false
+							completed: checklistState[item.id] ?? false,
+							isCustomEvent: false
 						});
 					}
 				});
+			});
+		});
+
+		// Ajouter les événements personnalisés du calendrier
+		const customEvents = getUpcomingEvents();
+		customEvents.forEach(event => {
+			allDeadlines.push({
+				id: event.id,
+				title: event.title,
+				description: event.description,
+				deadline: event.date,
+				themeId: event.type, // Utilise le type comme themeId
+				themeTitle: event.type.charAt(0).toUpperCase() + event.type.slice(1),
+				themeIcon: event.icon || '📅',
+				themeColor: event.color || 'bg-blue-500',
+				completed: false, // Les événements personnalisés ne sont pas "complétables"
+				isCustomEvent: true,
+				url: event.url
 			});
 		});
 
@@ -444,7 +486,10 @@ export default function CalendrierPage() {
 													<h3 className={`font-semibold text-sm sm:text-base ${deadline.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
 														{deadline.title}
 													</h3>
-													<p className="text-xs sm:text-sm text-gray-600 truncate">{deadline.themeTitle}</p>
+													<p className="text-xs sm:text-sm text-gray-600 truncate">
+														{deadline.themeTitle}
+														{deadline.isCustomEvent && <span className="ml-2 text-purple-600">• Événement</span>}
+													</p>
 												</div>
 											</div>
 											<p className={`text-sm text-gray-600 mb-3 ${deadline.completed ? 'line-through' : ''}`}>
@@ -459,12 +504,29 @@ export default function CalendrierPage() {
 												</span>
 											</div>
 										</div>
-										<Link
-											href={`/theme/${deadline.themeId}`}
-											className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors text-xs sm:text-sm font-medium text-center whitespace-nowrap"
-										>
-											Voir le thème →
-										</Link>
+										{deadline.isCustomEvent ? (
+											deadline.url ? (
+												<a
+													href={deadline.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100 transition-colors text-xs sm:text-sm font-medium text-center whitespace-nowrap"
+												>
+													En savoir plus →
+												</a>
+											) : (
+												<div className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-gray-50 text-gray-500 rounded-lg text-xs sm:text-sm font-medium text-center whitespace-nowrap">
+													Événement
+												</div>
+											)
+										) : (
+											<Link
+												href={`/theme/${deadline.themeId}`}
+												className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors text-xs sm:text-sm font-medium text-center whitespace-nowrap"
+											>
+												Voir le thème →
+											</Link>
+										)}
 									</div>
 								</div>
 							))

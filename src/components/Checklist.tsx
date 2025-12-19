@@ -28,6 +28,92 @@ export function getChecklistState(themeId: string): ChecklistState {
 }
 
 /**
+ * Récupère les IDs des sections optionnelles démarrées depuis localStorage
+ * @param themeId - L'identifiant du thème
+ * @returns Un ensemble des IDs des sections optionnelles démarrées
+ */
+export function getStartedOptionalSections(themeId: string): Set<string> {
+	if (typeof window === 'undefined') {
+		return new Set();
+	}
+
+	try {
+		const savedState = localStorage.getItem(`optional-sections-${themeId}`);
+		if (savedState) {
+			return new Set(JSON.parse(savedState));
+		}
+	} catch (error) {
+		console.error('Erreur lors du chargement des sections optionnelles:', error);
+	}
+
+	return new Set();
+}
+
+/**
+ * Sauvegarde les IDs des sections optionnelles démarrées dans localStorage
+ * @param themeId - L'identifiant du thème
+ * @param sectionIds - Les IDs des sections démarrées
+ */
+export function saveStartedOptionalSections(themeId: string, sectionIds: Set<string>): void {
+	if (typeof window === 'undefined') {
+		return;
+	}
+
+	try {
+		localStorage.setItem(`optional-sections-${themeId}`, JSON.stringify(Array.from(sectionIds)));
+	} catch (error) {
+		console.error('Erreur lors de la sauvegarde des sections optionnelles:', error);
+	}
+}
+
+/**
+ * Démarre une section optionnelle (l'ajoute dans le local storage)
+ * @param themeId - L'identifiant du thème
+ * @param sectionId - L'identifiant de la section à démarrer
+ */
+export function startOptionalSection(themeId: string, sectionId: string): void {
+	const startedSections = getStartedOptionalSections(themeId);
+	startedSections.add(sectionId);
+	saveStartedOptionalSections(themeId, startedSections);
+}
+
+/**
+ * Arrête une section optionnelle (la retire du local storage et supprime ses items du checklistState)
+ * @param themeId - L'identifiant du thème
+ * @param sectionId - L'identifiant de la section à arrêter
+ * @param section - La section pour récupérer les IDs des items à supprimer
+ */
+export function stopOptionalSection(themeId: string, sectionId: string, section: ChecklistSection): void {
+	// Retirer la section de la liste des sections démarrées
+	const startedSections = getStartedOptionalSections(themeId);
+	startedSections.delete(sectionId);
+	saveStartedOptionalSections(themeId, startedSections);
+
+	// Supprimer tous les items de cette section du checklistState
+	const checklistState = getChecklistState(themeId);
+	section.items.forEach(item => {
+		delete checklistState[item.id];
+	});
+	localStorage.setItem(`checklist-${themeId}`, JSON.stringify(checklistState));
+}
+
+export function countActiveChecklists(checklistSections: ChecklistSection[], startedOptionalSections: Set<string>): number {
+	let count = 0;
+
+	checklistSections.forEach(section => {
+		if (section.optional) {
+			if (startedOptionalSections.has(section.id)) {
+				count += 1;
+			}
+		} else {
+			count += 1;
+		}
+	});
+
+	return count;
+}
+
+/**
  * Fusionne les données des thèmes avec l'état sauvegardé
  * @param checklistSections - Les sections de checklist du thème
  * @param checklistState - L'état sauvegardé
@@ -46,10 +132,19 @@ export function mergeChecklistData(checklistSections: ChecklistSection[], checkl
 /**
  * Calcule les statistiques d'une checklist avec sections
  * @param checklistSections - Les sections de checklist
+ * @param startedOptionalSections - Ensemble des IDs des sections optionnelles démarrées (optionnel)
  * @returns Objet avec les statistiques calculées
  */
-export function calculateChecklistStats(checklistSections: ChecklistSection[]) {
-	const allItems = checklistSections.flatMap(section => section.items);
+export function calculateChecklistStats(checklistSections: ChecklistSection[], startedOptionalSections?: Set<string>) {
+	// Filtrer les sections : exclure les sections optionnelles non démarrées
+	const sectionsToCount = checklistSections.filter(section => {
+		if (section.optional && startedOptionalSections) {
+			return startedOptionalSections.has(section.id);
+		}
+		return !section.optional; // Inclure toutes les sections non optionnelles
+	});
+
+	const allItems = sectionsToCount.flatMap(section => section.items);
 	const totalTasks = allItems.length;
 	const completedTasks = allItems.filter(item => item.completed).length;
 	const highPriorityTasks = allItems.filter(item => item.priority === 'high').length;
@@ -74,8 +169,9 @@ export function calculateGlobalStats(themes: ThemeSection[]) {
 
 	themes.forEach(theme => {
 		const checklistState = getChecklistState(theme.id);
+		const startedOptionalSections = getStartedOptionalSections(theme.id);
 		const mergedSections = mergeChecklistData(theme.checklistSections, checklistState);
-		const stats = calculateChecklistStats(mergedSections);
+		const stats = calculateChecklistStats(mergedSections, startedOptionalSections);
 		totalTasks += stats.totalTasks;
 		completedTasks += stats.completedTasks;
 	});
@@ -102,7 +198,7 @@ export function calculateGlobalStatsDefault(themes: ThemeSection[]) {
 	themes.forEach(theme => {
 		// Utilise un état vide (pas de localStorage)
 		const mergedSections = mergeChecklistData(theme.checklistSections, {});
-		const stats = calculateChecklistStats(mergedSections);
+		const stats = calculateChecklistStats(mergedSections, new Set());
 		totalTasks += stats.totalTasks;
 		completedTasks += stats.completedTasks;
 	});
@@ -128,12 +224,16 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 	// État pour l'expansion/collapse des sections (fermées par défaut)
 	const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
+	// État pour les sections optionnelles démarrées
+	const [startedOptionalSections, setStartedOptionalSections] = useState<Set<string>>(() => new Set());
+
 	// Sections avec état mis à jour
 	const mergedSections = mergeChecklistData(checklistSections, checklistState);
 
 	// Mettre à jour si le themeId change
 	useEffect(() => {
 		setChecklistState(getChecklistState(themeId));
+		setStartedOptionalSections(getStartedOptionalSections(themeId));
 		setExpandedSections(new Set());
 	}, [themeId]);
 
@@ -155,7 +255,11 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 		}));
 	};
 
-	const toggleSection = (sectionId: string) => {
+	const toggleSection = (sectionId: string, isOptional: boolean, isStarted: boolean) => {
+		if (isOptional && !isStarted) {
+			return;
+		}
+
 		setExpandedSections(prev => {
 			const newSet = new Set(prev);
 			if (newSet.has(sectionId)) {
@@ -165,6 +269,37 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 			}
 			return newSet;
 		});
+	};
+
+	// Démarrer une section optionnelle
+	const handleStartOptionalSection = (sectionId: string) => {
+		startOptionalSection(themeId, sectionId);
+		setStartedOptionalSections(prev => {
+			const newSet = new Set(prev);
+			newSet.add(sectionId);
+			return newSet;
+		});
+	};
+
+	// Arrêter une section optionnelle
+	const handleStopOptionalSection = (sectionId: string) => {
+		const section = checklistSections.find(s => s.id === sectionId);
+		if (section) {
+			stopOptionalSection(themeId, sectionId, section);
+			setStartedOptionalSections(prev => {
+				const newSet = new Set(prev);
+				newSet.delete(sectionId);
+				return newSet;
+			});
+			// Fermer la section après l'avoir arrêtée
+			setExpandedSections(prev => {
+				const newSet = new Set(prev);
+				newSet.delete(sectionId);
+				return newSet;
+			});
+			// Recharger le checklistState pour retirer les items
+			setChecklistState(getChecklistState(themeId));
+		}
 	};
 
 	const isSectionExpanded = (sectionId: string) => {
@@ -227,45 +362,50 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 		}
 	};
 
-	const allItems = mergedSections.flatMap(section => section.items);
-	const completedCount = allItems.filter(item => item.completed).length;
-	const totalCount = allItems.length;
-	const progressPercentage = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+	// Calculer les stats en excluant les sections optionnelles non démarrées
+	const stats = calculateChecklistStats(mergedSections, startedOptionalSections);
+	const completedCount = stats.completedTasks;
+	const totalCount = stats.totalTasks;
+	const progressPercentage = stats.progressPercentage;
 
 	return (
 		<div className="bg-white rounded-lg shadow-md p-6">
-			<div className="mb-6">
-				<div className="mb-2">
-					<h2 className="text-xl font-bold text-gray-900">Checklist</h2>
-					<div className="flex items-center justify-between">
-						<span className="text-sm text-gray-600">
-							{completedCount}/{totalCount} terminées
-						</span>
-						<button
-							onClick={hasExpandedSections ? collapseAllSections : expandAllSections}
-							className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-md transition-colors duration-200"
-						>
-							{hasExpandedSections ? '📤 Tout replier' : '📥 Tout déplier'}
-						</button>
+			{/* Show if totalCount > 0 */}
+			{totalCount > 0 && (
+				<div className="mb-6">
+					<div className="mb-2">
+						<h2 className="text-xl font-bold text-gray-900">Checklist</h2>
+						<div className="flex items-center justify-between">
+							<span className="text-sm text-gray-600">
+								{completedCount}/{totalCount} terminées
+							</span>
+							<button
+								onClick={hasExpandedSections ? collapseAllSections : expandAllSections}
+								className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-md transition-colors duration-200"
+							>
+								{hasExpandedSections ? '📤 Tout replier' : '📥 Tout déplier'}
+							</button>
+						</div>
 					</div>
-				</div>
 
-				{/* Barre de progression */}
-				<div className="w-full bg-gray-200 rounded-full h-3">
-					<div
-						className="bg-blue-600 h-3 rounded-full transition-all duration-300"
-						style={{ width: `${progressPercentage}%` }}
-					></div>
-				</div>
-
-				{progressPercentage === 100 && (
-					<div className="mt-3 p-3 bg-green-200 border border-green-100 rounded-md">
-						<p className="text-sm font-medium">
-							🎉 Félicitations ! Vous avez terminé toutes les tâches de cette section.
-						</p>
+					{/* Barre de progression */}
+					<div className="w-full bg-gray-200 rounded-full h-3">
+						<div
+							className="bg-blue-700 h-3 rounded-full transition-all duration-300"
+							style={{ width: `${progressPercentage}%` }}
+						></div>
 					</div>
-				)}
-			</div>
+
+					{progressPercentage === 100 && (
+						<div className="mt-3 p-3 bg-green-200 border border-green-100 rounded-md">
+							<p className="text-sm font-medium">
+								🎉 Félicitations ! Vous avez terminé toutes les tâches de cette section.
+							</p>
+						</div>
+					)}
+				</div>
+			)}
+
 
 			{/* Rendu par sections */}
 			<div className="space-y-8">
@@ -273,13 +413,15 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 					const isExpanded = isSectionExpanded(section.id);
 					const completedItems = section.items.filter(item => item.completed).length;
 					const totalItems = section.items.length;
+					const isOptional = section.optional || false;
+					const isStarted = startedOptionalSections.has(section.id);
 
 					return (
 						<div key={section.id} className="space-y-4">
 							{/* En-tête de section clickable */}
-							<button
-								onClick={() => toggleSection(section.id)}
-								className="w-full border-l-4 border-blue-500 bg-blue-50 hover:bg-blue-100 p-4 rounded-r-lg transition-colors duration-200 text-left"
+							<div
+								onClick={() => toggleSection(section.id, isOptional, isStarted)}
+								className="flex-1 text-left hover:opacity-80 transition-opacity duration-200 w-full"
 							>
 								<div className="flex items-center justify-between">
 									<div className="flex-1">
@@ -306,22 +448,46 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 										</div>
 									</div>
 
-									{/* Icône expand/collapse */}
-									<div className="ml-4 flex-shrink-0">
-										<svg
-											className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-										</svg>
+									{/* Boutons pour sections optionnelles */}
+									<div className="ml-4 flex items-center space-x-2">
+										{isOptional && !isStarted && (
+											<button
+												onClick={(e) => {
+													e.stopPropagation();
+													handleStartOptionalSection(section.id);
+												}}
+												className="px-3 py-1 bg-blue-700 hover:bg-blue-800 text-white text-xs font-medium rounded-md transition-colors duration-200"
+											>
+												+ Suivre
+											</button>
+										)}
+										{isOptional && isStarted && (
+											<button
+												onClick={(e) => {
+													e.stopPropagation();
+													handleStopOptionalSection(section.id);
+												}}
+												className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-medium rounded-md transition-colors duration-200 border border-gray-300 mr-2"
+											>
+												Ne plus suivre
+											</button>
+										)}
+										{(!isOptional || isStarted) && (
+											<svg
+												className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+											</svg>
+										)}
 									</div>
 								</div>
-							</button>
+							</div>
 
 							{/* Items de la section (conditionnellement affichés) */}
-							{isExpanded && (
+							{isExpanded && (!isOptional || isStarted) && (
 								<div className="space-y-3">
 									{section.items.map((item) => {
 										const deadline = formatDeadline(item.deadline);
@@ -357,9 +523,6 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 																<h4 className={`font-medium ${item.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
 																	{item.title}
 																</h4>
-																<p className={`text-sm mt-1 ${item.completed ? 'line-through text-gray-400' : 'text-gray-600'}`}>
-																	{item.description}
-																</p>
 															</div>
 
 															{/* Badge priorité */}
@@ -367,6 +530,10 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 																{getPriorityLabel(item.priority)}
 															</span>
 														</div>
+
+														<p className={`text-sm mt-1 ${item.completed ? 'line-through text-gray-400' : 'text-gray-600'}`}>
+															{item.description}
+														</p>
 
 														{/* Échéance */}
 														{deadline && (
@@ -388,7 +555,7 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 																			href={resource.url}
 																			target="_blank"
 																			rel="noopener noreferrer"
-																			className="text-xs text-blue-600 hover:text-blue-700 underline block"
+																			className="text-xs text-blue-700 hover:text-blue-700 underline block"
 																		>
 																			{resource.title}
 																		</Link>

@@ -242,6 +242,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'logement-location',
 				title: 'Recherche et dossier de location',
+				optional: true,
 				description: 'Trouver et construire un dossier solide pour sa location',
 				items: [
 					{
@@ -303,6 +304,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'logement-achat',
 				title: 'Recherche et Achat immobilier',
+				optional: true,
 				description: 'Étapes pour acheter son premier logement',
 				items: [
 					{
@@ -352,6 +354,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'logement-aides',
 				title: 'Aides au logement',
+				optional: true,
 				description: 'Bénéficier des aides financières',
 				items: [
 					{
@@ -488,6 +491,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'sante-prevention',
 				title: 'Prévention',
+				optional: true,
 				description: 'Vaccins et suivi préventif',
 				items: [
 					{
@@ -521,6 +525,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'sante-urgences',
 				title: 'Aides',
+				optional: true,
 				description: 'Se proteger soi même et les autres',
 				items: [
 					{
@@ -753,6 +758,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'banque-credit',
 				title: 'Crédit et endettement',
+				optional: true,
 				description: 'Emprunter de manière responsable',
 				items: [
 					{
@@ -942,6 +948,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'assurances-specifiques',
 				title: 'Assurances spécifiques',
+				optional: true,
 				description: 'Selon activités et mode de vie particuliers',
 				items: [
 					{
@@ -1066,6 +1073,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'emploi-droits',
 				title: 'Bases du droit du travail',
+				optional: true,
 				description: 'Connaître ses droits et obligations fondamentaux',
 				items: [
 					{
@@ -1119,6 +1127,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'emploi-profil',
 				title: 'Création et mise à jour du profil emploi',
+				optional: true,
 				description: 'Construire et maintenir sa présence professionnelle',
 				items: [
 					{
@@ -1176,6 +1185,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'emploi-recherche',
 				title: 'Recherche d\'emploi active',
+				optional: true,
 				description: 'Stratégies et démarches pour trouver un emploi',
 				items: [
 					{
@@ -1347,6 +1357,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'demenagement-avant',
 				title: 'Avant le déménagement',
+				optional: true,
 				description: 'Préparatifs et organisation',
 				items: [
 					{
@@ -1393,6 +1404,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'demenagement-changement-adresse',
 				title: 'Changement d\'adresse',
+				optional: true,
 				description: 'Déclarations et notifications officielles',
 				items: [
 					{
@@ -1430,6 +1442,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'demenagement-nouveau-logement',
 				title: 'Nouveau logement',
+				optional: true,
 				description: 'Installation et souscription aux services',
 				items: [
 					{
@@ -1525,6 +1538,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'voyages-avant-depart',
 				title: 'Avant le départ',
+				optional: true,
 				description: 'Préparatifs et formalités essentielles',
 				items: [
 					{
@@ -1609,6 +1623,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'voyages-pratique',
 				title: 'Aspects pratiques',
+				optional: true,
 				description: 'Organisation et logistique du voyage',
 				items: [
 					{

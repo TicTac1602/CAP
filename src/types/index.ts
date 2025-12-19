@@ -18,6 +18,7 @@ export interface ChecklistSection {
 	title: string;
 	description: string;
 	items: ChecklistItem[];
+	optional?: boolean;
 }
 
 export interface ChecklistState {

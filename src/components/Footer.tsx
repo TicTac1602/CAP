@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
 	return (
-		<footer className="bg-gray-50 border-t">
+		<footer className="border-t">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{/* À propos */}
@@ -24,16 +24,16 @@ export default function Footer() {
 							Ressources
 						</h3>
 						<div className="mt-4 space-y-4">
-							<Link href="/theme" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/theme" className="text-sm text-gray-600 hover:text-blue-700 block">
 								Thèmes
 							</Link>
-							<Link href="/simulateurs" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/simulateurs" className="text-sm text-gray-600 hover:text-blue-700 block">
 								Simulateurs
 							</Link>
-							<Link href="/calendrier" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/calendrier" className="text-sm text-gray-600 hover:text-blue-700 block">
 								Calendrier
 							</Link>
-							<Link href="/faq" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/faq" className="text-sm text-gray-600 hover:text-blue-700 block">
 								FAQ
 							</Link>
 						</div>
@@ -45,17 +45,17 @@ export default function Footer() {
 							Aide
 						</h3>
 						<div className="mt-4 space-y-4">
-							<Link href="/contact" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/contact" className="text-sm text-gray-600 hover:text-blue-700 block">
 								Contact
 							</Link>
-							<Link href="/mentions-legales" className="text-sm text-gray-600 hover:text-blue-600 block">
+							<Link href="/mentions-legales" className="text-sm text-gray-600 hover:text-blue-700 block">
 								Mentions légales
 							</Link>
 							<Link
 								href="https://www.service-public.fr"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-sm text-gray-600 hover:text-blue-600 block"
+								className="text-sm text-gray-600 hover:text-blue-700 block"
 							>
 								Service Public
 							</Link>
@@ -63,7 +63,7 @@ export default function Footer() {
 								href="https://www.caf.fr"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-sm text-gray-600 hover:text-blue-600 block"
+								className="text-sm text-gray-600 hover:text-blue-700 block"
 							>
 								CAF
 							</Link>
@@ -71,7 +71,7 @@ export default function Footer() {
 								href="https://www.impots.gouv.fr"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-sm text-gray-600 hover:text-blue-600 block"
+								className="text-sm text-gray-600 hover:text-blue-700 block"
 							>
 								Impôts
 							</Link>
@@ -84,7 +84,7 @@ export default function Footer() {
 						© 2025 AdulPath. Tous droits réservés.
 					</p>
 					<p className="text-sm text-gray-400 text-center">
-						Made with ❤️ by <span className="font-semibold"><a href="https://github.com/TicTac1602" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer">Emil</a></span>.
+						Made with ❤️ by <span className="font-semibold"><a href="https://github.com/TicTac1602" className="hover:text-blue-700" target="_blank" rel="noopener noreferrer">Emil</a></span>.
 					</p>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ export default function FAQPage() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -42,7 +42,7 @@ export default function FAQPage() {
 								key={category}
 								onClick={() => setActiveCategory(category)}
 								className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeCategory === category
-									? 'bg-blue-600 text-white'
+									? 'bg-blue-700 text-white'
 									: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
 									}`}
 							>
@@ -63,7 +63,7 @@ export default function FAQPage() {
 								<div className="flex justify-between items-center">
 									<div className="flex-1">
 										<div className="flex items-center mb-2">
-											<span className="inline-block px-2 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded mr-3">
+											<span className="inline-block px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded mr-3">
 												{item.category}
 											</span>
 										</div>
@@ -107,7 +107,7 @@ export default function FAQPage() {
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
 						<Link
 							href="/#themes"
-							className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+							className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
 						>
 							Voir tous les guides
 						</Link>
@@ -115,7 +115,7 @@ export default function FAQPage() {
 							href="https://www.service-public.fr"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+							className="px-6 py-3 border border-blue-700 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
 						>
 							Service Public.fr
 						</Link>

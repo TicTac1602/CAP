@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ThemesPage() {
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -49,13 +49,13 @@ export default function ThemesPage() {
 						<div className="flex flex-wrap justify-center gap-4">
 							<Link
 								href="/faq"
-								className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+								className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
 							>
 								Notre FAQ
 							</Link>
 							<Link
 								href="/contact"
-								className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
+								className="inline-flex items-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg border border-blue-800 hover:bg-blue-50 transition-colors"
 							>
 								Nous contacter
 							</Link>

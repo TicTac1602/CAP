@@ -17,13 +17,13 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-white shadow-sm relative">
+		<header className="bg-blue-100 shadow-sm sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center py-4">
 					{/* Logo */}
 					<div className="flex items-center">
 						<Link href="/" className="flex items-center">
-							<span className="text-2xl font-bold text-blue-600">
+							<span className="text-2xl font-bold text-blue-700">
 								AdulPath
 							</span>
 						</Link>
@@ -35,7 +35,7 @@ export default function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+								className="text-gray-700 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors"
 							>
 								{item.name}
 							</Link>
@@ -46,7 +46,7 @@ export default function Header() {
 					<div className="md:hidden">
 						<button
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
-							className="text-gray-700 hover:text-blue-600 p-2"
+							className="text-gray-700 hover:text-blue-700 p-2"
 						>
 							<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -63,7 +63,7 @@ export default function Header() {
 								<Link
 									key={item.name}
 									href={item.href}
-									className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium hover:bg-gray-50 rounded"
+									className="text-gray-700 hover:text-blue-700 block px-3 py-2 text-base font-medium hover:bg-gray-50 rounded"
 									onClick={() => setIsMenuOpen(false)}
 								>
 									{item.name}

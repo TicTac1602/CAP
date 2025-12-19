@@ -2,15 +2,15 @@ import Link from 'next/link';
 
 export default function NotFound() {
 	return (
-		<div className="min-h-screen bg-gray-50 flex flex-col">
+		<div className="min-h-screen flex flex-col">
 			<main className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
 				<div className="max-w-lg w-full text-center">
 					{/* Icône 404 */}
 					<div className="mb-8">
-						<div className="text-6xl md:text-8xl font-bold text-blue-600 mb-4">
+						<div className="text-6xl md:text-8xl font-bold text-blue-700 mb-4">
 							404
 						</div>
-						<div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+						<div className="w-24 h-1 bg-blue-700 mx-auto rounded-full"></div>
 					</div>
 
 					{/* Message principal */}
@@ -27,7 +27,7 @@ export default function NotFound() {
 					<div className="space-y-4">
 						<Link
 							href="/"
-							className="inline-block w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+							className="inline-block w-full sm:w-auto bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
 						>
 							← Retour à l&apos;accueil
 						</Link>
@@ -39,19 +39,19 @@ export default function NotFound() {
 						<div className="flex flex-col sm:flex-row gap-3 justify-center">
 							<Link
 								href="/theme"
-								className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+								className="inline-block border-2 border-blue-700 text-blue-700 px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition-colors"
 							>
 								Explorer les thèmes
 							</Link>
 							<Link
 								href="/guide"
-								className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+								className="inline-block border-2 border-blue-700 text-blue-700 px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition-colors"
 							>
 								Voir les guides
 							</Link>
 							<Link
 								href="/faq"
-								className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+								className="inline-block border-2 border-blue-700 text-blue-700 px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition-colors"
 							>
 								FAQ
 							</Link>

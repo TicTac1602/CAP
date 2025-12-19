@@ -8,12 +8,12 @@ export default function Home() {
 	const featuredThemes = themes.slice(0, 3); // Les 3 premiers thèmes
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main>
 				{/* Hero Section */}
-				<section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+				<section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center">
 							<h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -27,13 +27,13 @@ export default function Home() {
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
 								<Link
 									href="/theme"
-									className="border-2 border-white bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+									className="border-2 border-white bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
 								>
 									Explorer les thèmes
 								</Link>
 								<Link
 									href="/calendrier"
-									className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+									className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors"
 								>
 									Voir le calendrier
 								</Link>
@@ -43,11 +43,11 @@ export default function Home() {
 				</section>
 
 				{/* Section Thèmes principaux */}
-				<section id="themes" className="py-16 bg-gray-50 mt-8">
+				<section id="themes" className="pt-16">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
-								9 thèmes essentiels pour votre autonomie
+								10 thèmes essentiels pour votre autonomie
 							</h2>
 							<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 								De l&apos;administration aux finances personnelles : tous les domaines 
@@ -64,7 +64,7 @@ export default function Home() {
 						<div className="text-center">
 							<Link
 								href="/theme"
-								className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+								className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
 							>
 								Voir tous les thèmes
 								<svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ export default function Home() {
 				</section>
 
 				{/* Section Fonctionnalités */}
-				<section className="py-16 bg-white">
+				<section className="py-16">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -132,7 +132,7 @@ export default function Home() {
 				</section>
 
 				{/* Call to Action final */}
-				<section className="py-16 bg-blue-600">
+				<section className="py-16 bg-blue-700">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 						<h2 className="text-3xl font-bold text-white mb-4">
 							Prêt à commencer votre vie d&apos;adulte ?
@@ -142,7 +142,7 @@ export default function Home() {
 						</p>
 						<Link
 							href="/theme"
-							className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-lg"
+							className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-lg"
 						>
 							Commencer maintenant
 							<svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

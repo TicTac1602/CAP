@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 			
 			<main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -27,9 +27,9 @@ export default function MentionsLegalesPage() {
 							<h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Éditeur du site</h2>
 							<div className="bg-gray-50 p-4 rounded-lg">
 								<p><strong>Nom du site :</strong> AdulPath</p>
-								<p><strong>Adresse du site :</strong> <a href="https://adulpath.fr" className="text-blue-600 hover:text-blue-700">https://adulpath.fr</a></p>
+								<p><strong>Adresse du site :</strong> <a href="https://adulpath.fr" className="text-blue-700 hover:text-blue-800">https://adulpath.fr</a></p>
 								<p><strong>Propriétaire / Éditeur :</strong> AdulPath</p>
-								<p><strong>Contact :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-600 hover:text-blue-700">contact.adulpath@gmail.com</a></p>
+								<p><strong>Contact :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-700 hover:text-blue-800">contact.adulpath@gmail.com</a></p>
 								<p><strong>Statut :</strong> Site web d&apos;information et d&apos;aide aux démarches administratives</p>
 							</div>
 						</section>
@@ -38,7 +38,7 @@ export default function MentionsLegalesPage() {
 						<section>
 							<h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Directeur de la publication</h2>
 							<p>Le directeur de la publication du site AdulPath est l&apos;équipe éditoriale d&apos;AdulPath.</p>
-							<p><strong>Contact :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-600 hover:text-blue-700">contact.adulpath@gmail.com</a></p>
+							<p><strong>Contact :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-700 hover:text-blue-800">contact.adulpath@gmail.com</a></p>
 						</section>
 
 						{/* Hébergement */}
@@ -47,7 +47,7 @@ export default function MentionsLegalesPage() {
 							<div className="bg-gray-50 p-4 rounded-lg">
 								<p><strong>Hébergeur :</strong> Vercel Inc.</p>
 								<p><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
-								<p><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">vercel.com</a></p>
+								<p><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-800">vercel.com</a></p>
 							</div>
 						</section>
 
@@ -64,7 +64,7 @@ export default function MentionsLegalesPage() {
 									<li>Pas d&apos;usage commercial sans autorisation expresse</li>
 								</ul>
 								
-								<p>Pour toute demande d&apos;autorisation spécifique, contactez-nous à : <a href="mailto:contact.adulpath@gmail.com" className="text-blue-600 hover:text-blue-700">contact.adulpath@gmail.com</a></p>
+								<p>Pour toute demande d&apos;autorisation spécifique, contactez-nous à : <a href="mailto:contact.adulpath@gmail.com" className="text-blue-700 hover:text-blue-800">contact.adulpath@gmail.com</a></p>
 							</div>
 						</section>
 
@@ -94,7 +94,7 @@ export default function MentionsLegalesPage() {
 								
 								<p><strong>Cookies :</strong> Le site utilise uniquement des cookies techniques nécessaires au fonctionnement du site. Aucun cookie de traçage tiers n&apos;est utilisé.</p>
 								
-								<p><strong>Vos droits :</strong> Pour toute question relative à la protection des données, contactez-nous à : <a href="mailto:contact.adulpath@gmail.com" className="text-blue-600 hover:text-blue-700">contact.adulpath@gmail.com</a></p>
+								<p><strong>Vos droits :</strong> Pour toute question relative à la protection des données, contactez-nous à : <a href="mailto:contact.adulpath@gmail.com" className="text-blue-700 hover:text-blue-800">contact.adulpath@gmail.com</a></p>
 							</div>
 						</section>
 
@@ -109,8 +109,8 @@ export default function MentionsLegalesPage() {
 							<h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Contact</h2>
 							<div className="bg-blue-50 p-4 rounded-lg">
 								<p>Pour toute question concernant ces mentions légales ou le site AdulPath :</p>
-								<p><strong>Email :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-600 hover:text-blue-700">contact.adulpath@gmail.com</a></p>
-								<p><strong>Ou via notre page :</strong> <Link href="/contact" className="text-blue-600 hover:text-blue-700">Contact</Link></p>
+								<p><strong>Email :</strong> <a href="mailto:contact.adulpath@gmail.com" className="text-blue-700 hover:text-blue-800">contact.adulpath@gmail.com</a></p>
+								<p><strong>Ou via notre page :</strong> <Link href="/contact" className="text-blue-700 hover:text-blue-800">Contact</Link></p>
 							</div>
 						</section>
 

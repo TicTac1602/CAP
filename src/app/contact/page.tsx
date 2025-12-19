@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 
 export default function ContactPage() {
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -31,7 +31,7 @@ export default function ContactPage() {
 							</p>
 							<a
 								href="mailto:contact.capadulte@gmail.com"
-								className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+								className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors font-medium"
 							>
 								Contactez-nous !
 							</a>

@@ -27,7 +27,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 	const otherThemes = getOtherThemes(currentIndex, themeCount);
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 sm:py-8 lg:px-8">
@@ -145,7 +145,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 										rel="noopener noreferrer"
 										className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
 									>
-										<h3 className="font-semibold text-blue-600 mb-1 text-sm">{link.title}</h3>
+										<h3 className="font-semibold text-blue-700 mb-1 text-sm">{link.title}</h3>
 										<p className="text-xs text-gray-600 mb-2">{link.description}</p>
 										<p className="text-xs text-gray-500 truncate" title={link.url}>{link.url}</p>
 									</Link>
@@ -157,7 +157,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 
 				{/* Navigation vers autres thèmes */}
 				{otherThemes.length > 0 && (
-					<div className="mt-12 bg-white rounded-lg shadow-md p-6">
+					<div className="my-12 bg-white rounded-lg shadow-md p-6">
 						<h2 className="text-xl font-bold text-gray-900 mb-4">Autres thèmes essentiels</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 							{otherThemes.map((otherTheme) => (

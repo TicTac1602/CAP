@@ -78,7 +78,7 @@ export default function SimulateursPage() {
 	const upcomingSimulators = simulateurs.filter(sim => !sim.available);
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -99,7 +99,7 @@ export default function SimulateursPage() {
 						<div className="text-sm text-gray-600">Simulateurs disponibles</div>
 					</div>
 					<div className="bg-white rounded-lg shadow-sm p-6 text-center">
-						<div className="text-3xl font-bold text-blue-600 mb-2">{upcomingSimulators.length}</div>
+						<div className="text-3xl font-bold text-blue-700 mb-2">{upcomingSimulators.length}</div>
 						<div className="text-sm text-gray-600">Bientôt disponibles</div>
 					</div>
 					<div className="bg-white rounded-lg shadow-sm p-6 text-center">
@@ -142,7 +142,7 @@ export default function SimulateursPage() {
 											{simulateur.description}
 										</p>
 
-										<div className="flex items-center text-blue-600 font-medium text-sm">
+										<div className="flex items-center text-blue-700 font-medium text-sm">
 											Utiliser ce simulateur
 											<svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -210,7 +210,7 @@ export default function SimulateursPage() {
 				)}
 
 				{/* Call to action */}
-				<div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8 text-center">
+				<div className="mt-16 bg-gradient-to-r from-blue-700 to-blue-800 text-white rounded-xl p-8 text-center">
 					<h2 className="text-2xl font-bold mb-4">
 						Vous avez une idée de simulateur ?
 					</h2>
@@ -220,7 +220,7 @@ export default function SimulateursPage() {
 					</p>
 					<Link
 						href="/contact"
-						className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+						className="inline-flex items-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
 					>
 						Faire une suggestion
 						<svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

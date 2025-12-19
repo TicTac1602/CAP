@@ -107,7 +107,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 					</button>
 					<button
 						onClick={() => setCurrentDate(new Date())}
-						className="px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"
+						className="px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-lg transition-colors"
 					>
 						Aujourd&apos;hui
 					</button>
@@ -169,7 +169,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 								{/* Numéro du jour */}
 								<div className={`text-xs sm:text-sm font-medium mb-0.5 sm:mb-1 text-center sm:text-left relative z-10 ${
 									!isCurrentMonthDay ? 'text-gray-400' :
-									isTodayDate ? 'text-blue-600 font-bold' : 
+									isTodayDate ? 'text-blue-700 font-bold' : 
 									hasDeadlines && hasIncompleteDeadlines ? 'text-blue-800 sm:text-gray-900 font-bold sm:font-medium' :
 									hasDeadlines && hasCompletedDeadlines ? 'text-green-800 sm:text-gray-900 font-bold sm:font-medium' :
 									'text-gray-900'
@@ -286,7 +286,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 									href={selectedDeadline.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
+									className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors text-sm sm:text-base font-medium"
 									onClick={() => setSelectedDeadline(null)}
 								>
 									En savoir plus →
@@ -300,7 +300,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 							// Pour les tâches des checklists, afficher le lien vers le thème
 							<Link
 								href={`/theme/${selectedDeadline.themeId}`}
-								className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
+								className="block w-full text-center px-4 py-3 sm:py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors text-sm sm:text-base font-medium"
 								onClick={() => setSelectedDeadline(null)}
 							>
 								Voir le thème complet →
@@ -402,7 +402,7 @@ export default function CalendrierPage() {
 
 	if (!isHydrated) {
 		return (
-			<div className="min-h-screen bg-gray-50">
+			<div className="min-h-screen">
 				<Header />
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 					<div className="animate-pulse">
@@ -420,7 +420,7 @@ export default function CalendrierPage() {
 	}
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<Header />
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
@@ -438,7 +438,7 @@ export default function CalendrierPage() {
 						<button
 							onClick={() => setViewMode('list')}
 							className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-md font-medium transition-colors text-sm sm:text-base ${viewMode === 'list'
-								? 'bg-white text-blue-600 shadow-sm'
+								? 'bg-white text-blue-700 shadow-sm'
 								: 'text-gray-600 hover:text-gray-900'
 								}`}
 						>
@@ -447,7 +447,7 @@ export default function CalendrierPage() {
 						<button
 							onClick={() => setViewMode('calendar')}
 							className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-md font-medium transition-colors text-sm sm:text-base ${viewMode === 'calendar'
-								? 'bg-white text-blue-600 shadow-sm'
+								? 'bg-white text-blue-700 shadow-sm'
 								: 'text-gray-600 hover:text-gray-900'
 								}`}
 						>
@@ -522,7 +522,7 @@ export default function CalendrierPage() {
 										) : (
 											<Link
 												href={`/theme/${deadline.themeId}`}
-												className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors text-xs sm:text-sm font-medium text-center whitespace-nowrap"
+												className="w-full sm:w-auto sm:ml-4 px-3 sm:px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-xs sm:text-sm font-medium text-center whitespace-nowrap"
 											>
 												Voir le thème →
 											</Link>

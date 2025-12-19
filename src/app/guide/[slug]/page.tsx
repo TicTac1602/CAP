@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: PageProps) {
 				<div className="mb-6">
 					<Link
 						href={`/theme/${guide.themeId}`}
-						className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+						className="inline-flex items-center text-blue-700 hover:text-blue-800 font-medium"
 					>
 						← Retour au thème
 					</Link>
@@ -196,7 +196,7 @@ export default async function GuidePage({ params }: PageProps) {
 								// Si le lien commence par #, c'est une ancre interne
 								if (href?.startsWith('#')) {
 									return (
-										<a href={href} className="text-blue-600 hover:text-blue-800 underline font-medium">
+										<a href={href} className="text-blue-700 hover:text-blue-800 underline font-medium">
 											{children}
 										</a>
 									);
@@ -205,7 +205,7 @@ export default async function GuidePage({ params }: PageProps) {
 								return (
 									<a 
 										href={href} 
-										className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 underline font-medium" 
+										className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 underline font-medium" 
 										target="_blank" 
 										rel="noopener noreferrer"
 									>
@@ -239,7 +239,7 @@ export default async function GuidePage({ params }: PageProps) {
 								</div>
 							),
 							thead: ({ children }) => (
-								<thead className="bg-blue-600 text-white">
+								<thead className="bg-blue-700 text-white">
 									{children}
 								</thead>
 							),
@@ -273,7 +273,7 @@ export default async function GuidePage({ params }: PageProps) {
 				<div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
 					<Link
 						href={`/theme/${guide.themeId}`}
-						className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors"
+						className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition-colors"
 					>
 						<span>←</span>
 						<span>Retour au thème</span>

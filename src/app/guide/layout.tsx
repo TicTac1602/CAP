@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 		title: "Guides détaillés pour jeunes adultes | AdulPath",
 		description: "Guides complets avec étapes détaillées pour réussir toutes vos démarches administratives et personnelles.",
 		url: "https://adulpath.fr/guide",
+	},
+	alternates: {
+		canonical: 'https://adulpath.fr/guide'
 	}
 };
 

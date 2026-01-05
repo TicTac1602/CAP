@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 		title: "FAQ - Toutes vos questions sur l'autonomie | AdulPath",
 		description: "Plus de 80 questions-réponses pour vous aider dans vos démarches d'autonomie. Administration, logement, emploi, santé...",
 		url: "https://adulpath.fr/faq",
+	},
+	alternates: {
+		canonical: "https://adulpath.fr/faq"
 	}
 };
 

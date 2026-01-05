@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 		title: "Simulateurs financiers gratuits | AdulPath",
 		description: "Outils gratuits pour optimiser votre budget et vos finances personnelles. Calculs instantanés avec conseils personnalisés.",
 		url: "https://adulpath.fr/simulateurs",
+	},
+	alternates: {
+		canonical: 'https://adulpath.fr/simulateurs'
 	}
 };
 

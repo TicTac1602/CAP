@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 		title: "Simulateur de budget personnel gratuit | AdulPath",
 		description: "Outil gratuit pour optimiser votre budget avec la règle 50-30-20. Calculs instantanés et conseils personnalisés.",
 		url: "https://adulpath.fr/simulateurs/budget",
+	},
+	alternates: {
+		canonical: 'https://adulpath.fr/simulateurs/budget'
 	}
 };
 

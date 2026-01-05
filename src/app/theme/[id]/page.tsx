@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Checklist from '@/components/Checklist';
@@ -8,6 +9,31 @@ import { getGuidesByTheme } from '@/data/guides';
 
 interface ThemePageProps {
 	params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: ThemePageProps): Promise<Metadata> {
+	const { id } = await params;
+	const theme = getThemeById(id);
+
+	if (!theme) {
+		return {
+			title: 'Thème non trouvé',
+			description: 'Le thème que vous recherchez n\'existe pas.'
+		};
+	}
+
+	return {
+		title: `${theme.title} - Guide complet et checklist`,
+		description: theme.description,
+		openGraph: {
+			title: `${theme.title} | AdulPath`,
+			description: theme.description,
+			url: `https://adulpath.fr/theme/${id}`,
+		},
+		alternates: {
+			canonical: `https://adulpath.fr/theme/${id}`
+		}
+	};
 }
 
 export default async function ThemePage({ params }: ThemePageProps) {

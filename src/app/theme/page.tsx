@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 		title: "Thèmes essentiels pour devenir autonome | AdulPath",
 		description: "9 thèmes complets avec checklists et guides : administration, logement, santé, budget, emploi, assurances, déménagement, voyages, entrepreneuriat.",
 		url: "https://adulpath.fr/theme",
+	},
+	alternates: {
+		canonical: 'https://adulpath.fr/theme'
 	}
 };
 

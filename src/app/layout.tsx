@@ -71,6 +71,9 @@ export const metadata: Metadata = {
 			'max-snippet': -1,
 		},
 	},
+	alternates: {
+		canonical: 'https://adulpath.fr'
+	},
 	icons: {
 		icon: [
 			{ url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

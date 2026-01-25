@@ -312,7 +312,13 @@ export const themes: ThemeSection[] = [
 						title: 'Évaluer sa capacité d\'emprunt',
 						description: 'Calculer son budget en fonction de ses revenus et charges',
 						completed: false,
-						priority: 'medium'
+						priority: 'medium',
+						resources: [
+							{
+								title: 'Simulateur de prêt immobilier - AdulPath',
+								url: '/simulateurs/emprunt'
+							}
+						]
 					},
 					{
 						id: 'housing-3',
@@ -340,7 +346,13 @@ export const themes: ThemeSection[] = [
 						title: 'Finaliser le prêt immobilier',
 						description: 'Obtenir l\'accord de la banque et signer l\'offre de prêt',
 						completed: false,
-						priority: 'high'
+						priority: 'high',
+						resources: [
+							{
+								title: 'Simulateur de prêt immobilier - AdulPath',
+								url: '/simulateurs/emprunt'
+							}
+						]
 					},
 					{
 						id: 'housing-11',
@@ -768,6 +780,10 @@ export const themes: ThemeSection[] = [
 						completed: false,
 						priority: 'medium',
 						resources: [
+							{
+								title: 'Simulateur de prêt immobilier - AdulPath',
+								url: '/simulateurs/emprunt'
+							},
 							{
 								title: 'Calculateur d\'endettement simplifié - Service Public',
 								url: 'https://www.lafinancepourtous.com/outils/calculateurs/calculateur-d-endettement/'

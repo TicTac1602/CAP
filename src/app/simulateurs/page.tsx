@@ -50,7 +50,7 @@ const simulateurs = [
 		description: 'Calculez votre capacité d\'emprunt immobilier et vos mensualités',
 		icon: '🏠',
 		color: 'bg-purple-500',
-		available: false,
+		available: true,
 		difficulty: 'Moyen',
 		duration: '8 min'
 	},

@@ -6,10 +6,61 @@ import Footer from '@/components/Footer';
 import EmpruntForm from '@/components/emprunt/EmpruntForm';
 import EmpruntResults from '@/components/emprunt/EmpruntResults';
 
-export default function EmpruntPage() {
-	const [results, setResults] = useState<any>(null);
+interface EmpruntFormData {
+	budgetProjet: number;
+	apportPersonnel: number;
+	typeBien: 'ancien' | 'neuf';
+	categorieBien: 'appartement' | 'maison';
+	usage: 'principale' | 'locatif';
+	dureeAnnees: number;
+	revenusMensuels: number;
+	primoAccedant: boolean;
+	zoneGeographique: 'A' | 'A bis' | 'B1' | 'B2' | 'C';
+}
 
-	const handleCalculate = (data: any) => {
+interface EmpruntResults {
+	// Informations du projet
+	budgetProjet: number;
+	apportPersonnel: number;
+	fraisNotaire: number;
+	typeBien: string;
+	categorieBien: string;
+	usage: string;
+	
+	// Calculs du prêt
+	capital: number;
+	tauxAnnuel: number;
+	tauxAssurance: number;
+	nombreMois: number;
+	dureeAnnees: number;
+	
+	// Mensualités et coûts
+	mensualiteHorsAssurance: number;
+	assuranceMensuelle: number;
+	mensualiteTotale: number;
+	coutInteretsTotal: number;
+	coutAssuranceTotal: number;
+	coutTotalCredit: number;
+	
+	// Capacité d'emprunt
+	tauxEndettement: number;
+	resteAVivre: number;
+	revenusMensuels: number;
+	
+	// PTZ
+	eligiblePTZ: boolean;
+	montantMaxPTZ: number;
+	quotitePTZ: number;
+	capitalHorsPTZ: number;
+	primoAccedant: boolean;
+	zoneGeographique: string;
+	pourcentageApport: number;
+}
+
+export default function EmpruntPage() {
+	const [results, setResults] = useState<EmpruntResults | null>(null);
+
+	const handleCalculate = (data: EmpruntFormData) => {
 		const tauxFraisNotaire = data.typeBien === 'neuf' ? 0.025 : 0.075; // 2.5% neuf, 7.5% ancien
 		const fraisNotaire = data.budgetProjet * tauxFraisNotaire;
 

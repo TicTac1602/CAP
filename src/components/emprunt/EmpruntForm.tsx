@@ -2,21 +2,33 @@
 
 import { useState } from 'react';
 
+export interface EmpruntFormData {
+	budgetProjet: number;
+	apportPersonnel: number;
+	typeBien: 'ancien' | 'neuf';
+	categorieBien: 'appartement' | 'maison';
+	usage: 'principale' | 'locatif';
+	dureeAnnees: number;
+	revenusMensuels: number;
+	primoAccedant: boolean;
+	zoneGeographique: 'A' | 'A bis' | 'B1' | 'B2' | 'C';
+}
+
 interface EmpruntFormProps {
-	onCalculate: (data: any) => void;
+	onCalculate: (data: EmpruntFormData) => void;
 }
 
 export default function EmpruntForm({ onCalculate }: EmpruntFormProps) {
-	const [formData, setFormData] = useState({
+	const [formData, setFormData] = useState<EmpruntFormData>({
 		budgetProjet: 50000,
 		apportPersonnel: 0,
-		typeBien: 'ancien', // ancien ou neuf
-		categorieBien: 'appartement', // appartement ou maison
-		usage: 'principale', // principale ou locatif
+		typeBien: 'ancien',
+		categorieBien: 'appartement',
+		usage: 'principale',
 		dureeAnnees: 20,
 		revenusMensuels: 0,
 		primoAccedant: false,
-		zoneGeographique: 'A' // Pour PTZ : A, A bis, B1, B2, C
+		zoneGeographique: 'A'
 	});
 
 	const [showTooltip, setShowTooltip] = useState<string | null>(null);

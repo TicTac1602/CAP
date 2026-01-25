@@ -1735,6 +1735,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'entreprendre-projet',
 				title: 'Définir son projet',
+				optional: true,
 				description: 'Validation et structuration de l\'idée',
 				items: [
 					{
@@ -1784,6 +1785,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'entreprendre-creation',
 				title: 'Formalités de création',
+				optional: true,
 				description: 'Démarches administratives et immatriculation',
 				items: [
 					{
@@ -1834,6 +1836,7 @@ export const themes: ThemeSection[] = [
 			{
 				id: 'entreprendre-lancement',
 				title: 'Lancer son activité',
+				optional: true,
 				description: 'Premiers clients et développement',
 				items: [
 					{

@@ -35,7 +35,7 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 				<div className="flex justify-between text-sm mb-2">
 					<span className="font-medium text-gray-700">{label}</span>
 					<span className="text-gray-600">
-						{formatEuro(current)} / {formatEuro(recommended)} recommandé
+						{formatEuro(current)} / {formatEuro(recommended)}
 					</span>
 				</div>
 				<div className="w-full bg-gray-200 rounded-full h-4 relative">
@@ -52,7 +52,7 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 				</div>
 				<div className="flex justify-between text-xs text-gray-500 mt-1">
 					<span>{currentPercentage.toFixed(1)}%</span>
-					<span className="text-gray-600">│ {recommendedPercentage}% recommandé</span>
+					<span className="text-gray-600"> {recommendedPercentage}%</span>
 				</div>
 			</div>
 		);
@@ -161,7 +161,7 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 					<div className="mt-2">
 						<div className="font-medium text-gray-700">Dépenses flexibles</div>
 						<div className="text-sm text-gray-600">{formatEuro(calculations.depensesFlexibles)}</div>
-						<div className="text-xs text-gray-500">Idéal 30%</div>
+						<div className="text-xs text-gray-500">Max 30%</div>
 					</div>
 				</div>
 

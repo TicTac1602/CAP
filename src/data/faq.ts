@@ -294,6 +294,30 @@ export const faqData: FAQItem[] = [
 		question: 'Dois-je déclarer mes jobs d\'été/étudiants aux impôts ?',
 		answer: 'Oui, tous vos revenus doivent être déclarés (jobs, stages rémunérés, auto-entreprise). Mais si vous gagnez moins de 4 936€ par an en jobs étudiants (2024), vous êtes exonéré d\'impôt. Déclarez quand même pour justifier vos ressources.',
 		category: 'Administration'
+	},
+	{
+		id: '51',
+		question: 'Quelle est la différence entre capital versé et capital final dans un simulateur d\'épargne ?',
+		answer: 'Le capital versé correspond uniquement à votre effort d\'épargne (capital de départ + versements). Le capital final inclut en plus les intérêts générés. L\'écart entre les deux représente l\'effet des intérêts composés au fil du temps.',
+		category: 'Budget'
+	},
+	{
+		id: '52',
+		question: 'Pourquoi mes versements s\'arrêtent-ils avant la fin de la simulation sur certains produits ?',
+		answer: 'Certains placements ont un plafond réglementaire de versements (par exemple Livret Jeune, Livret A, LDDS, PEL, PEA). Une fois ce plafond atteint, vous ne pouvez plus ajouter de nouveaux versements, mais les intérêts continuent à s\'accumuler.',
+		category: 'Budget'
+	},
+	{
+		id: '53',
+		question: 'Comment choisir l\'horizon de simulation de mon épargne ?',
+		answer: 'L\'horizon dépend de votre objectif: court terme pour une réserve de sécurité, moyen terme pour un projet, long terme pour investir. Certains produits ont aussi une durée maximale ou un cadre d\'usage qui limite l\'horizon pertinent.',
+		category: 'Budget'
+	},
+	{
+		id: '54',
+		question: 'Quelle différence entre le taux du prêt et le TAEG ?',
+		answer: 'Le taux du prêt (taux nominal) rémunère uniquement la banque pour l\'argent prêté. Le TAEG inclut le coût total annuel du crédit: taux nominal + assurance + frais de dossier + frais obligatoires. C\'est le TAEG qu\'il faut comparer entre offres.',
+		category: 'Banque'
 	}
 ];
 

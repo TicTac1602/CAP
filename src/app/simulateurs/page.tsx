@@ -58,9 +58,9 @@ const simulateurs = [
 		id: 'epargne',
 		title: 'Simulateur d\'épargne',
 		description: 'Planifiez vos objectifs d\'épargne et calculez les intérêts',
-		icon: '�',
+		icon: '🐖',
 		color: 'bg-yellow-500',
-		available: false,
+		available: true,
 		difficulty: 'Facile',
 		duration: '5 min'
 	},

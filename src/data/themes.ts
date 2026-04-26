@@ -92,7 +92,7 @@ export const themes: ThemeSection[] = [
 						description: 'S\'assurer que ses prélèvements à la source sont corrects et calculer sa partie d\'impôts à payer en fin d\'année',
 						completed: false,
 						priority: 'medium',
-						deadline: new Date('2026-01-31'),
+						deadline: new Date('2027-01-31'),
 						resources: [
 							{
 								title: 'Gerer mon prélèvement à la source - Impots.gouv',
@@ -124,7 +124,7 @@ export const themes: ThemeSection[] = [
 						description: 'Effectuer le paiement de la taxe foncière si concerné',
 						completed: false,
 						priority: 'high',
-						deadline: new Date('2025-10-20'),
+						deadline: new Date('2026-10-20'),
 						resources: [
 							{
 								title: 'Site officiel des impôts',
@@ -138,7 +138,7 @@ export const themes: ThemeSection[] = [
 						description: 'Effectuer le paiement des impôts sur le revenu',
 						completed: false,
 						priority: 'high',
-						deadline: new Date('2025-12-31'),
+						deadline: new Date('2026-12-31'),
 						resources: [
 							{
 								title: 'Notre simulateur d\'impôt sur le revenu',
@@ -1019,7 +1019,7 @@ export const themes: ThemeSection[] = [
 								url: 'https://www.quechoisir.org/rub-comparateur-t621/'
 							}
 						],
-						deadline: new Date("2026-01-01")
+						deadline: new Date("2027-01-01")
 					}
 				]
 			}

@@ -3,10 +3,10 @@ import { CalendarEvent } from "@/types";
 export const calendarEvents: CalendarEvent[] = [
 	// Événements administratifs
 	{
-		id: 'demande-bourses-2026',
+		id: 'demande-bourses-2027',
 		title: 'Demande de bourse étudiante',
 		description: 'Ouverture du DSE (Dossier Social Étudiant) pour l\'année suivante sur messervices.etudiant.gouv.fr',
-		date: new Date(2026, 0, 15), // 15 janvier 2026
+		date: new Date(2027, 0, 15), // 15 janvier 2027
 		type: 'education',
 		recurring: 'yearly',
 		icon: '🎓',
@@ -29,7 +29,7 @@ export const calendarEvents: CalendarEvent[] = [
 		id: 'declaration-medecin-traitant',
 		title: 'Rappel : Médecin traitant',
 		description: 'Vérifiez que votre médecin traitant est bien déclaré sur ameli.fr pour un meilleur remboursement',
-		date: new Date(2026, 0, 30), // 30 janvier 2026
+		date: new Date(2027, 0, 30), // 30 janvier 2027
 		type: 'health',
 		recurring: 'yearly',
 		icon: '⚕️',
@@ -39,10 +39,10 @@ export const calendarEvents: CalendarEvent[] = [
 
 	// Événements logement
 	{
-		id: 'revision-loyer-2026',
+		id: 'revision-loyer-2027',
 		title: 'Révision annuelle du loyer',
 		description: 'Période de révision des loyers selon l\'IRL (Indice de Référence des Loyers)',
-		date: new Date(2026, 0, 1), // 1er janvier 2026
+		date: new Date(2027, 0, 1), // 1er janvier 2027
 		type: 'housing',
 		recurring: 'yearly',
 		icon: '📊',
@@ -60,8 +60,10 @@ export function getEventsForYear(year: number): CalendarEvent[] {
 		
 		// Si l'événement est récurrent annuellement, ajuste l'année
 		if (event.recurring === 'yearly') {
+			const baseId = event.id.replace(/-\d{4}$/, '');
 			return {
 				...event,
+				id: `${baseId}-${year}`,
 				date: new Date(year, eventDate.getMonth(), eventDate.getDate())
 			};
 		}

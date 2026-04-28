@@ -100,7 +100,7 @@ export default function EpargneForm({ formData, onChange }: EpargneFormProps) {
 
 				<div>
 					<label htmlFor="frequenceVersement" className="block text-sm font-medium text-gray-700 mb-2">
-						Fréquence d'ajout
+						Fréquence d&aposajout
 					</label>
 					<select
 						id="frequenceVersement"
@@ -191,7 +191,7 @@ export default function EpargneForm({ formData, onChange }: EpargneFormProps) {
 				) : (
 					<div>
 						<label htmlFor="produitSelectionne" className="block text-sm font-medium text-gray-700 mb-2">
-							Sélection de produit d'épargne
+							Sélection de produit d&aposépargne
 						</label>
 						<select
 							id="produitSelectionne"

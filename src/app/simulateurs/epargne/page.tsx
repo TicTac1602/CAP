@@ -110,7 +110,7 @@ export default function EpargnePage() {
 			<main className="container mx-auto px-4 py-8">
 				<div className="text-center mb-8">
 					<h1 className="text-3xl font-bold text-gray-900 mb-4">
-						Simulateur d'Épargne
+						Simulateur d&aposÉpargne
 					</h1>
 					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
 						Projetez votre capital sur le long terme avec intérêts composés et versements périodiques
@@ -127,8 +127,8 @@ export default function EpargnePage() {
 								Outil à vocation pédagogique
 							</h3>
 							<p className="text-sm text-blue-800">
-								Cette simulation illustre la dynamique de l'épargne. Les rendements varient dans la réalité,
-								en fonction des marchés, des frais, de la fiscalité réelle et de l'inflation.
+								Cette simulation illustre la dynamique de l&aposépargne. Les rendements varient dans la réalité,
+								en fonction des marchés, des frais, de la fiscalité réelle et de l&aposinflation.
 							</p>
 						</div>
 					</div>

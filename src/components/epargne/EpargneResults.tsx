@@ -27,13 +27,13 @@ export function EpargnePlacementComparison() {
 					 fortement le résultat net selon la durée de détention, le type de retrait et votre situation personnelle.
 				</p>
 				<p>
-					La disponibilité des fonds est également déterminante: une épargne totalement liquide n'a pas la même fonction
-					 qu'une enveloppe d'investissement de long terme. Pour un projet robuste, il est pertinent de séparer l'épargne
-					 de sécurité et l'épargne de performance.
+					La disponibilité des fonds est également déterminante: une épargne totalement liquide n&apos;a pas la même fonction
+					 qu&apos;une enveloppe d&apos;investissement de long terme. Pour un projet robuste, il est pertinent de séparer l&apos;épargne
+					 de sécurité et l&apos;épargne de performance.
 				</p>
 				<p>
 					Le tableau ci-dessous synthétise les principaux régimes de plafond et de fiscalité, mais les règles exactes
-					 dépendent toujours de la date d'ouverture, des versements et des retraits effectivement réalisés.
+					 dépendent toujours de la date d&apos;ouverture, des versements et des retraits effectivement réalisés.
 				</p>
 			</div>
 
@@ -82,7 +82,7 @@ export default function EpargneResults({
 	if (!lastPoint) {
 		return (
 			<div className="bg-white rounded-lg shadow-sm p-6 text-center text-gray-600">
-				Renseignez vos paramètres pour visualiser l'évolution de votre épargne.
+				Renseignez vos paramètres pour visualiser l&aposévolution de votre épargne.
 			</div>
 		);
 	}
@@ -222,7 +222,7 @@ export default function EpargneResults({
 						</div>
 						<div className="flex items-center gap-2">
 							<span className="inline-block h-0.5 w-8 border-t-2 border-dashed border-amber-600" />
-							<span>Total versé par l'épargnant</span>
+							<span>Total versé par l&aposépargnant</span>
 						</div>
 						<div className="text-gray-600">Zone bleue: effet cumulé des intérêts composés</div>
 					</div>
@@ -270,7 +270,7 @@ export default function EpargneResults({
 
 					{produitSelectionne.dureeMaxAnnees && (
 						<div className="rounded-lg bg-orange-50 border border-orange-200 p-4 text-sm text-orange-900">
-							Ce produit est généralement encadré dans le temps (jusqu'à <strong>{produitSelectionne.dureeMaxAnnees} ans</strong> pour la simulation).
+							Ce produit est généralement encadré dans le temps (jusqu&aposà <strong>{produitSelectionne.dureeMaxAnnees} ans</strong> pour la simulation).
 						</div>
 					)}
 				</div>

@@ -308,12 +308,47 @@ export const themes: ThemeSection[] = [
 				description: 'Étapes pour acheter son premier logement',
 				items: [
 					{
+						id: 'housing-13',
+						title: 'Définir son projet immobilier',
+						description: 'Préciser le type de bien, la zone recherchée, la surface minimale, l\'horizon d\'achat et les critères non négociables.',
+						completed: false,
+						priority: 'high'
+					},
+					{
 						id: 'housing-6',
 						title: 'Évaluer sa capacité d\'emprunt',
-						description: 'Calculer son budget en fonction de ses revenus et charges',
+						description: 'Estimer le montant empruntable selon ses revenus, charges, apport et taux d\'endettement pour savoir si le projet est réaliste.',
 						completed: false,
-						priority: 'medium',
+						priority: 'high',
 						resources: [
+							{
+								title: 'Simulateur de prêt immobilier - AdulPath',
+								url: '/simulateurs/emprunt'
+							},
+							{
+								title: 'Crédit immobilier - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/N20373'
+							}
+						]
+					},
+					{
+						id: 'housing-14',
+						title: 'Définir le budget global du projet',
+						description: 'Prévoir le prix du bien mais aussi les frais de notaire, frais de garantie, frais de dossier, travaux, mobilier et charges récurrentes.',
+						completed: false,
+						priority: 'medium'
+					},
+					{
+						id: 'housing-15',
+						title: 'Étudier les solutions de financement',
+						description: 'Comparer prêt principal, apport personnel, PTZ et autres aides éventuelles avant de lancer les recherches sérieusement.',
+						completed: false,
+						priority: 'high',
+						resources: [
+							{
+								title: 'Prêt à taux zéro (PTZ) - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F10871'
+							},
 							{
 								title: 'Simulateur de prêt immobilier - AdulPath',
 								url: '/simulateurs/emprunt'
@@ -323,34 +358,45 @@ export const themes: ThemeSection[] = [
 					{
 						id: 'housing-3',
 						title: 'Rechercher un bien immobilier',
-						description: 'Utiliser des sites spécialisés, agences immobilières, etc.',
+						description: 'Utiliser des plateformes d\'annonces, agences, notaires et réseaux locaux une fois le projet et le budget cadrés.',
 						completed: false,
 						priority: 'medium'
 					},
 					{
+						id: 'housing-16',
+						title: 'Visiter et comparer les biens',
+						description: 'Comparer l\'état du bien, l\'emplacement, la copropriété, les diagnostics, les travaux à prévoir et le coût total du projet.',
+						completed: false,
+						priority: 'high'
+					},
+					{
 						id: 'housing-8',
 						title: 'Faire une offre d\'achat',
-						description: 'Négocier le prix avec le vendeur',
+						description: 'Proposer un prix cohérent avec le marché et vos capacités de financement, puis négocier avec le vendeur si nécessaire.',
 						completed: false,
 						priority: 'high'
 					},
 					{
 						id: 'housing-9',
 						title: 'Signer le compromis de vente',
-						description: 'Engagement réciproque entre l\'acheteur et le vendeur',
+						description: 'Formaliser l\'accord avec le vendeur et vérifier les clauses suspensives, notamment celle liée à l\'obtention du financement.',
 						completed: false,
 						priority: 'high'
 					},
 					{
 						id: 'housing-10',
 						title: 'Finaliser le prêt immobilier',
-						description: 'Obtenir l\'accord de la banque et signer l\'offre de prêt',
+						description: 'Monter le dossier, comparer les offres de banque ou de courtier, obtenir l\'accord puis signer l\'offre de prêt dans les délais.',
 						completed: false,
 						priority: 'high',
 						resources: [
 							{
 								title: 'Simulateur de prêt immobilier - AdulPath',
 								url: '/simulateurs/emprunt'
+							},
+							{
+								title: 'Crédit immobilier - Service Public',
+								url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/N20373'
 							}
 						]
 					},

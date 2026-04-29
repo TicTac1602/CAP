@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 		"simulateur prêt immobilier", "calcul mensualité crédit", "capacité d'emprunt",
 		"taux d'intérêt immobilier", "coût crédit immobilier", "calculateur prêt maison",
 		"simulation emprunt", "mensualité prêt", "PTZ prêt à taux zéro",
-		"éligibilité PTZ", "primo-accédant", "taux d'endettement 35%",
+		"éligibilité PTZ", "primo-accédant", "taux d'endettement 33%",
 		"frais de notaire", "assurance emprunteur", "crédit immobilier neuf ancien",
 		"investissement locatif", "résidence principale", "simulateur crédit maison appartement"
 	],

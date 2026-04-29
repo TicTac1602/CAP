@@ -5,168 +5,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmpruntForm from '@/components/emprunt/EmpruntForm';
 import EmpruntResults from '@/components/emprunt/EmpruntResults';
-
-interface EmpruntFormData {
-	budgetProjet: number;
-	apportPersonnel: number;
-	typeBien: 'ancien' | 'neuf';
-	categorieBien: 'appartement' | 'maison';
-	usage: 'principale' | 'locatif';
-	dureeAnnees: number;
-	revenusMensuels: number;
-	primoAccedant: boolean;
-	zoneGeographique: 'A' | 'A bis' | 'B1' | 'B2' | 'C';
-}
-
-interface EmpruntResults {
-	// Informations du projet
-	budgetProjet: number;
-	apportPersonnel: number;
-	fraisNotaire: number;
-	typeBien: string;
-	categorieBien: string;
-	usage: string;
-	
-	// Calculs du prêt
-	capital: number;
-	tauxAnnuel: number;
-	tauxAssurance: number;
-	nombreMois: number;
-	dureeAnnees: number;
-	
-	// Mensualités et coûts
-	mensualiteHorsAssurance: number;
-	assuranceMensuelle: number;
-	mensualiteTotale: number;
-	coutInteretsTotal: number;
-	coutAssuranceTotal: number;
-	coutTotalCredit: number;
-	
-	// Capacité d'emprunt
-	tauxEndettement: number;
-	resteAVivre: number;
-	revenusMensuels: number;
-	
-	// PTZ
-	eligiblePTZ: boolean;
-	montantMaxPTZ: number;
-	quotitePTZ: number;
-	capitalHorsPTZ: number;
-	primoAccedant: boolean;
-	zoneGeographique: string;
-	pourcentageApport: number;
-}
+import { EmpruntFormData, EmpruntSimulationResult } from '@/components/emprunt/types';
+import { buildSimulationResult } from '@/components/emprunt/calculations';
 
 export default function EmpruntPage() {
-	const [results, setResults] = useState<EmpruntResults | null>(null);
+	const [results, setResults] = useState<EmpruntSimulationResult | null>(null);
 
 	const handleCalculate = (data: EmpruntFormData) => {
-		const tauxFraisNotaire = data.typeBien === 'neuf' ? 0.025 : 0.075; // 2.5% neuf, 7.5% ancien
-		const fraisNotaire = data.budgetProjet * tauxFraisNotaire;
-
-		const capital = data.budgetProjet + fraisNotaire - data.apportPersonnel;
-
-		let tauxAnnuel = 3.5; // Taux de base en 2026
-		
-		// Ajustements selon le type de bien et usage
-		if (data.typeBien === 'neuf') tauxAnnuel -= 0.1; // Légèrement meilleur pour le neuf
-		if (data.usage === 'locatif') tauxAnnuel += 0.4; // Plus élevé pour l'investissement locatif
-		if (data.usage === 'principale' && data.primoAccedant) tauxAnnuel -= 0.1; // Bonus primo-accédant
-		
-		// Ajustement selon la durée
-		if (data.dureeAnnees > 20) tauxAnnuel += 0.2;
-		if (data.dureeAnnees < 15) tauxAnnuel -= 0.1;
-
-		// Ajustement selon l'apport
-		const pourcentageApport = (data.apportPersonnel / data.budgetProjet) * 100;
-		if (pourcentageApport >= 20) tauxAnnuel -= 0.15;
-		else if (pourcentageApport < 10) tauxAnnuel += 0.3;
-
-		const tauxAssurance = 0.30; // Taux moyen
-
-		const nombreMois = data.dureeAnnees * 12;
-		const tauxMensuel = tauxAnnuel / 100 / 12;
-
-		const mensualiteHorsAssurance = tauxMensuel === 0 
-			? capital / nombreMois 
-			: (capital * tauxMensuel) / (1 - Math.pow(1 + tauxMensuel, -nombreMois));
-
-		const assuranceMensuelle = (capital * tauxAssurance / 100) / 12;
-		const mensualiteTotale = mensualiteHorsAssurance + assuranceMensuelle;
-
-		const coutTotalCredit = (mensualiteTotale * nombreMois) - capital;
-		const coutAssuranceTotal = assuranceMensuelle * nombreMois;
-		const coutInteretsTotal = coutTotalCredit - coutAssuranceTotal;
-
-		const tauxEndettement = data.revenusMensuels > 0 
-			? (mensualiteTotale / data.revenusMensuels) * 100 
-			: 0;
-
-		const resteAVivre = data.revenusMensuels > 0 
-			? data.revenusMensuels - mensualiteTotale 
-			: 0;
-
-		// 8. Vérification éligibilité PTZ et calcul du montant
-		const eligiblePTZ = data.primoAccedant && 
-							data.usage === 'principale' && 
-							data.typeBien === 'neuf';
-
-		// Calcul du montant PTZ potentiel selon la zone
-		let montantMaxPTZ = 0;
-		let quotitePTZ = 0; // Pourcentage du projet finançable
-		
-		if (eligiblePTZ) {
-			// Quotité selon la zone (données 2026)
-			if (data.zoneGeographique === 'A bis' || data.zoneGeographique === 'A' || data.zoneGeographique === 'B1') {
-				quotitePTZ = 40; // 40% en zone B1
-			} else {
-				quotitePTZ = 20; // 20% en zone C
-			}
-			
-			montantMaxPTZ = (data.budgetProjet * quotitePTZ) / 100;
-		}
-
-		// Capital à emprunter hors PTZ
-		const capitalHorsPTZ = Math.max(0, capital - montantMaxPTZ);
-
-		setResults({
-			// Informations du projet
-			budgetProjet: data.budgetProjet,
-			apportPersonnel: data.apportPersonnel,
-			fraisNotaire,
-			typeBien: data.typeBien,
-			categorieBien: data.categorieBien,
-			usage: data.usage,
-			
-			// Calculs du prêt
-			capital,
-			tauxAnnuel,
-			tauxAssurance,
-			nombreMois,
-			dureeAnnees: data.dureeAnnees,
-			
-			// Mensualités et coûts
-			mensualiteHorsAssurance,
-			assuranceMensuelle,
-			mensualiteTotale,
-			coutInteretsTotal,
-			coutAssuranceTotal,
-			coutTotalCredit,
-			
-			// Capacité d'emprunt
-			tauxEndettement,
-			resteAVivre,
-			revenusMensuels: data.revenusMensuels,
-			
-			// PTZ
-			eligiblePTZ,
-			montantMaxPTZ,
-			quotitePTZ,
-			capitalHorsPTZ,
-			primoAccedant: data.primoAccedant,
-			zoneGeographique: data.zoneGeographique,
-			pourcentageApport
-		});
+		setResults(buildSimulationResult(data));
 	};
 
 	return (
@@ -179,7 +25,7 @@ export default function EmpruntPage() {
 						Simulateur de Prêt Immobilier
 					</h1>
 					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Calculez vos mensualités et estimez le coût total de votre crédit
+						Estimez soit la faisabilité d&apos;un projet précis, soit le budget immobilier accessible selon vos revenus
 					</p>
 				</div>
 
@@ -220,7 +66,7 @@ export default function EmpruntPage() {
 									Prêt à calculer ?
 								</h3>
 								<p className="text-gray-600">
-									Remplissez le formulaire pour voir vos résultats détaillés
+									Choisissez un mode, renseignez vos données financières, puis lancez la simulation
 								</p>
 							</div>
 						)}
@@ -283,7 +129,7 @@ export default function EmpruntPage() {
 							</h3>
 							<p className="text-gray-600 text-sm">
 								C&apos;est le ratio entre vos mensualités de crédit et vos revenus. 
-								Depuis 2022, les banques ne peuvent pas dépasser <strong>35% d&apos;endettement</strong> 
+								Depuis 2022, les banques ne peuvent pas dépasser <strong>33% d&apos;endettement</strong> 
 								(sauf exceptions). C&apos;est une protection pour éviter le surendettement.
 							</p>
 						</div>
@@ -358,7 +204,7 @@ export default function EmpruntPage() {
 								Gardez une marge de sécurité
 							</h3>
 							<p className="text-gray-600 text-sm">
-								Ne vous endettez pas au maximum des 35%. 
+								Ne vous endettez pas au maximum des 33%. 
 								Gardez une <strong>marge de manœuvre</strong> pour les imprévus 
 								(travaux, perte d&apos;emploi, etc.).
 							</p>

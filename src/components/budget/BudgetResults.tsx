@@ -219,7 +219,7 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 					{calculations.pourcentageEpargne < 20 && calculations.solde > 0 && (
 						<li>• Augmentez votre épargne pour atteindre 20% minimum de vos revenus</li>
 					)}
-					{calculations.pourcentageFlexible > 35 && (
+					{calculations.pourcentageFlexible > 33 && (
 						<li>• Réduisez vos dépenses de loisirs et sorties pour rééquilibrer votre budget</li>
 					)}
 					{calculations.solde < 0 && (

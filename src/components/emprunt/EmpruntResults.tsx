@@ -164,7 +164,7 @@ export default function EmpruntResults({ results }: EmpruntResultsProps) {
 						</div>
 						{results.eligiblePTZ && (
 							<div className="text-[11px] text-purple-200 mt-1">
-								Le PTZ réel peut être différé: la mensualité n'est pas toujours lissée uniformément sur toute la durée.
+								Le PTZ réel peut être différé: la mensualité n&apos;est pas toujours lissée uniformément sur toute la durée.
 							</div>
 						)}
 					</div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Calculator } from 'lucide-react';
 import EmpruntForm from '@/components/emprunt/EmpruntForm';
 import EmpruntResults from '@/components/emprunt/EmpruntResults';
 import { EmpruntFormData, EmpruntSimulationResult } from '@/components/emprunt/types';
@@ -63,7 +64,7 @@ export default function EmpruntPage() {
 							<EmpruntResults results={results} />
 						) : (
 							<div className="bg-white rounded-lg shadow-sm p-8 text-center">
-								<div className="text-6xl mb-4">📊</div>
+								<Calculator size={48} className="mx-auto mb-4" aria-hidden="true" />
 								<h3 className="text-lg font-semibold text-gray-900 mb-2">Prêt à calculer ?</h3>
 								<p className="text-gray-600">Indiquez vos revenus, l&apos;argent disponible pour l&apos;achat et la durée souhaitée. Si vous avez déjà un logement en vue, ajoutez son prix.</p>
 							</div>

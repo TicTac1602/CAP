@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ThemeSection, ChecklistState, ChecklistSection } from '@/types';
 import Link from 'next/link';
+import { Clock, MoveDown, MoveUp, Sparkles } from 'lucide-react';
 
 // Fonctions utilitaires exportées
 /**
@@ -381,9 +382,9 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 							</span>
 							<button
 								onClick={hasExpandedSections ? collapseAllSections : expandAllSections}
-								className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-md transition-colors duration-200"
+								className="inline-flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-md transition-colors duration-200"
 							>
-								{hasExpandedSections ? '📤 Tout replier' : '📥 Tout déplier'}
+								{hasExpandedSections ? <MoveUp size={14} aria-hidden="true" /> : <MoveDown size={14} aria-hidden="true" />} {hasExpandedSections ? 'Tout replier' : 'Tout déplier'}
 							</button>
 						</div>
 					</div>
@@ -398,8 +399,8 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 
 					{progressPercentage === 100 && (
 						<div className="mt-3 p-3 bg-green-200 border border-green-100 rounded-md">
-							<p className="text-sm font-medium">
-								🎉 Félicitations ! Vous avez terminé toutes les tâches de cette section.
+							<p className="flex items-start gap-2 text-sm font-medium">
+								<Sparkles size={18} className="shrink-0" aria-hidden="true" /> Félicitations ! Vous avez terminé toutes les tâches de cette section.
 							</p>
 						</div>
 					)}
@@ -538,8 +539,8 @@ export default function Checklist({ checklistSections, themeId }: ChecklistProps
 														{/* Échéance */}
 														{deadline && (
 															<div className="mt-2">
-																<span className={`text-xs font-medium ${deadline.color}`}>
-																	⏰ {deadline.text}
+																<span className={`inline-flex items-center gap-1 text-xs font-medium ${deadline.color}`}>
+																	<Clock size={14} aria-hidden="true" /> {deadline.text}
 																</span>
 															</div>
 														)}

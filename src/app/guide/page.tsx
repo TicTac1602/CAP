@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { createElement, useState, useMemo } from 'react';
 import Link from 'next/link';
 import { guideArticles } from '@/data/guides';
 import { themes } from '@/data/themes';
 import Header from '@/components/Header';
+import { BookOpen, CalendarDays, Search, Star, Timer } from 'lucide-react';
+import { themeIcons } from '@/lib/theme-icons';
 
 export default function GuidesPage() {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -32,8 +34,7 @@ export default function GuidesPage() {
 
 	// Obtenir l'icône du thème
 	const getThemeIcon = (themeId: string) => {
-		const theme = themes.find(t => t.id === themeId);
-		return theme ? theme.icon : '📚';
+		return themeIcons[themeId] ?? BookOpen;
 	};
 
 	// Obtenir la couleur du thème
@@ -88,7 +89,7 @@ export default function GuidesPage() {
 								<option value="all">Toutes les catégories</option>
 								{themes.map(theme => (
 									<option key={theme.id} value={theme.id}>
-										{theme.icon} {theme.title}
+										{theme.title}
 									</option>
 								))}
 							</select>
@@ -105,7 +106,7 @@ export default function GuidesPage() {
 				{/* Liste des guides */}
 				{filteredGuides.length === 0 ? (
 					<div className="text-center py-12">
-						<div className="text-6xl mb-4">🔍</div>
+						<Search size={48} className="mx-auto mb-4" aria-hidden="true" />
 						<h3 className="text-xl font-semibold text-gray-700 mb-2">
 							Aucun guide trouvé
 						</h3>
@@ -126,12 +127,12 @@ export default function GuidesPage() {
 									<div className="p-4 pb-0">
 										<div className="flex justify-between items-start mb-3">
 											{/* Catégorie */}
-											<span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white ${getThemeColor(guide.themeId)}`}>
-												{getThemeIcon(guide.themeId)} {getThemeName(guide.themeId)}
+											<span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium text-white ${getThemeColor(guide.themeId)}`}>
+												{createElement(getThemeIcon(guide.themeId), { size: 16, 'aria-hidden': true })} {getThemeName(guide.themeId)}
 											</span>
 											{guide.featured && (
-												<span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-													⭐ Recommandé
+												<span className="inline-flex items-center gap-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+													<Star size={14} aria-hidden="true" /> Recommandé
 												</span>
 											)}
 										</div>
@@ -165,11 +166,11 @@ export default function GuidesPage() {
 
 										{/* Métadonnées */}
 										<div className="flex items-center justify-between text-xs text-gray-500">
-											<span className="flex items-center">
-												⏱️ {guide.readingTime} min de lecture
+													<span className="flex items-center gap-1">
+														<Timer size={14} aria-hidden="true" /> {guide.readingTime} min de lecture
 											</span>
-											<span>
-												📅 {guide.publishedAt ? new Date(guide.publishedAt).toLocaleDateString('fr-FR') : 'Date inconnue'}
+													<span className="inline-flex items-center gap-1">
+														<CalendarDays size={14} aria-hidden="true" /> {guide.publishedAt ? new Date(guide.publishedAt).toLocaleDateString('fr-FR') : 'Date inconnue'}
 											</span>
 										</div>
 									</div>

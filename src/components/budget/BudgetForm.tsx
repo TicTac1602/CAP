@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useCallback, memo } from 'react';
 import { BudgetData } from '@/types';
+import { Calculator, Diamond, House, ShoppingCart, Wallet } from 'lucide-react';
 
 interface BudgetFormProps {
 	budgetData: BudgetData;
@@ -44,14 +45,14 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 		}));
 	}, [setBudgetData]); return (
 		<div className="bg-white rounded-lg shadow-md p-6">
-			<h2 className="text-xl font-semibold text-gray-900 mb-6">
-				📊 Saisie de votre budget
+			<h2 className="flex items-center gap-2 text-xl font-semibold text-gray-900 mb-6">
+				<Calculator size={20} aria-hidden="true" /> Saisie de votre budget
 			</h2>
 
 			{/* Revenus */}
 			<div className="mb-8">
-				<h3 className="text-lg font-medium text-green-700 mb-4 flex items-center">
-					💰 Revenus mensuels
+				<h3 className="text-lg font-medium text-green-700 mb-4 flex items-center gap-2">
+					<Wallet size={20} aria-hidden="true" /> Revenus mensuels
 				</h3>
 				<div className="bg-green-50 border border-green-200 rounded-lg p-4">
 					<InputField
@@ -71,8 +72,8 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 
 			{/* Charges fixes */}
 			<div className="mb-8">
-				<h3 className="text-lg font-medium text-red-700 mb-4 flex items-center">
-					🏠 Charges fixes
+				<h3 className="text-lg font-medium text-red-700 mb-4 flex flex-wrap items-center gap-2">
+					<House size={20} aria-hidden="true" /> Charges fixes
 					<span className="text-sm font-normal text-gray-600 ml-2">(max 50% recommandé)</span>
 				</h3>
 				<div className="bg-red-50 border border-red-200 rounded-lg p-4">
@@ -117,8 +118,8 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 
 			{/* Dépenses flexibles */}
 			<div className="mb-8">
-				<h3 className="text-lg font-medium text-orange-700 mb-4 flex items-center">
-					🛒 Dépenses flexibles
+				<h3 className="text-lg font-medium text-orange-700 mb-4 flex flex-wrap items-center gap-2">
+					<ShoppingCart size={20} aria-hidden="true" /> Dépenses flexibles
 					<span className="text-sm font-normal text-gray-600 ml-2">(30% recommandé)</span>
 				</h3>
 				<div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
@@ -157,8 +158,8 @@ export function BudgetForm({ budgetData, setBudgetData }: BudgetFormProps) {
 
 			{/* Épargne et placements */}
 			<div className="mb-6">
-				<h3 className="text-lg font-medium text-blue-700 mb-4 flex items-center">
-					💎 Épargne et placements
+				<h3 className="text-lg font-medium text-blue-700 mb-4 flex flex-wrap items-center gap-2">
+					<Diamond size={20} aria-hidden="true" /> Épargne et placements
 					<span className="text-sm font-normal text-gray-600 ml-2">(20% recommandé)</span>
 				</h3>
 				<div className="bg-blue-50 border border-blue-200 rounded-lg p-4">

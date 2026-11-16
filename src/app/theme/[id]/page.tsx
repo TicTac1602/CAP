@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { createElement } from 'react';
+import { AlertTriangle, BookOpen, Clock, Link as LinkIcon, ListChecks, Star, UserRound } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Checklist from '@/components/Checklist';
+import { themeIcons } from '@/lib/theme-icons';
 import { getThemeById, themes, getOtherThemes } from '@/data/themes';
 import { getGuidesByTheme } from '@/data/guides';
 
@@ -51,6 +54,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 	const currentIndex = themes.findIndex(t => t.id === id);
 	const themeCount = themes.length;
 	const otherThemes = getOtherThemes(currentIndex, themeCount);
+	const ThemeIcon = themeIcons[theme.id] ?? ListChecks;
 
 	return (
 		<div className="min-h-screen">
@@ -61,7 +65,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 				<div className="bg-white rounded-lg shadow-md p-8 mb-8">
 					<div className="flex items-center mb-6">
 						<div className={`${theme.color} text-white rounded-lg p-4 mr-6`}>
-							<span className="text-2xl">{theme.icon}</span>
+							<ThemeIcon size={24} aria-hidden="true" />
 						</div>
 						<div>
 							<h1 className="text-xl font-bold text-gray-900 mb-2">{theme.title}</h1>
@@ -73,22 +77,22 @@ export default async function ThemePage({ params }: ThemePageProps) {
 					<div className="border-t pt-6">
 						<h2 className="text-lg font-semibold text-gray-900 mb-4">Navigation rapide</h2>
 						<div className="flex flex-wrap gap-2">
-							<Link href="#checklist" className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
-								📋 Checklist
+							<Link href="#checklist" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
+								<ListChecks size={18} aria-hidden="true" /> Checklist
 							</Link>
 							{themeGuides.length > 0 && (
-								<Link href="#guides" className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors">
-									📚 Guides
+								<Link href="#guides" className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors">
+									<BookOpen size={18} aria-hidden="true" /> Guides
 								</Link>
 							)}
 							{theme.vigilancePoints.length > 0 && (
-								<Link href="#vigilance" className="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors">
-									⚠️ Points de vigilance
+								<Link href="#vigilance" className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors">
+									<AlertTriangle size={18} aria-hidden="true" /> Points de vigilance
 								</Link>
 							)}
 							{theme.usefulLinks.length > 0 && (
-								<Link href="#liens" className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors">
-									🔗 Liens utiles
+								<Link href="#liens" className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors">
+									<LinkIcon size={18} aria-hidden="true" /> Liens utiles
 								</Link>
 							)}
 						</div>
@@ -115,12 +119,12 @@ export default async function ThemePage({ params }: ThemePageProps) {
 									>
 										<h3 className="text-lg font-semibold text-gray-900 mb-2">{guide.title}</h3>
 										<p className="text-gray-600 mb-3 text-sm">{guide.description}</p>
-										<div className="flex items-center text-xs text-gray-500 space-x-3 mb-2">
-											<span>⏱️ {guide.readingTime} min</span>
-											<span>👤 {guide.author}</span>
+										<div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-2">
+											<span className="inline-flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {guide.readingTime} min</span>
+											<span className="inline-flex items-center gap-1"><UserRound size={14} aria-hidden="true" /> {guide.author}</span>
 											{guide.featured && (
-												<span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">
-													⭐ À la une
+												<span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-2 py-1 rounded">
+													<Star size={14} aria-hidden="true" /> À la une
 												</span>
 											)}
 										</div>
@@ -193,7 +197,7 @@ export default async function ThemePage({ params }: ThemePageProps) {
 									className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
 								>
 									<div className="flex items-center">
-										<span className="text-xl mr-3">{otherTheme.icon}</span>
+										{createElement(themeIcons[otherTheme.id] ?? ListChecks, { size: 20, className: 'mr-3 shrink-0', 'aria-hidden': true })}
 										<div>
 											<h3 className="font-semibold">{otherTheme.title}</h3>
 											<p className="text-sm text-gray-600">{otherTheme.description}</p>

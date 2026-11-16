@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Construction, House, PiggyBank, Receipt, Timer, UserRound, Wallet } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
@@ -28,7 +29,7 @@ const simulateurs = [
 		id: 'budget',
 		title: 'Simulateur de budget',
 		description: 'Calculez et optimisez votre budget mensuel personnel',
-		icon: '💰',
+		icon: Wallet,
 		color: 'bg-green-500',
 		available: true,
 		difficulty: 'Facile',
@@ -38,7 +39,7 @@ const simulateurs = [
 		id: 'impots',
 		title: 'Simulateur d\'impôts',
 		description: 'Estimez votre impôt sur le revenu et optimisez vos déclarations',
-		icon: '🧾',
+		icon: Receipt,
 		color: 'bg-blue-500',
 		available: false,
 		difficulty: 'Moyen',
@@ -48,7 +49,7 @@ const simulateurs = [
 		id: 'emprunt',
 		title: 'Capacité d\'emprunt',
 		description: 'Calculez votre capacité d\'emprunt immobilier et vos mensualités',
-		icon: '🏠',
+		icon: House,
 		color: 'bg-purple-500',
 		available: true,
 		difficulty: 'Moyen',
@@ -58,7 +59,7 @@ const simulateurs = [
 		id: 'epargne',
 		title: 'Simulateur d\'épargne',
 		description: 'Planifiez vos objectifs d\'épargne et calculez les intérêts',
-		icon: '🐖',
+		icon: PiggyBank,
 		color: 'bg-yellow-500',
 		available: true,
 		difficulty: 'Facile',
@@ -68,7 +69,7 @@ const simulateurs = [
 		id: 'retraite',
 		title: 'Simulateur retraite',
 		description: 'Estimez votre pension de retraite et planifiez votre future',
-		icon: '👴',
+		icon: UserRound,
 		color: 'bg-indigo-500',
 		available: false,
 		difficulty: 'Avancé',
@@ -126,7 +127,7 @@ export default function SimulateursPage() {
 									<div className="p-6">
 										<div className="flex items-center mb-4">
 											<div className={`${simulateur.color} text-white rounded-lg p-3 mr-4`}>
-												<span className="text-2xl">{simulateur.icon}</span>
+												<simulateur.icon size={24} aria-hidden="true" />
 											</div>
 											<div className="flex-1">
 												<h3 className="text-lg font-semibold text-gray-900 mb-1">
@@ -136,7 +137,7 @@ export default function SimulateursPage() {
 													<span className="bg-gray-100 px-2 py-1 rounded">
 														{simulateur.difficulty}
 													</span>
-													<span>⏱️ {simulateur.duration}</span>
+													<span className="inline-flex items-center gap-1"><Timer size={14} aria-hidden="true" /> {simulateur.duration}</span>
 												</div>
 											</div>
 										</div>
@@ -157,7 +158,7 @@ export default function SimulateursPage() {
 						</div>
 					) : (
 						<div className="text-center py-12">
-							<span className="text-6xl mb-4 block">🚧</span>
+							<Construction size={48} className="mx-auto mb-4" aria-hidden="true" />
 							<h3 className="text-lg font-medium text-gray-900 mb-2">
 								Aucun simulateur disponible pour le moment
 							</h3>
@@ -171,7 +172,7 @@ export default function SimulateursPage() {
 				{/* Simulateurs à venir */}
 				{upcomingSimulators.length > 0 && (
 					<section>
-						<h2 className="text-2xl font-bold text-gray-900 mb-6">🚧 Prochainement disponibles</h2>
+						<h2 className="flex items-center gap-2 text-2xl font-bold text-gray-900 mb-6"><Construction size={24} aria-hidden="true" /> Prochainement disponibles</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{upcomingSimulators.map((simulateur) => (
 								<div
@@ -181,7 +182,7 @@ export default function SimulateursPage() {
 									<div className="p-6">
 										<div className="flex items-center mb-4">
 											<div className={`${simulateur.color} text-white rounded-lg p-3 mr-4 opacity-60`}>
-												<span className="text-2xl">{simulateur.icon}</span>
+												<simulateur.icon size={24} aria-hidden="true" />
 											</div>
 											<div className="flex-1">
 												<h3 className="text-lg font-semibold text-gray-600 mb-1">
@@ -191,7 +192,7 @@ export default function SimulateursPage() {
 													<span className="bg-gray-100 px-2 py-1 rounded">
 														{simulateur.difficulty}
 													</span>
-													<span>⏱️ {simulateur.duration}</span>
+													<span className="inline-flex items-center gap-1"><Timer size={14} aria-hidden="true" /> {simulateur.duration}</span>
 												</div>
 											</div>
 										</div>

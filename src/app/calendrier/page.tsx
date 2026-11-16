@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { createElement, useState, useEffect } from 'react';
 import Link from 'next/link';
+import { CalendarDays, CheckCircle, Clock, MapPin } from 'lucide-react';
+import { themeIcons } from '@/lib/theme-icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { themes } from '@/data/themes';
@@ -15,7 +17,6 @@ interface DeadlineItem {
 	deadline: Date;
 	themeId: string;
 	themeTitle: string;
-	themeIcon: string;
 	themeColor: string;
 	completed: boolean;
 	isCustomEvent?: boolean; // Pour distinguer les événements personnalisés
@@ -182,7 +183,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 									{hasDeadlines && (
 										<div className="text-center">
 											<div className={`text-lg ${hasIncompleteDeadlines ? 'text-blue-700' : 'text-green-700'}`}>
-												{hasIncompleteDeadlines ? '📌' : '✅'}
+												{hasIncompleteDeadlines ? <MapPin size={18} className="mx-auto" aria-hidden="true" /> : <CheckCircle size={18} className="mx-auto" aria-hidden="true" />}
 											</div>
 											{dayDeadlines.length > 1 && (
 												<div className={`text-xs font-bold ${hasIncompleteDeadlines ? 'text-blue-800' : 'text-green-800'}`}>
@@ -210,7 +211,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 											title={`${deadline.title} (${deadline.themeTitle})`}
 										>
 											<div className="flex items-center gap-1">
-												<span className="text-sm">{deadline.themeIcon}</span>
+												{createElement(themeIcons[deadline.themeId] ?? CalendarDays, { size: 16, className: 'shrink-0', 'aria-hidden': true })}
 												<span className="truncate font-medium">{deadline.title}</span>
 											</div>
 										</div>
@@ -246,7 +247,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 					>
 						<div className="flex items-start justify-between mb-4">
 							<div className="flex items-center gap-3 flex-1 min-w-0">
-								<span className="text-2xl flex-shrink-0">{selectedDeadline.themeIcon}</span>
+								{createElement(themeIcons[selectedDeadline.themeId] ?? CalendarDays, { size: 24, className: 'flex-shrink-0', 'aria-hidden': true })}
 								<div className="min-w-0 flex-1">
 									<h3 className="font-semibold text-gray-900 text-sm sm:text-base">{selectedDeadline.title}</h3>
 									<p className="text-xs sm:text-sm text-gray-600 truncate">{selectedDeadline.themeTitle}</p>
@@ -264,7 +265,7 @@ function CalendarView({ deadlines }: { deadlines: DeadlineItem[] }) {
 
 						<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm mb-6">
 							<span className="text-gray-500 flex items-center gap-2">
-								<span className="flex-shrink-0">📅</span>
+								<CalendarDays size={18} className="flex-shrink-0" aria-hidden="true" />
 								<span className="text-xs sm:text-sm">
 									{selectedDeadline.deadline.toLocaleDateString('fr-FR', {
 										weekday: 'long',
@@ -335,7 +336,6 @@ export default function CalendrierPage() {
 							deadline: item.deadline,
 							themeId: theme.id,
 							themeTitle: theme.title,
-							themeIcon: theme.icon,
 							themeColor: theme.color,
 							completed: checklistState[item.id] ?? false,
 							isCustomEvent: false
@@ -355,7 +355,6 @@ export default function CalendrierPage() {
 				deadline: event.date,
 				themeId: event.type, // Utilise le type comme themeId
 				themeTitle: event.type.charAt(0).toUpperCase() + event.type.slice(1),
-				themeIcon: event.icon || '📅',
 				themeColor: event.color || 'bg-blue-500',
 				completed: false, // Les événements personnalisés ne sont pas "complétables"
 				isCustomEvent: true,
@@ -461,7 +460,7 @@ export default function CalendrierPage() {
 					<div className="space-y-4">
 						{deadlines.length === 0 ? (
 							<div className="text-center py-12">
-								<div className="text-6xl mb-4">📅</div>
+								<CalendarDays size={48} className="mx-auto mb-4" aria-hidden="true" />
 								<h3 className="text-lg font-medium text-gray-900 mb-2">
 									Aucune échéance trouvée
 								</h3>
@@ -481,7 +480,7 @@ export default function CalendrierPage() {
 									<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
 										<div className="flex-1 min-w-0">
 											<div className="flex items-center gap-3 mb-2">
-												<span className="text-xl sm:text-2xl flex-shrink-0">{deadline.themeIcon}</span>
+												{createElement(themeIcons[deadline.themeId] ?? CalendarDays, { size: 24, className: 'flex-shrink-0', 'aria-hidden': true })}
 												<div className="min-w-0 flex-1">
 													<h3 className={`font-semibold text-sm sm:text-base ${deadline.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
 														{deadline.title}
@@ -497,9 +496,9 @@ export default function CalendrierPage() {
 											</p>
 											<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
 												<span className="text-gray-500 flex items-center gap-1">
-													<span className="flex-shrink-0">📅</span>
+													<CalendarDays size={18} className="flex-shrink-0" aria-hidden="true" />
 													<span className="truncate">{formatDate(deadline.deadline)}</span>
-													<span className="flex-shrink-0 ml-4">⏰</span>
+													<Clock size={18} className="flex-shrink-0 ml-4" aria-hidden="true" />
 													<span>{getTimeUntilDeadline(deadline.deadline)}</span>
 												</span>
 											</div>

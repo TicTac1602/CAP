@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from 'next/link';
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { CalendarDays, Timer } from 'lucide-react';
 import { guideArticles, getGuideBySlug } from "@/data/guides";
 import { notFound } from "next/navigation";
 import { readFileSync } from "fs";
@@ -101,11 +102,11 @@ export default async function GuidePage({ params }: PageProps) {
 					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{guide.title}</h1>
 					<p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">{guide.description}</p>
 					<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-						<span className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
-							⏱️ {guide.readingTime} min de lecture
+						<span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
+							<Timer size={16} aria-hidden="true" /> {guide.readingTime} min de lecture
 						</span>
-						<span className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
-							📅 Mis à jour le {guide.updatedAt || guide.publishedAt}
+						<span className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+							<CalendarDays size={16} aria-hidden="true" /> Mis à jour le {guide.updatedAt || guide.publishedAt}
 						</span>
 					</div>
 				</header>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ThemeCard from '@/components/ThemeCard';
+import { BookOpen, Calculator, CalendarDays, ListChecks, Rocket } from 'lucide-react';
 import { themes } from '@/data/themes';
 
 export default function Home() {
@@ -90,7 +91,7 @@ export default function Home() {
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 							<Link href="/theme" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-									<span className="text-2xl">📋</span>
+									<ListChecks size={24} aria-hidden="true" />
 								</div>
 								<h3 className="text-lg font-semibold mb-2">Checklists interactives</h3>
 								<p className="text-gray-600 text-sm">
@@ -100,7 +101,7 @@ export default function Home() {
 
 							<Link href="/calendrier" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-									<span className="text-2xl">📅</span>
+									<CalendarDays size={24} aria-hidden="true" />
 								</div>
 								<h3 className="text-lg font-semibold mb-2">Calendrier de rappels</h3>
 								<p className="text-gray-600 text-sm">
@@ -110,7 +111,7 @@ export default function Home() {
 
 							<Link href="/simulateurs" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-									<span className="text-2xl">🧮</span>
+									<Calculator size={24} aria-hidden="true" />
 								</div>
 								<h3 className="text-lg font-semibold mb-2">Simulateurs</h3>
 								<p className="text-gray-600 text-sm">
@@ -120,7 +121,7 @@ export default function Home() {
 
 							<Link href="/faq" className="text-center cursor-pointer hover:transform hover:scale-105 transition-all">
 								<div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-									<span className="text-2xl">📚</span>
+									<BookOpen size={24} aria-hidden="true" />
 								</div>
 								<h3 className="text-lg font-semibold mb-2">FAQ</h3>
 								<p className="text-gray-600 text-sm">

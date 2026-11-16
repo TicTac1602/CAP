@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Globe, Mail } from 'lucide-react';
 
 export default function ContactPage() {
 	return (
@@ -21,7 +22,7 @@ export default function ContactPage() {
 					<div className="bg-white rounded-xl shadow-sm p-6 sm:p-8">
 						<div className="text-center">
 							<div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">📧</span>
+								<Mail size={24} aria-hidden="true" />
 							</div>
 							<h2 className="text-xl font-semibold text-gray-900 mb-3">
 								Email
@@ -45,7 +46,7 @@ export default function ContactPage() {
 					<div className="bg-white rounded-xl shadow-sm p-6 sm:p-8">
 						<div className="text-center">
 							<div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">🌐</span>
+								<Globe size={24} aria-hidden="true" />
 							</div>
 							<h2 className="text-xl font-semibold text-gray-900 mb-3">
 								Suivez-nous

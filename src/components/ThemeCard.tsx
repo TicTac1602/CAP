@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { ListChecks } from 'lucide-react';
+import { themeIcons } from '@/lib/theme-icons';
 import { ThemeSection } from '@/types';
 import { getGuidesByTheme } from '@/data/guides';
 import { getChecklistState, calculateChecklistStats, mergeChecklistData, getStartedOptionalSections, countActiveChecklists } from '@/components/Checklist';
@@ -11,6 +13,7 @@ interface ThemeCardProps {
 }
 
 export default function ThemeCard({ theme }: ThemeCardProps) {
+	const ThemeIcon = themeIcons[theme.id] ?? ListChecks;
 	// Initialize with default stats (no localStorage access)
 	const [stats, setStats] = useState(() => {
 		
@@ -62,7 +65,7 @@ export default function ThemeCard({ theme }: ThemeCardProps) {
 				{/* Header avec icône et titre */}
 				<div className="flex items-center mb-4">
 					<div className={`${theme.color} text-white rounded-lg p-3 mr-4`}>
-						<span className="text-2xl">{theme.icon}</span>
+						<ThemeIcon size={24} aria-hidden="true" />
 					</div>
 					<div className="flex-1">
 						<h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">

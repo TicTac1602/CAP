@@ -1,4 +1,5 @@
 import { BudgetCalculations } from '@/types';
+import { AlertCircle, AlertTriangle, CheckCircle, House, Lightbulb, Wallet } from 'lucide-react';
 
 interface BudgetAlertsProps {
 	calculations: BudgetCalculations;
@@ -11,7 +12,7 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 	if (calculations.solde < 0) {
 		alerts.push({
 			type: 'danger',
-			title: '🚨 Budget déficitaire !',
+			icon: AlertCircle, title: 'Budget déficitaire !',
 			message: `Vos dépenses dépassent vos revenus de ${Math.abs(calculations.solde).toFixed(2)} €. Il est urgent de réduire vos dépenses ou d'augmenter vos revenus.`,
 			priority: 1
 		});
@@ -21,7 +22,7 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 	if (calculations.solde >= 0 && calculations.solde < 50 && calculations.pourcentageEpargne < 20) {
 		alerts.push({
 			type: 'warning',
-			title: '⚠️ Épargne insuffisante',
+			icon: AlertTriangle, title: 'Épargne insuffisante',
 			message: `Il ne vous reste que ${calculations.solde.toFixed(2)} € après vos dépenses. Vous ne pouvez pas constituer d'épargne de sécurité en cas d'imprévu.`,
 			priority: 2
 		});
@@ -31,7 +32,7 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 	if (calculations.pourcentageChargesFixes > 50) {
 		alerts.push({
 			type: 'warning',
-			title: '🏠 Charges fixes trop élevées',
+			icon: House, title: 'Charges fixes trop élevées',
 			message: `Vos charges fixes représentent ${calculations.pourcentageChargesFixes.toFixed(1)}% de vos revenus (recommandé: 50% max). Cela réduit votre flexibilité financière.`,
 			priority: 2
 		});
@@ -41,7 +42,7 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 	if (calculations.epargneTotal === 0 && calculations.solde > 0) {
 		alerts.push({
 			type: 'info',
-			title: '💰 Pensez à épargner',
+			icon: Wallet, title: 'Pensez à épargner',
 			message: `Vous pourriez épargner ${calculations.solde.toFixed(2)} € par mois. Constituez d'abord une épargne de sécurité de 3-6 mois de charges.`,
 			priority: 3
 		});
@@ -51,7 +52,7 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 	if (calculations.solde > 0 && calculations.pourcentageChargesFixes <= 50 && calculations.epargneTotal > 0) {
 		alerts.push({
 			type: 'success',
-			title: '✅ Budget équilibré',
+			icon: CheckCircle, title: 'Budget équilibré',
 			message: `Félicitations ! Votre budget respecte les bonnes pratiques. Continuez sur cette voie !`,
 			priority: 4
 		});
@@ -89,8 +90,8 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 
 	return (
 		<div className="space-y-4">
-			<h3 className="text-lg font-semibold text-gray-900">
-				🚨 Analyse de votre budget
+			<h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+				<AlertCircle size={20} aria-hidden="true" /> Analyse de votre budget
 			</h3>
 
 			{alerts.map((alert, index) => (
@@ -98,14 +99,14 @@ export function BudgetAlerts({ calculations }: BudgetAlertsProps) {
 					key={index}
 					className={`border rounded-lg p-4 ${getAlertClass(alert.type)}`}
 				>
-					<h4 className="font-medium mb-2">{alert.title}</h4>
+					<h4 className="flex items-center gap-2 font-medium mb-2"><alert.icon size={18} aria-hidden="true" /> {alert.title}</h4>
 					<p className="text-sm">{alert.message}</p>
 				</div>
 			))}
 
 			{/* Conseils généraux */}
 			<div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-				<h4 className="font-medium text-indigo-800 mb-2">💡 Règle 50-30-20 rappel</h4>
+				<h4 className="flex items-center gap-2 font-medium text-indigo-800 mb-2"><Lightbulb size={18} aria-hidden="true" /> Règle 50-30-20 rappel</h4>
 				<div className="text-sm text-indigo-700 space-y-1">
 					<p>• <strong>50%</strong> : Besoins essentiels (loyer, assurances, transports...)</p>
 					<p>• <strong>30%</strong> : Envies et loisirs (sorties, hobbies, vêtements...)</p>

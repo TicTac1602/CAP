@@ -1,4 +1,5 @@
 import { BudgetCalculations } from '@/types';
+import { Lightbulb, TrendingUp } from 'lucide-react';
 
 interface BudgetResultsProps {
 	calculations: BudgetCalculations;
@@ -105,8 +106,8 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 	if (calculations.revenuTotal === 0) {
 		return (
 			<div className="bg-white rounded-lg shadow-md p-6">
-				<h3 className="text-lg font-semibold text-gray-900 mb-4">
-					📈 Analyse de votre budget
+				<h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-4">
+					<TrendingUp size={20} aria-hidden="true" /> Analyse de votre budget
 				</h3>
 				<div className="text-center text-gray-600 py-8">
 					<p>Saisissez vos revenus pour voir l&apos;analyse</p>
@@ -117,8 +118,8 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 
 	return (
 		<div className="bg-white rounded-lg shadow-md p-6">
-			<h3 className="text-lg font-semibold text-gray-900 mb-6">
-				📈 Analyse de votre budget
+			<h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 mb-6">
+				<TrendingUp size={20} aria-hidden="true" /> Analyse de votre budget
 			</h3>
 
 			{/* Résumé global */}
@@ -211,7 +212,7 @@ export function BudgetResults({ calculations }: BudgetResultsProps) {
 
 			{/* Conseils personnalisés */}
 			<div className="mt-6 p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
-				<h4 className="font-medium text-indigo-800 mb-2">💡 Conseils pour optimiser votre budget</h4>
+				<h4 className="flex items-center gap-2 font-medium text-indigo-800 mb-2"><Lightbulb size={18} aria-hidden="true" /> Conseils pour optimiser votre budget</h4>
 				<ul className="text-sm text-indigo-700 space-y-1">
 					{calculations.pourcentageChargesFixes > 50 && (
 						<li>• Réduisez vos charges fixes : négociez vos assurances, changez de banque, ou déménagez</li>

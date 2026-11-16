@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Simulateurs financiers gratuits - Budget, impôts, épargne",
-	description: "Outils de simulation gratuits pour gérer vos finances : calculateur de budget personnel, simulateur d'impôts, estimation capacité d'emprunt. Conseils personnalisés inclus.",
+	title: "Simulateurs gratuits : budget, épargne et prêt immobilier",
+	description: "Explorez votre budget mensuel, projetez votre épargne et estimez un prêt immobilier avec trois outils pédagogiques gratuits aux résultats indicatifs.",
 	keywords: [
-		"simulateur budget gratuit", "calculateur budget personnel", "simulateur impôts",
+		"simulateur budget gratuit", "calculateur budget personnel", "simulateur épargne",
 		"règle 50-30-20", "gestion budget étudiant", "calculateur épargne",
 		"simulation capacité emprunt", "outil financier gratuit",
 		"budget mensuel", "optimisation budget", "conseil financier"
@@ -113,7 +113,7 @@ export default function SimulateursPage() {
 
 				{/* Simulateurs disponibles */}
 				<section className="mb-12">
-					<h2 className="text-2xl font-bold text-gray-900 mb-6">✅ Simulateurs disponibles</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mb-6">Simulateurs disponibles</h2>
 
 					{availableSimulators.length > 0 ? (
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmpruntForm from '@/components/emprunt/EmpruntForm';
@@ -25,7 +27,7 @@ export default function EmpruntPage() {
 						Simulateur de Prêt Immobilier
 					</h1>
 					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Estimez soit la faisabilité d&apos;un projet précis, soit le budget immobilier accessible selon vos revenus
+						Estimez vos mensualités ou votre budget immobilier à partir de vos revenus et de votre apport, sans connaître les taux bancaires
 					</p>
 				</div>
 
@@ -62,155 +64,24 @@ export default function EmpruntPage() {
 						) : (
 							<div className="bg-white rounded-lg shadow-sm p-8 text-center">
 								<div className="text-6xl mb-4">📊</div>
-								<h3 className="text-lg font-semibold text-gray-900 mb-2">
-									Prêt à calculer ?
-								</h3>
-								<p className="text-gray-600">
-									Choisissez un mode, renseignez vos données financières, puis lancez la simulation
-								</p>
+								<h3 className="text-lg font-semibold text-gray-900 mb-2">Prêt à calculer ?</h3>
+								<p className="text-gray-600">Indiquez vos revenus, l&apos;argent disponible pour l&apos;achat et la durée souhaitée. Si vous avez déjà un logement en vue, ajoutez son prix.</p>
 							</div>
 						)}
 					</div>
 				</div>
 
-				{/* Section explicative et conseils */}
-				<div className="mt-12 bg-white rounded-lg shadow-sm p-8">
-					<h2 className="text-2xl font-bold text-gray-900 mb-6">
-						Comprendre et optimiser votre prêt immobilier
-					</h2>
-					
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-						{/* Comment ça fonctionne */}
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Le calcul des mensualités
-							</h3>
-							<p className="text-gray-600 mb-3 text-sm">
-								La mensualité comprend deux parties :
-							</p>
-							<ul className="space-y-2 text-sm text-gray-600">
-								<li className="flex items-start gap-2">
-									<span className="font-semibold text-blue-700 mt-0.5">1.</span>
-									<span><strong>Le capital + intérêts</strong> : remboursement du prêt à la banque</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<span className="font-semibold text-blue-700 mt-0.5">2.</span>
-									<span><strong>L&apos;assurance emprunteur</strong> : protection en cas de décès ou invalidité</span>
-								</li>
-							</ul>
+				<section aria-labelledby="financement-guide" className="mt-12 border-t border-gray-200 pt-8">
+					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+						<div className="max-w-2xl">
+							<h2 id="financement-guide" className="text-xl font-semibold text-gray-900 mb-2">En apprendre plus sur votre financement</h2>
+							<p className="text-gray-600 leading-relaxed">PTZ, Action Logement, aides locales et offres pour primo-accédants : découvrez les solutions à étudier et les questions à poser avant de choisir un prêt.</p>
 						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Le coût total du crédit
-							</h3>
-							<p className="text-gray-600 mb-3 text-sm">
-								Au-delà du capital emprunté, vous payez :
-							</p>
-							<ul className="space-y-2 text-sm text-gray-600">
-								<li className="flex items-start gap-2">
-									<span className="text-red-600 mt-0.5">→</span>
-									<span>Les <strong>intérêts</strong> : rémunération de la banque</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<span className="text-red-600 mt-0.5">→</span>
-									<span>L&apos;<strong>assurance</strong> : coût de la protection</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<span className="text-red-600 mt-0.5">→</span>
-									<span>Les <strong>frais de dossier</strong> : non inclus dans ce simulateur</span>
-								</li>
-							</ul>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Le taux d&apos;endettement
-							</h3>
-							<p className="text-gray-600 text-sm">
-								C&apos;est le ratio entre vos mensualités de crédit et vos revenus. 
-								Depuis 2022, les banques ne peuvent pas dépasser <strong>33% d&apos;endettement</strong> 
-								(sauf exceptions). C&apos;est une protection pour éviter le surendettement.
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Le PTZ (Prêt à Taux Zéro)
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Si vous êtes primo-accédant et achetez du neuf pour votre résidence principale, 
-								vous pouvez bénéficier d&apos;un <strong>prêt sans intérêts</strong> finançant jusqu&apos;à 40% de votre projet. 
-								Un vrai coup de pouce pour démarrer !
-							</p>
-						</div>
-
-						{/* Conseils d'optimisation */}
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Comparez plusieurs banques
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Les taux peuvent varier de <strong>0,5% à 1%</strong> entre établissements. 
-								Sur 20 ans, cela représente des <strong>milliers d&apos;euros</strong> d&apos;économies ! 
-								Utilisez un courtier ou négociez directement.
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Négociez l&apos;assurance emprunteur
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Vous pouvez choisir une <strong>assurance externe</strong> (délégation d&apos;assurance) 
-								souvent 30 à 50% moins chère que celle de la banque. C&apos;est votre droit !
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Maximisez votre apport
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Plus votre apport est élevé, meilleur sera votre taux. 
-								Visez au moins <strong>20% du prix</strong> pour obtenir les meilleures conditions. 
-								Moins d&apos;emprunter = moins d&apos;intérêts !
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Choisissez la bonne durée
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Une durée plus courte coûte <strong>beaucoup moins cher</strong> au total, 
-								mais avec des mensualités plus élevées. Trouvez le bon équilibre pour votre budget.
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Remboursement anticipé
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Vérifiez les <strong>conditions de remboursement anticipé</strong>. 
-								Certaines banques facturent des pénalités, d&apos;autres non. 
-								C&apos;est important si vous prévoyez de revendre.
-							</p>
-						</div>
-
-						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">
-								Gardez une marge de sécurité
-							</h3>
-							<p className="text-gray-600 text-sm">
-								Ne vous endettez pas au maximum des 33%. 
-								Gardez une <strong>marge de manœuvre</strong> pour les imprévus 
-								(travaux, perte d&apos;emploi, etc.).
-							</p>
-						</div>
+						<Link href="/guide/financer-premier-achat-immobilier" className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-700 text-white rounded-md font-medium hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:shrink-0">
+							Lire le guide<ArrowRight size={18} aria-hidden="true" />
+						</Link>
 					</div>
-				</div>
+				</section>
 			</main>
 
 			<Footer />

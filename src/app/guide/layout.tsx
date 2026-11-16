@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: "Guides détaillés pour jeunes adultes - Démarches administratives",
-	description: "Guides complets et détaillés pour réussir vos démarches : premier logement, comprendre sa fiche de paie, déclaration d'impôts, entretiens d'embauche, CV efficace. Conseils pratiques et étapes détaillées.",
+	description: "Guides pour comprendre vos premières démarches en France : location, fiche de paie, fonctionnement des impôts, CV et entretiens d'embauche.",
 	keywords: [
 		"guide premier logement", "guide fiche de paie", "guide déclaration impôts", 
 		"guide entretien embauche", "guide CV", "guide lettre motivation",

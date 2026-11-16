@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 	}
 
 	return {
-		title: `${guide.title} - Guide complet pour jeunes adultes | AdulPath`,
+		title: guide.title,
 		description: guide.description,
 		keywords: guide.tags,
 		authors: [{ name: guide.author }],

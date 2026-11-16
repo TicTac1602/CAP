@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Mentions légales - AdulPath",
+	title: "Mentions légales",
 	description: "Mentions légales et informations légales obligatoires du site AdulPath - Guide pratique pour jeunes adultes.",
 	robots: {
 		index: true,

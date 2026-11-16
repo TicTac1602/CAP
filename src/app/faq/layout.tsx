@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
+import { faqData } from '@/data/faq';
 
 export const metadata: Metadata = {
 	title: "FAQ - Questions fréquentes jeunes adultes | Démarches administratives",
-	description: "80+ questions-réponses sur l'autonomie des jeunes adultes : administration, logement, santé, budget, emploi. Toutes les réponses à vos questions pratiques.",
+	description: `${faqData.length} questions-réponses pour comprendre vos démarches en France : administration, logement, santé, budget et emploi.`,
 	keywords: [
 		"FAQ jeunes adultes", "questions fréquentes administration", "aide démarches administratives",
 		"première fois logement", "première fois impôts", "première fois emploi",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 	],
 	openGraph: {
 		title: "FAQ - Toutes vos questions sur l'autonomie | AdulPath",
-		description: "Plus de 80 questions-réponses pour vous aider dans vos démarches d'autonomie. Administration, logement, emploi, santé...",
+		description: `${faqData.length} questions-réponses sur vos premières démarches : administration, logement, emploi, santé et budget.`,
 		url: "https://adulpath.fr/faq",
 	},
 	alternates: {

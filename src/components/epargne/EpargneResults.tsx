@@ -82,7 +82,7 @@ export default function EpargneResults({
 	if (!lastPoint) {
 		return (
 			<div className="bg-white rounded-lg shadow-sm p-6 text-center text-gray-600">
-				Renseignez vos paramètres pour visualiser l&aposévolution de votre épargne.
+				Renseignez vos paramètres pour visualiser l&apos;évolution de votre épargne.
 			</div>
 		);
 	}
@@ -222,7 +222,7 @@ export default function EpargneResults({
 						</div>
 						<div className="flex items-center gap-2">
 							<span className="inline-block h-0.5 w-8 border-t-2 border-dashed border-amber-600" />
-							<span>Total versé par l&aposépargnant</span>
+							<span>Total versé par l&apos;épargnant</span>
 						</div>
 						<div className="text-gray-600">Zone bleue: effet cumulé des intérêts composés</div>
 					</div>
@@ -270,7 +270,7 @@ export default function EpargneResults({
 
 					{produitSelectionne.dureeMaxAnnees && (
 						<div className="rounded-lg bg-orange-50 border border-orange-200 p-4 text-sm text-orange-900">
-							Ce produit est généralement encadré dans le temps (jusqu&aposà <strong>{produitSelectionne.dureeMaxAnnees} ans</strong> pour la simulation).
+							Ce produit est généralement encadré dans le temps (jusqu&apos;à <strong>{produitSelectionne.dureeMaxAnnees} ans</strong> pour la simulation).
 						</div>
 					)}
 				</div>

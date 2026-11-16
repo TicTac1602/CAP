@@ -30,7 +30,7 @@ export default function ThemesPage() {
 					<h1 className="text-3xl font-bold text-gray-900 mb-4">Tous les thèmes</h1>
 					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						Explorez tous les domaines essentiels de la vie adulte. Chaque thème contient
-						des checklists pratiques, des guides détaillés et des conseils personnalisés.
+						des éléments essentiels pour chaque aspect de votre vie adulte.
 					</p>
 				</div>
 

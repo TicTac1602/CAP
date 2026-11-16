@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Contact - Posez vos questions sur l'autonomie | AdulPath",
-	description: "Une question sur vos démarches administratives ? Besoin de conseils pour votre vie d'adulte ? Contactez l'équipe AdulPath par email. Nous répondons à toutes vos interrogations sur l'autonomie, les impôts, le logement, l'emploi.",
+	title: "Contact : questions, suggestions et signalements",
+	description: "Contactez AdulPath par email pour signaler une erreur, suggérer un contenu ou partager votre expérience des premières démarches administratives.",
 	keywords: [
 		"contact AdulPath", "poser une question", "aide démarches administratives",
 		"conseil jeunes adultes", "support autonomie", "questions impôts", "aide logement",

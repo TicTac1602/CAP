@@ -30,7 +30,7 @@ export default function Header() {
 					</div>
 
 					{/* Navigation desktop */}
-					<nav className="hidden md:flex space-x-8">
+					<nav className="hidden lg:flex gap-1">
 						{navigation.map((item) => (
 							<Link
 								key={item.name}
@@ -43,9 +43,12 @@ export default function Header() {
 					</nav>
 
 					{/* Menu burger mobile */}
-					<div className="md:hidden">
+					<div className="lg:hidden">
 						<button
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+							aria-expanded={isMenuOpen}
+							aria-controls="navigation-mobile"
 							className="text-gray-700 hover:text-blue-700 p-2"
 						>
 							<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +60,7 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="absolute top-full left-0 right-0 md:hidden bg-white shadow-lg border-t z-50">
+					<div id="navigation-mobile" className="absolute top-full left-0 right-0 lg:hidden bg-white shadow-lg border-t z-50">
 						<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 							{navigation.map((item) => (
 								<Link

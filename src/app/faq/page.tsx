@@ -8,17 +8,8 @@ import { faqCategories, getFAQByCategory } from '@/data/faq';
 
 export default function FAQPage() {
 	const [activeCategory, setActiveCategory] = useState('Tous');
-	const [openItems, setOpenItems] = useState<string[]>([]);
 
 	const filteredFAQ = getFAQByCategory(activeCategory);
-
-	const toggleItem = (id: string) => {
-		setOpenItems(prev =>
-			prev.includes(id)
-				? prev.filter(item => item !== id)
-				: [...prev, id]
-		);
-	};
 
 	return (
 		<div className="min-h-screen">
@@ -41,6 +32,7 @@ export default function FAQPage() {
 							<button
 								key={category}
 								onClick={() => setActiveCategory(category)}
+								aria-pressed={activeCategory === category}
 								className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeCategory === category
 									? 'bg-blue-700 text-white'
 									: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -55,10 +47,9 @@ export default function FAQPage() {
 				{/* Liste des FAQ */}
 				<div className="space-y-4">
 					{filteredFAQ.map((item) => (
-						<div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-							<button
-								onClick={() => toggleItem(item.id)}
-								className="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors"
+						<details key={item.id} className="group bg-white rounded-lg shadow-md overflow-hidden">
+							<summary
+								className="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors cursor-pointer list-none focus-visible:outline-2 focus-visible:outline-blue-700 focus-visible:outline-offset-[-2px]"
 							>
 								<div className="flex justify-between items-center">
 									<div className="flex-1">
@@ -72,8 +63,8 @@ export default function FAQPage() {
 										</h3>
 									</div>
 									<svg
-										className={`w-6 h-6 text-gray-400 transition-transform ${openItems.includes(item.id) ? 'rotate-180' : ''
-											}`}
+										className="w-6 h-6 text-gray-400 transition-transform group-open:rotate-180 shrink-0"
+										aria-hidden="true"
 										fill="none"
 										stroke="currentColor"
 										viewBox="0 0 24 24"
@@ -81,18 +72,15 @@ export default function FAQPage() {
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
 									</svg>
 								</div>
-							</button>
-
-							{openItems.includes(item.id) && (
-								<div className="px-6 pb-6">
-									<div className="border-t pt-4">
-										<p className="text-gray-600 leading-relaxed">
-											{item.answer}
-										</p>
-									</div>
+							</summary>
+							<div className="px-6 pb-6">
+								<div className="border-t pt-4">
+									<p className="text-gray-600 leading-relaxed">
+										{item.answer}
+									</p>
 								</div>
-							)}
-						</div>
+							</div>
+						</details>
 					))}
 				</div>
 
@@ -106,7 +94,7 @@ export default function FAQPage() {
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
 						<Link
-							href="/#themes"
+							href="/guide"
 							className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
 						>
 							Voir tous les guides

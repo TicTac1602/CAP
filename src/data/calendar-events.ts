@@ -3,7 +3,7 @@ import { CalendarEvent } from "@/types";
 export const calendarEvents: CalendarEvent[] = [
 	// Événements administratifs
 	{
-		id: 'demande-bourses-2027',
+		id: 'demande-bourses',
 		title: 'Demande de bourse étudiante',
 		description: 'Ouverture du DSE (Dossier Social Étudiant) pour l\'année suivante sur messervices.etudiant.gouv.fr',
 		date: new Date(2027, 0, 15), // 15 janvier 2027
@@ -11,17 +11,18 @@ export const calendarEvents: CalendarEvent[] = [
 		recurring: 'yearly',
 		icon: '🎓',
 		color: 'bg-blue-500',
-		url: 'https://www.messervices.etudiant.gouv.fr'
+		url: 'https://www.etudiant.gouv.fr/fr/bourse-et-logement-constituez-votre-dossier-social-etudiant-dse-409'
 	},
 	{
-		id: 'fermeture-dse-2026',
+		id: 'fermeture-dse',
 		title: 'Date limite demande de bourse',
 		description: 'Date limite pour compléter votre DSE pour la rentrée suivante',
-		date: new Date(2026, 4, 15), // 15 mai 2026
+		date: new Date(2027, 4, 15), // 15 mai 2027
 		type: 'education',
 		recurring: 'yearly',
 		icon: '🎓',
-		color: 'bg-red-500'
+		color: 'bg-red-500',
+		url: 'https://www.etudiant.gouv.fr/fr/bourse-et-logement-constituez-votre-dossier-social-etudiant-dse-409'
 	},
 
 	// Événements santé
@@ -39,14 +40,15 @@ export const calendarEvents: CalendarEvent[] = [
 
 	// Événements logement
 	{
-		id: 'revision-loyer-2027',
+		id: 'revision-loyer',
 		title: 'Révision annuelle du loyer',
 		description: 'Période de révision des loyers selon l\'IRL (Indice de Référence des Loyers)',
 		date: new Date(2027, 0, 1), // 1er janvier 2027
 		type: 'housing',
 		recurring: 'yearly',
 		icon: '📊',
-		color: 'bg-purple-500'
+		color: 'bg-purple-500',
+		url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F1311'
 	}
 ];
 
@@ -56,6 +58,7 @@ export const calendarEvents: CalendarEvent[] = [
  */
 export function getEventsForYear(year: number): CalendarEvent[] {
 	return calendarEvents.map(event => {
+		if (!event.date) return event;
 		const eventDate = new Date(event.date);
 		
 		// Si l'événement est récurrent annuellement, ajuste l'année
@@ -69,7 +72,7 @@ export function getEventsForYear(year: number): CalendarEvent[] {
 		}
 		
 		return event;
-	}).filter(event => event.date.getFullYear() === year);
+	}).filter(event => !event.date || event.date.getFullYear() === year);
 }
 
 /**
@@ -77,6 +80,7 @@ export function getEventsForYear(year: number): CalendarEvent[] {
  */
 export function getUpcomingEvents(limit?: number): CalendarEvent[] {
 	const now = new Date();
+	now.setHours(0, 0, 0, 0);
 	const currentYear = now.getFullYear();
 	const nextYear = currentYear + 1;
 	
@@ -84,9 +88,9 @@ export function getUpcomingEvents(limit?: number): CalendarEvent[] {
 	const thisYearEvents = getEventsForYear(currentYear);
 	const nextYearEvents = getEventsForYear(nextYear);
 	
-	const allEvents = [...thisYearEvents, ...nextYearEvents]
-		.filter(event => event.date >= now)
-		.sort((a, b) => a.date.getTime() - b.date.getTime());
+	const allEvents = [...thisYearEvents, ...nextYearEvents.filter(event => event.date)]
+		.filter(event => !event.date || event.date >= now)
+		.sort((a, b) => (a.date?.getTime() ?? Infinity) - (b.date?.getTime() ?? Infinity));
 	
 	return limit ? allEvents.slice(0, limit) : allEvents;
 }
@@ -96,6 +100,7 @@ export function getUpcomingEvents(limit?: number): CalendarEvent[] {
  */
 export function getEventsForMonth(year: number, month: number): CalendarEvent[] {
 	return getEventsForYear(year).filter(event => {
+		if (!event.date) return false;
 		const eventDate = new Date(event.date);
 		return eventDate.getMonth() === month;
 	});

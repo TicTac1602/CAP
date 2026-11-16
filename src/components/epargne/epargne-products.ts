@@ -114,8 +114,7 @@ export const PRODUITS_EPARGNE: ProduitEpargne[] = [
 		risque: 'faible',
 		fiscalite: 'Fiscalité plus favorable après 8 ans selon les retraits effectués.',
 		fiscaliteDetaillee: 'Pas d\'impôt tant qu\'il n\'y a pas de rachat. Après 8 ans: abattement annuel de 4 600 EUR (9 200 EUR pour un couple), puis taxation selon la part de gains et la date/montant des versements.',
-		plafond: 152500,
-		plafondTexte: 'Pas de plafond de versements légal, mais seuil fiscal de 152 500 EUR pour certains versements (taux de 7,5% au-delà de 8 ans dans certains cas).',
+		plafondTexte: 'Pas de plafond légal de versements. Les seuils fiscaux ne constituent pas un plafond de versements.',
 		description: 'Placement prudent, souple pour préparer des projets de moyen/long terme.'
 	},
 	{

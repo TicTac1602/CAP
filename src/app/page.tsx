@@ -47,7 +47,7 @@ export default function Home() {
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl font-bold text-gray-900 mb-4">
-								10 thèmes essentiels pour votre autonomie
+								{themes.length} thèmes pour commencer votre vie indépendante
 							</h2>
 							<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 								De l&apos;administration aux finances personnelles : tous les domaines 
@@ -104,7 +104,7 @@ export default function Home() {
 								</div>
 								<h3 className="text-lg font-semibold mb-2">Calendrier de rappels</h3>
 								<p className="text-gray-600 text-sm">
-									Ne ratez plus aucune échéance importante
+									Consultez les échéances importantes et ne manquez jamais une date clé.
 								</p>
 							</Link>
 

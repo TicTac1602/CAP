@@ -1,6 +1,6 @@
 {
-  "name": "Cap Adulte - Guide pratique pour jeunes adultes",
-  "short_name": "Cap Adulte",
+  "name": "AdulPath - Guide pratique pour jeunes adultes",
+  "short_name": "AdulPath",
   "description": "Votre guide pratique pour bien démarrer votre vie d'adulte indépendant. Checklists, guides et simulateurs pour réussir vos démarches administratives.",
   "start_url": "/",
   "display": "standalone",

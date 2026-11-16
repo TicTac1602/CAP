@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Calendrier des échéances administratives - Jeunes adultes | AdulPath",
-	description: "Ne manquez plus aucune démarche importante ! Calendrier interactif des échéances administratives pour jeunes adultes : déclaration d'impôts, renouvellement CNI, assurances, APL. Rappels personnalisés et alertes pour vos deadlines.",
+	title: "Calendrier des échéances administratives",
+	description: "Consultez les échéances associées à vos checklists administratives. Vérifiez les dates applicables à votre situation auprès des organismes officiels.",
 	keywords: [
 		"calendrier échéances", "rappels administratifs", "deadlines impôts", "déclaration impôts date",
 		"renouvellement carte identité", "échéances APL", "dates importantes administratives",

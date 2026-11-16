@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 		default: "AdulPath - Guide pratique pour jeunes adultes",
 		template: "%s | AdulPath"
 	},
-	description: "Votre guide pratique pour bien démarrer votre vie d'adulte indépendant. Checklists interactives, guides détaillés et simulateurs pour réussir vos démarches administratives en France.",
+	description: "AdulPath aide les 18–35 ans à comprendre leurs démarches en France : logement, impôts, santé et budget.",
 	keywords: [
 		"devenir autonome", "guide jeunes adultes", "première déclaration impôts", "premier appartement", "premier emploi",
-		"démarches administratives", "18-30 ans", "vie étudiante", "transition adulte", "indépendance financière",
-		"checklists interactives", "simulateur budget", "simulateur impôts", "guide logement", "premier bail",
+		"démarches administratives", "18-35 ans", "vie étudiante", "transition adulte", "indépendance financière",
+		"checklists interactives", "simulateur budget", "simulateur épargne", "guide logement", "premier bail",
 		"carte identité", "sécurité sociale", "mutuelle santé", "compte bancaire", "assurance habitation",
 		"recherche emploi", "CV", "entretien embauche", "contrat travail", "droits salariés",
 		"budget étudiant", "épargne", "crédit", "aides CAF", "APL", "bourse étudiant",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 		locale: "fr_FR",
 		url: "https://adulpath.fr",
 		siteName: "AdulPath",
-		title: "AdulPath - Guide complet pour devenir autonome | 18-30 ans",
+		title: "AdulPath - Guide complet pour devenir autonome",
 		description: "Accompagnement complet pour les jeunes adultes : guides détaillés, checklists interactives et simulateurs pour réussir toutes vos démarches administratives.",
 		images: [
 			{
@@ -51,14 +51,6 @@ export const metadata: Metadata = {
 				alt: "AdulPath - Guide pratique pour jeunes adultes",
 			}
 		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		site: "@adulpath",
-		creator: "@adulpath",
-		title: "AdulPath - Guide complet pour devenir autonome",
-		description: "Guides, checklists et simulateurs pour réussir vos démarches administratives de 18 à 30 ans.",
-		images: ["/og-image.png"],
 	},
 	robots: {
 		index: true,
@@ -83,13 +75,6 @@ export const metadata: Metadata = {
 		apple: [
 			{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
 		],
-		other: [
-			{
-				rel: "mask-icon",
-				url: "/safari-pinned-tab.svg",
-				color: "#2563eb"
-			}
-		]
 	},
 	manifest: "/site.webmanifest",
 	referrer: "origin-when-cross-origin",

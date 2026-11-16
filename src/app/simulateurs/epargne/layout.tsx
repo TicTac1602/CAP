@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Simulateur d'épargne gratuit - Projection capital, intérêts et fiscalité | AdulPath",
-	description: "Simulez l'évolution de votre épargne avec capital initial, versements périodiques et rendement annuel. Comparez plusieurs produits (Livret A, LDDS, PEL, PEA...) et comprenez leur fiscalité.",
+	title: "Simulateur d'épargne : capital et intérêts composés",
+	description: "Projetez votre épargne avec un capital initial, des versements réguliers et une hypothèse de rendement. Résultats bruts indicatifs, hors frais, fiscalité et inflation.",
 	keywords: [
 		"simulateur épargne", "calcul intérêts composés", "versement mensuel",
 		"projection capital", "livret a", "ldds", "pel", "pea",

@@ -103,10 +103,10 @@ export const themes: ThemeSection[] = [
 					{
 						id: 'admin-2',
 						title: 'Déclarer ses revenus',
-						description: 'Généralement entre avril et juin chaque année il faut déclarer ses revenus sur le site des impôts',
+						description: 'Déclarer ses revenus chaque année. La date limite dépend du département et du mode de déclaration ; consulter le calendrier officiel de la campagne.',
 						completed: false,
 						priority: 'high',
-						deadline: new Date('2026-05-31'),
+						deadline: new Date('2027-05-31'),
 						resources: [
 							{
 								title: 'Site officiel des impôts',
@@ -120,22 +120,22 @@ export const themes: ThemeSection[] = [
 					},
 					{
 						id: 'admin-10',
-						title: 'Paiement taxe foncière',
-						description: 'Effectuer le paiement de la taxe foncière si concerné',
+						title: 'Paiement en ligne de la taxe foncière',
+						description: 'Pour les propriétaires concernés : paiement en ligne jusqu’au 20 octobre 2026 à minuit, ou jusqu’au 15 octobre hors paiement dématérialisé. Le prélèvement du paiement en ligne intervient à compter du 26 octobre. Vérifiez votre avis, notamment si vous êtes mensualisé.',
 						completed: false,
 						priority: 'high',
-						deadline: new Date('2026-10-20'),
+						deadline: new Date(2026, 9, 20),
 						resources: [
 							{
-								title: 'Site officiel des impôts',
-								url: 'https://www.impots.gouv.fr'
+								title: 'Calendrier fiscal officiel',
+								url: 'https://www.impots.gouv.fr/particulier/calendrier-fiscal'
 							}
 						]
 					},
 					{
 						id: 'admin-8',
 						title: 'Paiement des impôts sur le revenu',
-						description: 'Effectuer le paiement des impôts sur le revenu',
+						description: 'Vérifier le solde indiqué sur l’avis d’impôt : en règle générale, prélèvement en septembre si le solde est inférieur ou égal à 300 €, ou en quatre échéances de septembre à décembre au-delà.',
 						completed: false,
 						priority: 'high',
 						deadline: new Date('2026-12-31'),
@@ -503,7 +503,7 @@ export const themes: ThemeSection[] = [
 						description: 'Consulter son médecin traitant pour un check-up complet',
 						completed: false,
 						priority: 'medium',
-						deadline: new Date('2026-09-01')
+						deadline: new Date('2027-09-01')
 					},
 					{
 						id: 'health-7',
@@ -511,7 +511,7 @@ export const themes: ThemeSection[] = [
 						description: 'Consulter son dentiste pour un contrôle et un nettoyage',
 						completed: false,
 						priority: 'medium',
-						deadline: new Date('2026-09-01')
+						deadline: new Date('2027-09-01')
 					}
 				]
 			},
@@ -728,8 +728,8 @@ export const themes: ThemeSection[] = [
 								url: '/simulateurs/budget'
 							},
 							{
-								title: 'Notre template de budget (Excel)',
-								url: '/documents/template-budget.xlsx'
+								title: 'Conseils pour établir un budget - Banque de France',
+								url: 'https://www.mesquestionsdargent.fr/budget'
 							}
 						]
 					},
@@ -822,7 +822,7 @@ export const themes: ThemeSection[] = [
 					{
 						id: 'credit-1',
 						title: 'Connaître sa capacité d\'endettement',
-						description: 'Maximum 33% des revenus nets pour tous les crédits',
+						description: 'Pour un crédit immobilier, le repère HCSF est de 35% de taux d’effort, assurance comprise, avec des dérogations encadrées. Ce seuil ne garantit pas un accord bancaire.',
 						completed: false,
 						priority: 'medium',
 						resources: [
@@ -831,7 +831,7 @@ export const themes: ThemeSection[] = [
 								url: '/simulateurs/emprunt'
 							},
 							{
-								title: 'Calculateur d\'endettement simplifié - Service Public',
+								title: 'Calculateur d\'endettement - La Finance pour tous',
 								url: 'https://www.lafinancepourtous.com/outils/calculateurs/calculateur-d-endettement/'
 							}
 						]
@@ -873,8 +873,8 @@ export const themes: ThemeSection[] = [
 			},
 			{
 				id: 'vigilance-budget-3',
-				title: 'Règle des 33%',
-				description: 'Ne jamais dépasser 33% de ses revenus nets en remboursements de crédits',
+				title: 'Taux d’effort et crédit immobilier',
+				description: 'Le cadre HCSF retient 35%, assurance comprise, avec des dérogations encadrées. Garder une marge pour les dépenses courantes et les imprévus reste essentiel.',
 				type: 'important'
 			},
 			{
